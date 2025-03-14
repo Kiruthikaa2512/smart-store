@@ -3,6 +3,7 @@
 ## Project Overview
 This project aims to perform business intelligence and data analytics for a smart store. 
 
+
 ## Folder Structure
 
 ## Setup Instructions
@@ -19,3 +20,13 @@ This project aims to perform business intelligence and data analytics for a smar
 - Python
 - Pandas
 - Jupyter Notebook
+
+## Acknowledgements
+
+Special Thanks To:
+Dr.Case for her guidance and support
+Open Source Contributors for essential license and tools. 
+
+## Future Enhancements
+Comprehensive Reporting for Sales, Inventory, Customer Management. 
+Seamless integration with leading e-commerce platforms. 
