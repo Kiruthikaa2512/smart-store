@@ -14,3 +14,8 @@ This project aims to perform business intelligence and data analytics for a smar
 ## Project Goals
 - Analyze customer and sales data.
 - Build predictive models for forecasting.
+
+## Technologies Used
+- Python
+- Pandas
+- Jupyter Notebook
