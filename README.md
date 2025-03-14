@@ -3,6 +3,11 @@
 ## Project Overview
 This project aims to perform business intelligence and data analytics for a smart store. 
 
+## Features
+- **Efficient Inventory Tracking**: Manage stock levels with ease.
+- **User-Friendly Interface**: Automated and easy to use.
+- **Scalable Design**: Versatile to suit all business size. 
+
 
 ## Folder Structure
 
