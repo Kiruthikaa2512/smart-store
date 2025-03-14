@@ -14,3 +14,6 @@ print(products_df.head())
 # Read the sales data
 sales_df = pd.read_csv('data/raw/sales_data.csv')
 print(sales_df.head())
+
+import os
+print("Current Working Directory:", os.getcwd())
