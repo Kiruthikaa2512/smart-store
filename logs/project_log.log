@@ -1,0 +1,6 @@
+2025-03-17 16:15:02.399 | INFO     | __main__:main:41 - STARTING data_prep.py
+2025-03-17 16:15:02.400 | INFO     | __main__:log_example:34 - This is an example info message.
+2025-03-17 16:15:02.400 | WARNING  | __main__:log_example:35 - This is an example warning message.
+2025-03-17 16:15:02.400 | ERROR    | __main__:log_example:36 - This is an example error message.
+2025-03-17 16:15:02.401 | INFO     | __main__:main:46 - View the log output at C:\Projects\smart-store-kiruthikaa\logs\project_log.log
+2025-03-17 16:15:02.401 | INFO     | __main__:main:47 - EXITING data_prep.py.
