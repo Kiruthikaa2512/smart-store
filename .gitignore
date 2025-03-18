@@ -1,13 +1,46 @@
-# Byte-compiled / optimized / DLL files
+# Python-specific
 __pycache__/
 *.py[cod]
-*.so
+*.pyo
+*.pyd
 
-# Virtual environment
-.venv/
+# Virtual environments
+env/
+venv/
 
-# Jupyter notebooks
-*.ipynb_checkpoints
+# Logs and temporary files
+*.log
+*.tmp
 
-# macOS
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS-specific
 .DS_Store
+Thumbs.db
+
+# IDE and editor configs
+.vscode/
+.idea/
+
+# Git merge conflicts
+*.orig
+
+# Ignore environment files
+.env
+
+# Exclude datasets or large files, if any
+datasets/
+*.csv
+*.xlsx
+
+# Ignore compiled Python files
+*.so
+*.dll
+
+# Build outputs
+build/
+dist/
+
+# Cache directories
+.cache/
