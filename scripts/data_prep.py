@@ -1,52 +1,48 @@
 """
-Logger Setup Script
-File: utils/logger.py
-
-This script provides logging functions for the project. Logging is an essential way to
-track events and issues during software execution. This logger setup uses Loguru to log
-messages and errors both to a file and to the console.
+Module 2: Initial Script to Verify Project Setup
+File: scripts/data_prep.py
 """
 
-# Imports from Python Standard Library
 import pathlib
+import sys
+import pandas as pd
 
-# Imports from external packages
-from loguru import logger
+# For local imports, temporarily add project root to Python sys.path
+PROJECT_ROOT = pathlib.Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
 
-# Define global constants
-CURRENT_SCRIPT = pathlib.Path(__file__).stem  # Gets the current file name without the extension
-PROJECT_ROOT = pathlib.Path(__file__).resolve().parent.parent  # Navigate to the project's root directory
-LOG_FOLDER: pathlib.Path = PROJECT_ROOT.joinpath("logs")  # Directory where logs will be stored
-LOG_FILE: pathlib.Path = LOG_FOLDER.joinpath("project_log.log")  # Path to the log file
+# Now we can import local modules
+from utils.logger import logger
 
-# Ensure the log folder exists or create it
-LOG_FOLDER.mkdir(exist_ok=True)
+# Constants
+DATA_DIR: pathlib.Path = PROJECT_ROOT.joinpath("data")
+RAW_DATA_DIR: pathlib.Path = DATA_DIR.joinpath("raw")
 
-# Configure Loguru to write to the log file
-logger.add(LOG_FILE, level="INFO")
+def read_raw_data(file_name: str) -> pd.DataFrame:
+    """Read raw data from CSV."""
+    file_path: pathlib.Path = RAW_DATA_DIR.joinpath(file_name)
+    try:
+        logger.info(f"Reading raw data from {file_path}.")
+        return pd.read_csv(file_path)
+    except FileNotFoundError:
+        logger.error(f"File not found: {file_path}")
+        return pd.DataFrame()  # Return an empty DataFrame if the file is not found
+    except Exception as e:
+        logger.error(f"Error reading {file_path}: {e}")
+        return pd.DataFrame()  # Return an empty DataFrame if any other error occurs
 
-# Optionally, add console output for logging (Uncomment the following line if needed)
-# logger.add(sys.stderr, level="DEBUG")
-
-
-def log_example() -> None:
-    """Example logging function to demonstrate logging behavior."""
-    logger.info("This is an example info message.")
-    logger.warning("This is an example warning message.")
-    logger.error("This is an example error message.")
-
+def process_data(file_name: str) -> None:
+    """Process raw data by reading it into a pandas DataFrame object."""
+    df = read_raw_data(file_name)
 
 def main() -> None:
-    """Main function to execute the logger setup and demonstrate its usage."""
-    logger.info(f"STARTING {CURRENT_SCRIPT}.py")
-    
-    # Call the example logging function
-    log_example()
-    
-    logger.info(f"View the log output at {LOG_FILE}")
-    logger.info(f"EXITING {CURRENT_SCRIPT}.py.")
+    """Main function for processing customer, product, and sales data."""
+    logger.info("Starting data preparation...")
+    process_data("customers_data.csv")
+    process_data("products_data.csv")
+    process_data("sales_data.csv")
+    logger.info("Data preparation complete.")
 
-
-# Conditional execution block that calls main() only when this file is executed directly
 if __name__ == "__main__":
     main()
