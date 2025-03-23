@@ -4,9 +4,9 @@ CustomerID,Name,Region,JoinDate,LoyaltyPoints,PreferredContactMethod
 1003,Dan Brown,West,10/19/2023,1000,Email 
 1004,Chewbacca,West,11/9/2022,300,Phone
 1005,Dr Who,North,8/18/2023,500,Email 
-1006,Tiffany James,South,6/7/2021,30,Email 
+1006,Tiffany James,South,6/7/2021,300,Email 
 1007,Susan Johnson,South,6/30/2023,80,Phone
-1008,Tony Stark,North,5/1/2020,200,Email 
-1009,Jason Bourne,West,12/1/2020,400,Phone
+1008,Tony Stark,North,5/1/2020,1000,Email 
+1009,Jason Bourne,West,12/1/2020,700,Phone
 1010,Hermione Granger,East,12/9/2022,700,Email 
 1011,Hermione Grager,East,12/9/2022,650,Phone
