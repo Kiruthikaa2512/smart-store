@@ -3,7 +3,9 @@ ProductID,ProductName,Category,UnitPrice,StockQuantity,Supplier
 102,hoodie,Clothing,39.1,280,Bloom
 103,cable,Electronics,22.76,300,NKT
 104,hat,Clothing,43.1,400,Haptics
-105,football,Sports,19.78,380,Wilson
+105,football,Sports,19.78,,Wilson
 106,controller,Electronics,88.98,2000,Realtek
 107,jacket,Clothing,67.02,300,NKT
-108,protector,Electronics,12.56,600,Diodes
+108,protector,Electronics,12.56,-50,Diodes
+109,laptop,Electronics,793.12,1000,HCL
+102,hoodie,Clothing,39.1,280,Blooom
