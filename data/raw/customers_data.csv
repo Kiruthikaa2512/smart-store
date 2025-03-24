@@ -9,7 +9,7 @@ CustomerID,Name,Region,JoinDate,LoyaltyPoints,PreferredContactMethod
 1008,Tony Stark,North,5/1/2020,1000,Email 
 1009,Jason Bourne,West,12/1/2020,700,Phone
 1010,Hermione Granger,East,12/9/2022,700,Email 
-1011,Hermione Granger,East,12/9/2022,700,Email 
+1010,Hermione Granger,East,12/9/2022,700,Email 
 1012,Hermione Grager,East,12/9/2022,60,Phone
 1013,Xys,North,5/1/2020,-50,Email 
 1014,Unknown,West,4/4/2000,1000,Email 
