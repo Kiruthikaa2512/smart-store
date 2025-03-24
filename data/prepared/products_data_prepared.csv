@@ -1,0 +1,6 @@
+ProductID,ProductName,Category,UnitPrice,StockQuantity,Supplier
+101,laptop,Electronics,793.12,1000.0,HCL
+102,hoodie,Clothing,39.1,280.0,Bloom
+103,cable,Electronics,22.76,300.0,NKT
+104,hat,Clothing,43.1,400.0,Haptics
+107,jacket,Clothing,67.02,300.0,NKT
