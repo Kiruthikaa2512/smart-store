@@ -1,0 +1,83 @@
+[33mcommit 785ffc4583f46fc086932e150c60231170c67353[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Tue Mar 18 12:48:43 2025 -0700
+
+    Updated logger.py with new content
+
+[33mcommit f914d229322ea363c468ab4df9c5ae800d7c54b3[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Tue Mar 18 12:44:53 2025 -0700
+
+    Added and completed logger.py and data_prep.py
+
+[33mcommit 6c83a342e1ee1a74b71b76b420d39ede73e697ca[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Tue Mar 18 12:09:19 2025 -0700
+
+    Updated README and added folder structure
+
+[33mcommit c4f9d025308c9850bfc1e968e7a61d0f0db61f56[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Tue Mar 18 12:07:47 2025 -0700
+
+    Updated README and added folder structure
+
+[33mcommit f8fc5f5a69ea4b44efdd8de5e81656b76089aeb9[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Mon Mar 17 16:18:14 2025 -0700
+
+    add starter files
+
+[33mcommit 17a82873227a5e07c4b69fdd11f27a7f4444a6b9[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Thu Mar 13 20:17:15 2025 -0700
+
+    Updated README with new details
+
+[33mcommit d66e6ec43a88cfa4939c6dbf11dd3eeef34ca0df[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Thu Mar 13 20:14:28 2025 -0700
+
+    Updated README with new details
+
+[33mcommit 7304ed09ec29589498371effb611e1a48e5f5b99[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Thu Mar 13 18:40:10 2025 -0700
+
+    docs: Add technologies used section to README
+
+[33mcommit fd3052a53d73678c0cabec700f26ab0266ac7052[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Thu Mar 13 18:38:47 2025 -0700
+
+    docs: Add project goals to README
+
+[33mcommit bbaf355133b71b13f52f8151def90318090ed2a8[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Thu Mar 13 18:31:40 2025 -0700
+
+    chore: Initial commit with project structure
+
+[33mcommit fcae03ad9dfaee77be01af58dc465da680990c0d[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Thu Mar 13 18:19:16 2025 -0700
+
+    feat: Add data processing script to read and display data
+
+[33mcommit b900980c0320a28473633b8cf8238c800910b204[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Thu Mar 13 17:51:00 2025 -0700
+
+    feat: Add Python script for data processing and analysis
+
+[33mcommit 855255dc9789dc354fc7386ad2615e471ecca9a9[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Thu Mar 13 17:27:57 2025 -0700
+
+    feat: Add rules to ignore temporary and virtual environment files in .gitignore
+
+[33mcommit 037b198be88a04e7e90c396ec6a51da625fd203f[m
+Author: Kiruthikaa <kiruthikaashri@gmail.com>
+Date:   Thu Mar 13 16:21:47 2025 -0700
+
+    Add requirements.txt and related files
