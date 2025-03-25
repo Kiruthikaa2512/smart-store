@@ -1,5 +1,5 @@
 """
-Module 3: Cleanup sales csv files and write to new csv file
+Cleanup sales csv files and write to new csv file
 """
 
 
