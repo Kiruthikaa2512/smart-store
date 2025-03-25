@@ -1,38 +1,61 @@
+"""
+Module 3: Cleanup sales csv files and write to new csv file
+"""
+
+
+import pathlib
+import sys
 import pandas as pd
-import numpy as np
 
-# Load the dataset
-sales_data = pd.read_csv('C:/Projects/smart-store-kiruthikaa/data/raw/sales_data.csv')
+# For local imports, temporarily add project root to Python sys.path
+PROJECT_ROOT = pathlib.Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
 
-# Remove Duplicates
-sales_data = sales_data.drop_duplicates(subset=['TransactionID'])
+# Now we can import local modules
+from utils.logger import logger
 
-# Handling missing values
-sales_data = sales_data.dropna()
+# Constants
+DATA_DIR: pathlib.Path = PROJECT_ROOT.joinpath("data")
+RAW_DATA_DIR: pathlib.Path = DATA_DIR.joinpath("raw")
+PREP_DATA_DIR: pathlib.Path = DATA_DIR.joinpath("prepared")
 
-# Remove the invalid values (BonusPoints >= 0)
-sales_data = sales_data[sales_data['BonusPoints'] >= 0]
+def read_raw_data(file_name: str) -> pd.DataFrame:
+    """Read raw data from CSV."""
+    file_path: pathlib.Path = RAW_DATA_DIR.joinpath(file_name)
+    try:
+        logger.info(f"Reading raw data from {file_path}.")
+        return pd.read_csv(file_path)
+    except FileNotFoundError:
+        logger.error(f"File not found: {file_path}")
+        return pd.DataFrame()  # Return an empty DataFrame if the file is not found
+    except Exception as e:
+        logger.error(f"Error reading {file_path}: {e}")
+        return pd.DataFrame()  # Return an empty DataFrame if any other error occurs
+    
+def save_prepared_data(df, file_name):
+    """Save cleaned data to csv"""
+    file_path: pathlib.Path = PREP_DATA_DIR.joinpath(file_name)
+    df.to_csv(file_path, index=False)
+    logger.info(f"Data saved to {file_path}")
 
-# Handle Outliers in SaleAmount using IQR
-# Calculate Q1, Q3, and IQR
-Q1 = sales_data['SaleAmount'].quantile(0.25)  # 25th percentile
-Q3 = sales_data['SaleAmount'].quantile(0.75)  # 75th percentile
-IQR = Q3 - Q1  # Interquartile Range
+def process_data(file_name: str) -> None:
+    """Process raw data by reading it into a pandas DataFrame object."""
+    df = read_raw_data(file_name)
+    df.columns = df.columns.str.strip()  # Clean column names
+    df = df.drop_duplicates()            # Remove duplicates
+    df['SaleAmount']=df['SaleAmount'].round(2)
+    df = df.dropna(subset=['CustomerID'])  # Drop rows missing critical info
 
-# Define lower and upper bounds for SaleAmount
-lower_bound = Q1 - 1.5 * IQR
-upper_bound = Q3 + 1.5 * IQR
+    return df
 
-# Keep rows within the bounds
-sales_data = sales_data[(sales_data['SaleAmount'] >= lower_bound) & (sales_data['SaleAmount'] <= upper_bound)]
+def main() -> None:
+    """Main function for processing customer data."""
+    logger.info("Starting data preparation...")
+    cleaned_df=process_data("sales_data.csv")
+    save_prepared_data(cleaned_df, "sales_data_prepared.csv")
+  
+    logger.info("Data preparation complete.")
 
-# Keep rows with valid PaymentType values
-sales_data = sales_data[sales_data['PaymentType'].notnull()]  # Removes blank PaymentType rows
-sales_data = sales_data[sales_data['PaymentType'].isin(['Cash', 'Credit', 'Debit'])]  # Keeps only valid PaymentType
-
-# Saving the cleaned dataset
-sales_data.to_csv('C:/Projects/smart-store-kiruthikaa/data/prepared/sales_data_prepared.csv', index=False)
-print("Cleaned data saved to C:/Projects/smart-store-kiruthikaa/data/prepared/sales_data_prepared.csv")
-
-# Check for duplicates in the sales dataset
-print(f"Number of duplicate rows: {sales_data.duplicated().sum()}")
+if __name__ == "__main__":
+    main()
