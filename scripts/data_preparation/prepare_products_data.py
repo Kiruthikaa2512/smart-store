@@ -1,3 +1,30 @@
+"""
+scripts/data_preparation/prepare_products_data.py
+
+This script reads product data from the data/raw folder, cleans the data, 
+and writes the cleaned version to the data/prepared folder.
+
+Tasks:
+- Remove duplicates
+- Handle missing values
+- Remove outliers
+- Ensure consistent formatting
+
+-----------------------------------
+How to Run:
+1. Open a terminal in the main root project folder.
+2. Activate the local project virtual environment.
+3. Choose the correct commands for your OS to run this script:
+
+Example (Windows/PowerShell) - do NOT include the > prompt:
+> .venv\Scripts\activate
+> py scripts\data_preparation\prepare_products_data.py
+
+Example (Mac/Linux) - do NOT include the $ prompt:
+$ source .venv/bin/activate
+$ python3 scripts/data_preparation/prepare_products_data.py
+"""
+
 import pathlib
 import sys
 import pandas as pd
