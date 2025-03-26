@@ -67,6 +67,141 @@ python -m venv .venv
 # Install dependencies
 pip install -r requirements.txt
 ```
+## Data Cleaning Process and Commands
+
+## Data Cleaning Process and Commands
+
+The data cleaning pipeline now integrates a modular class-based approach using the `DataScrubber` class. This addition streamlines data preparation tasks while ensuring maintainability and reusability across different datasets. Below is a detailed outline:
+
+### Data Scrubber Class
+
+The `DataScrubber` class, implemented in the project, encapsulates various data cleaning functionalities and provides a unified interface for handling datasets. It is designed to be flexible and scalable for diverse cleaning needs.
+
+### Key Features of `DataScrubber`
+
+- **Column Validation**: Ensures required columns are present before processing.
+- **Duplicate Removal**: Removes redundant rows to improve data integrity.
+- **Data Standardization**: Handles typos, formats dates, and standardizes numeric fields.
+- **Outlier Detection and Removal**: Identifies and removes data anomalies.
+- **Missing Value Handling**: Imputes or removes missing values based on context.
+- **Customizable Rules**: Allows defining dataset-specific cleaning rules.
+
+### Example Workflow Using `DataScrubber`
+
+1. **Initialization**: The class is initialized with dataset-specific configurations.
+2. **Execution**: Methods are called to perform step-by-step cleaning.
+3. **Output**: Cleaned data is returned or saved as needed.
+
+### Example Script Integration
+
+The `DataScrubber` class is utilized in the individual preparation scripts:
+
+1. **`prepare_customers_data.py`**:
+   - Removes duplicate customers.
+   - Standardizes names and formats `JoinDate`.
+   - Aggregates loyalty points.
+
+   Example Usage:
+   ```python
+   from scripts.data_scrubber import DataScrubber
+
+   scrubber = DataScrubber(custom_rules={"customerid": "mandatory"})
+   cleaned_data = scrubber.clean(customers_data)
+
+### Core Scripts in the Data Scrubbing Workflow
+The `data_prep.py` script is responsible for cleaning and preprocessing datasets for the Smart Store Project. Below is a detailed outline of the commands used:
+
+#### 1. Read Raw Data
+Reads raw CSV files and standardizes column names to ensure consistency:
+
+df = pd.read_csv(file_path)  # Load the CSV file
+df.columns = df.columns.str.strip().str.lower()  # Standardize column names
+
+### 2. Remove duplicate Rows
+df = df.drop_duplicates()  # Remove redundant rows
+
+### 3. Handle Missing Rows
+df = df.drop_duplicates()  # Remove redundant rows
+df = df.dropna(subset=["customerid", "saledate"])  # Remove invalid rows
+
+### 4. Correct Typos and Standardize Values
+df['paymenttype'] = df['paymenttype'].str.capitalize().replace({"Dbit": "Debit"})
+Fixes supplier typos (e.g., "Blooom" becomes "Bloom"):
+df['supplier'] = df['supplier'].replace({"Blooom": "Bloom"})
+Replaces invalid names in customers_data.csv
+df['name'] = df['name'].str.strip().replace({"Xys": "Anonymous", "Unknown": "Anonymous"}).fillna("Anonymous")
+
+### 5.Standardize Date Formats
+df['saledate'] = pd.to_datetime(df['saledate'], errors='coerce').dt.strftime('%Y-%m-%d')
+df = df.dropna(subset=['saledate'])  # Remove rows with invalid dates
+
+### 6.Filter Outliers
+For SaleAmount
+df = df[(df['saleamount'] > 0) & (df['saleamount'] <= 8000)]  # Valid range
+For StockQuantity
+df['stockquantity'] = pd.to_numeric(df['stockquantity'], errors='coerce').fillna(0)
+df = df.loc[(df['stockquantity'] >= 0) & (df['stockquantity'] <= 1500)]  # Excludes outliers
+Ensure BonusPoints
+df.loc[df['bonuspoints'] < 0, 'bonuspoints'] = 0
+
+### 7.Aggregate Data
+Groups and aggregates customer data to consolidate duplicate entries:
+df = df.groupby('name', as_index=False).agg({
+    'customerid': 'first',
+    'loyaltypoints': 'sum',
+    'joindate': 'first'
+})
+
+### 8.Save Cleaned Data
+Saves cleaned datasets to the data/prepared directory:
+df.to_csv(file_path, index=False)  # Save cleaned CSV
+
+### Workflow commands for data cleaning process
+# Execute the data cleaning script
+python scripts/data_prep.py
+
+# View logs to track data cleaning progress
+tail -f utils/logger.log
+
+### Key Issues Confirmed in This Script
+Here are the exact problems we encountered in the data_prep.py script initially:
+
+1. Missing Required Columns in products_data.csv
+Error:
+
+plaintext
+Copy
+Edit
+KeyError: "Missing required columns in products_data.csv: {'price'}"
+Fix:
+
+Added a check before processing to validate required columns ('price', 'ProductName', etc.).
+
+Converted column names to lowercase before checking.
+
+2. Column Name Inconsistencies
+Issue: Columns had leading/trailing spaces or inconsistent casing ("Price" vs. "price").
+
+Fix: Used
+
+python
+Copy
+Edit
+df.columns = df.columns.str.strip().str.lower()
+to standardize all column names.
+
+3. Duplicate Data
+Issue: Some datasets contained duplicate rows.
+Fix: Used df.drop_duplicates() to remove them.
+
+4. Missing Critical Data in customers_data.csv
+Issue: CustomerID or Name was missing in some rows.
+Fix: Dropped rows with missing values in these columns.
+
+5. Date Formatting Issues in sales_data.csv
+Issue: SaleDate had inconsistent formats and invalid values.
+Fix: Used
+
 ## Commands & Workflow
 ```bash
 

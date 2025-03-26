@@ -1,6 +1,9 @@
-ProductID,ProductName,Category,UnitPrice,StockQuantity,Supplier
-101,Laptop,electronics,793.12,1000.0,HCL
-102,Hoodie,clothing,39.1,280.0,Bloom
-103,Cable,electronics,22.76,300.0,NKT
-104,Hat,clothing,43.1,400.0,Haptics
-107,Jacket,clothing,67.02,300.0,NKT
+productid,productname,category,unitprice,stockquantity,supplier
+101,laptop,Electronics,793.12,1000.0,HCL
+102,hoodie,Clothing,39.1,280.0,Bloom
+103,cable,Electronics,22.76,300.0,NKT
+104,hat,Clothing,43.1,400.0,Haptics
+105,football,Sports,19.78,0.0,Wilson
+107,jacket,Clothing,67.02,300.0,NKT
+109,laptop,Electronics,793.12,1000.0,HCL
+102,hoodie,Clothing,39.1,280.0,Bloom
