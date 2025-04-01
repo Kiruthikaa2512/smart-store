@@ -15,3 +15,39 @@
 2025-03-25 21:52:23.767 | INFO     | __main__:main:85 - ========================
 2025-03-25 21:52:23.767 | INFO     | __main__:main:86 - Starting PRODUCTS prep
 2025-03-25 21:52:23.768 | INFO     | __main__:main:87 - ========================
+2025-03-26 20:41:08.202 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-26 20:41:08.203 | INFO     | __main__:main:162 - ==================================
+2025-03-26 20:41:08.203 | INFO     | __main__:main:163 - STARTING prepare_customers_data.py
+2025-03-26 20:41:08.203 | INFO     | __main__:main:164 - ==================================
+2025-03-26 20:41:08.204 | INFO     | __main__:main:166 - Root project folder: C:\Projects\smart-store-kiruthikaa
+2025-03-26 20:41:08.204 | INFO     | __main__:main:167 - data / raw folder: C:\Projects\smart-store-kiruthikaa\data\raw
+2025-03-26 20:41:08.204 | INFO     | __main__:main:168 - data / prepared folder: C:\Projects\smart-store-kiruthikaa\data\prepared
+2025-03-26 20:41:08.204 | INFO     | __main__:main:169 - scripts folder: C:\Projects\smart-store-kiruthikaa\scripts
+2025-03-26 20:41:08.204 | INFO     | __main__:read_raw_data:66 - FUNCTION START: read_raw_data with file_name=customers_data.csv
+2025-03-26 20:41:08.205 | INFO     | __main__:read_raw_data:68 - Reading data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv
+2025-03-26 20:41:08.208 | INFO     | __main__:read_raw_data:70 - Loaded dataframe with 14 rows and 6 columns
+2025-03-26 20:41:08.208 | INFO     | __main__:main:178 - Initial dataframe columns: CustomerID, Name, Region, JoinDate, LoyaltyPoints, PreferredContactMethod
+2025-03-26 20:41:08.208 | INFO     | __main__:main:179 - Initial dataframe shape: (14, 6)
+2025-03-26 20:41:08.209 | INFO     | __main__:remove_duplicates:98 - FUNCTION START: remove_duplicates with dataframe shape=(14, 6)
+2025-03-26 20:41:08.212 | INFO     | __main__:remove_duplicates:102 - Removed 1 duplicate rows
+2025-03-26 20:41:08.212 | INFO     | __main__:remove_duplicates:103 - 13 records remaining after removing duplicates.
+2025-03-26 20:41:08.212 | INFO     | __main__:handle_missing_values:117 - FUNCTION START: handle_missing_values with dataframe shape=(13, 6)
+2025-03-26 20:41:08.213 | INFO     | __main__:handle_missing_values:121 - Total missing values before handling: 1
+2025-03-26 20:41:08.214 | INFO     | __main__:handle_missing_values:130 - Total missing values after handling: 1
+2025-03-26 20:41:08.214 | INFO     | __main__:handle_missing_values:131 - 13 records remaining after handling missing values.
+2025-03-26 20:41:08.215 | INFO     | __main__:remove_outliers:145 - FUNCTION START: remove_outliers with dataframe shape=(13, 6)
+2025-03-26 20:41:08.215 | INFO     | __main__:remove_outliers:153 - Removed 0 outlier rows
+2025-03-26 20:41:08.215 | INFO     | __main__:remove_outliers:154 - 13 records remaining after removing outliers.
+2025-03-26 20:41:08.215 | INFO     | __main__:save_prepared_data:81 - FUNCTION START: save_prepared_data with file_name=customers_data_prepared.csv, dataframe shape=(13, 6)
+2025-03-26 20:41:08.218 | INFO     | __main__:save_prepared_data:84 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-26 20:41:08.219 | INFO     | __main__:main:202 - ==================================
+2025-03-26 20:41:08.219 | INFO     | __main__:main:203 - FINISHED prepare_customers_data.py
+2025-03-26 20:41:08.220 | INFO     | __main__:main:204 - ==================================
+2025-03-30 15:45:50.687 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-30 15:45:50.688 | INFO     | __main__:main:43 - Starting data warehouse creation...
+2025-03-30 15:45:50.692 | INFO     | __main__:create_dw:31 - Data warehouse created successfully.
+2025-03-30 15:45:50.693 | INFO     | __main__:main:45 - Data warehouse creation complete.
+2025-03-30 22:20:45.335 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-30 22:20:45.336 | INFO     | __main__:main:84 - Starting data warehouse creation...
+2025-03-30 22:20:45.427 | INFO     | __main__:create_dw:72 - Data warehouse schema created successfully.
+2025-03-30 22:20:45.428 | INFO     | __main__:main:86 - Data warehouse creation complete!
