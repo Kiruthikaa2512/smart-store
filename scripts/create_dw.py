@@ -9,48 +9,53 @@ DB_PATH = DW_DIR.joinpath("smart_sales.db")
 DW_DIR.mkdir(parents=True, exist_ok=True)
 
 def create_dw():
-    """Create database and tables."""
+    """Create database and tables with correct column names."""
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
+    # Drop existing tables to ensure fresh creation (Optional)
+    cursor.execute("DROP TABLE IF EXISTS sales;")
+    cursor.execute("DROP TABLE IF EXISTS products;")
+    cursor.execute("DROP TABLE IF EXISTS customers;")
+
     # Create customers table
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS customers (
-        customer_id INTEGER PRIMARY KEY,
-        name TEXT NOT NULL,
-        region TEXT NOT NULL,
-        join_date DATE NOT NULL,
-        total_transactions INTEGER,
-        loyalty_status TEXT
+    CREATE TABLE customers (
+        CustomerID INTEGER PRIMARY KEY,
+        Name TEXT NOT NULL,
+        Region TEXT NOT NULL,
+        JoinDate DATE NOT NULL,
+        LoyaltyPoints INTEGER,
+        PreferredContactMethod TEXT
     );
     """)
 
     # Create products table
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS products (
-        product_id INTEGER PRIMARY KEY,
-        product_name TEXT NOT NULL,
-        category TEXT NOT NULL,
-        unit_price REAL NOT NULL,
-        days_to_receive INTEGER,
-        customizable TEXT
+    CREATE TABLE products (
+        ProductID INTEGER PRIMARY KEY,
+        ProductName TEXT NOT NULL,
+        Category TEXT NOT NULL,
+        UnitPrice REAL NOT NULL,
+        StockQuantity INTEGER,
+        Supplier TEXT
     );
     """)
 
     # Create sales table
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS sales (
-        sale_id INTEGER PRIMARY KEY,
-        date DATE NOT NULL,
-        customer_id INTEGER NOT NULL,
-        product_id INTEGER NOT NULL,
-        store_id INTEGER,
-        campaign_id INTEGER,
-        quantity INTEGER NOT NULL,
-        sales_amount REAL NOT NULL,
-        bill_type TEXT,
-        FOREIGN KEY (customer_id) REFERENCES customers (customer_id),
-        FOREIGN KEY (product_id) REFERENCES products (product_id)
+    CREATE TABLE sales (
+        TransactionID INTEGER PRIMARY KEY,
+        SaleDate DATE NOT NULL,
+        CustomerID INTEGER NOT NULL,
+        ProductID INTEGER NOT NULL,
+        StoreID INTEGER,
+        CampaignID INTEGER,
+        SaleAmount REAL NOT NULL,
+        BonusPoints INTEGER,
+        PaymentType TEXT,
+        FOREIGN KEY (CustomerID) REFERENCES customers (CustomerID),
+        FOREIGN KEY (ProductID) REFERENCES products (ProductID)
     );
     """)
 
@@ -68,7 +73,7 @@ def convert_data_type(sqlite_type):
     return type_mapping.get(sqlite_type, sqlite_type)
 
 def fetch_schema():
-    """Fetch and display schemas."""
+    """Fetch and display schemas with correct column names and descriptions."""
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
@@ -93,34 +98,34 @@ def fetch_schema():
     conn.close()
 
 def get_description(table_name, column_name):
-    """Return column descriptions."""
+    """Return column descriptions aligned with provided data headers."""
     descriptions = {
         "customers": {
-            "customer_id": "Primary Key",
-            "name": "Customer's name",
-            "region": "Customer's region",
-            "join_date": "Customer's Join Date",
-            "total_transactions": "Customer's loyalty points",
-            "loyalty_status": "Customer's preferred contact method"
+            "CustomerID": "Primary Key",
+            "Name": "Customer's name",
+            "Region": "Customer's region",
+            "JoinDate": "Customer's join date",
+            "LoyaltyPoints": "Customer's loyalty points",
+            "PreferredContactMethod": "Customer's preferred contact method"
         },
         "products": {
-            "product_id": "Primary Key",
-            "product_name": "Product's description",
-            "category": "Product's category",
-            "unit_price": "Product's price per unit",
-            "days_to_receive": "Product's quantity in stock",
-            "customizable": "Product's supplier"
+            "ProductID": "Primary Key",
+            "ProductName": "Product's name",
+            "Category": "Product's category",
+            "UnitPrice": "Product's price per unit",
+            "StockQuantity": "Product's quantity in stock",
+            "Supplier": "Product's supplier"
         },
         "sales": {
-            "sale_id": "Primary Key",
-            "date": "Sale date",
-            "customer_id": "Foreign key to customer",
-            "product_id": "Foreign key to product",
-            "store_id": "Sale location",
-            "campaign_id": "Sale campaign identifier",
-            "quantity": "Quantity sold",
-            "sales_amount": "Sale amount",
-            "bill_type": "Sale payment method"
+            "TransactionID": "Primary Key",
+            "SaleDate": "Date of sale",
+            "CustomerID": "Foreign key to customer",
+            "ProductID": "Foreign key to product",
+            "StoreID": "Store identifier",
+            "CampaignID": "Campaign identifier",
+            "SaleAmount": "Amount of sale",
+            "BonusPoints": "Bonus points earned",
+            "PaymentType": "Type of payment method"
         }
     }
     return descriptions.get(table_name, {}).get(column_name, "No description available")
