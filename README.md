@@ -204,10 +204,9 @@ Fix: Used
 ## Commands & Workflow
 ```bash
 ```
-### Data Warehousing, Star Schemas, & Decision Support - Week 4
-Got it, Kiruthikaa! I'll tailor this piece to seamlessly integrate into the middle of your existing README, keeping the tone, formatting, and flow consistent with what you already have. Here's the concise section covering **Data Warehousing**, **Star Schema**, and **ETL Pipeline**:
+# Data Warehousing, Star Schemas, & Decision Support - Week 4
 
-### **Data Warehousing & ETL Pipeline**
+## **Data Warehousing & ETL Pipeline**
 
 #### **Overview**
 As part of the Smart Store project, this week we implemented a **Data Warehouse** using a **star schema** to enable efficient data analysis and decision support. The ETL pipeline was designed to extract, transform, and load data into the database, ensuring high-quality data ingestion for actionable insights.
