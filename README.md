@@ -265,15 +265,18 @@ The star schema consists of:
    ```
 #### **Challenges Encountered**
 - **Column Mapping Issues**:
-  - Solution: Explicitly mapped CSV headers (`transactionid`, `productid`, etc.) to schema fields (`sale_id`, `product_id`).
-- **Duplicate Data**:
-  - Solution: Implemented deduplication logic for primary keys.
-- **Data Gaps**:
-  - Solution: Handled missing values by filling logical defaults during preprocessing.
+  -Certainly! Here's the modified section, focusing on the hardest challenge we encountered:
 
-# Initialize Git Repository
-git init  
-git remote add origin https://github.com/your-repo-link.git  
+---
+
+#### **Challenges Encountered**
+- **Foreign Key Validation Issues**:
+  - **Problem**: Ensuring that the `sale` fact table's foreign keys matched valid entries in the `customer` and `product` dimension tables was particularly challenging due to missing or invalid keys.
+  - **Solution**: Validated relationships between tables and used surrogate keys (e.g., `-1`) for unknown values to maintain database integrity.
+- **Misaligned Schema Design**:
+  - Solution: Designed a star schema with as the fact table and dimension tables
+- **ETL Pipeline Misalignment**:
+  - Solution:  implemented modular ETL steps to clean, validate, and load data correctly.   
 
 # Initialize the Git Repository
 git init  
