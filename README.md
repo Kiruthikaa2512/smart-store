@@ -44,7 +44,7 @@ smart-store-kiruthikaa/
 └── .gitignore             # Git ignore file  
 ```
 
-## Setup Instructions
+## Setup Instructions - Week 1 & Week 2
 1. Clone the repository.
 2. Navigate to the project folder . 
 3. Create a virtual environment
@@ -67,9 +67,8 @@ python -m venv .venv
 # Install dependencies
 pip install -r requirements.txt
 ```
-## Data Cleaning Process and Commands
-
-## Data Cleaning Process and Commands
+## Data Collection, Cleaning, & ETL/ELT - Week 3
+## Data Cleaning Process and Commands 
 
 The data cleaning pipeline now integrates a modular class-based approach using the `DataScrubber` class. This addition streamlines data preparation tasks while ensuring maintainability and reusability across different datasets. Below is a detailed outline:
 
@@ -204,6 +203,74 @@ Fix: Used
 
 ## Commands & Workflow
 ```bash
+```
+### Data Warehousing, Star Schemas, & Decision Support - Week 4
+Got it, Kiruthikaa! I'll tailor this piece to seamlessly integrate into the middle of your existing README, keeping the tone, formatting, and flow consistent with what you already have. Here's the concise section covering **Data Warehousing**, **Star Schema**, and **ETL Pipeline**:
+
+### **Data Warehousing & ETL Pipeline**
+
+#### **Overview**
+As part of the Smart Store project, this week we implemented a **Data Warehouse** using a **star schema** to enable efficient data analysis and decision support. The ETL pipeline was designed to extract, transform, and load data into the database, ensuring high-quality data ingestion for actionable insights.
+
+#### **Star Schema Design**
+The star schema consists of:
+- **Fact Table (`sale`)**:
+  - Central table capturing transactional data like `sale_amount`, `sale_date`, and `campaignid`.
+  - Linked to dimension tables using foreign keys (`customer_id`, `product_id`).
+- **Dimension Tables**:
+  - **`customer`**: Attributes such as `name`, `region`, and `loyaltypoints`.
+  - **`product`**: Product-specific details including `product_name`, `category`, and `unitprice`.
+
+**Schema Representation**:
+```
+                customer
+                   ↑
+                   |
+    product ←— sale → store, campaign
+```
+#### **ETL Pipeline Process**
+- **Data Preprocessing**:
+  - Corrected IDs to ensure uniqueness and consistency.
+  - Handled missing values by replacing NaN with logical defaults (e.g., `0` for numbers, `"Unknown"` for text).
+  - Deduplicated rows to maintain data integrity.
+- **Schema Creation**:
+  - Generated tables (`customer`, `product`, `sale`) in SQLite based on the star schema.
+- **Data Loading**:
+  - Ingested cleaned data from CSV files into the database for downstream analysis.
+- 
+#### **Steps to Execute**
+1. Ensure cleaned CSV files are placed in `data/prepared/`:
+   - `customers_data_prepared.csv`
+   - `products_data_prepared.csv`
+   - `sales_data_prepared.csv`
+2. Run the ETL pipeline:
+   ```bash
+   python scripts/etl_to_dw.py
+   ```
+3. Verify the data and relationships using SQL queries:
+   ```sql
+   SELECT * FROM customer LIMIT 5;
+   SELECT * FROM product LIMIT 5;
+   SELECT * FROM sale LIMIT 5;
+
+   SELECT s.sale_id, c.name, p.product_name, s.sale_amount
+   FROM sale s
+   JOIN customer c ON s.customer_id = c.customer_id
+   JOIN product p ON s.product_id = p.product_id
+   LIMIT 5;
+4. Output should appear as show below for each table:
+   ![Customer Table](C:\Projects\smart-store-kiruthikaa\images\Customer_Table.png)
+   ![Products Table](C:\Projects\smart-store-kiruthikaa\images\Products_Table.png)
+   ![Sales Table](C:\Projects\smart-store-kiruthikaa\images\Sales_Table.png)
+
+   ```
+#### **Challenges Encountered**
+- **Column Mapping Issues**:
+  - Solution: Explicitly mapped CSV headers (`transactionid`, `productid`, etc.) to schema fields (`sale_id`, `product_id`).
+- **Duplicate Data**:
+  - Solution: Implemented deduplication logic for primary keys.
+- **Data Gaps**:
+  - Solution: Handled missing values by filling logical defaults during preprocessing.
 
 # Initialize Git Repository
 git init  
