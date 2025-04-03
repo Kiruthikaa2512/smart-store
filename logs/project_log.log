@@ -51,3 +51,109 @@
 2025-03-30 22:20:45.336 | INFO     | __main__:main:84 - Starting data warehouse creation...
 2025-03-30 22:20:45.427 | INFO     | __main__:create_dw:72 - Data warehouse schema created successfully.
 2025-03-30 22:20:45.428 | INFO     | __main__:main:86 - Data warehouse creation complete!
+2025-04-02 15:25:06,595 - INFO - Creating schema...
+2025-04-02 15:25:06,623 - INFO - Schema created successfully.
+2025-04-02 15:25:06,623 - INFO - Deleting existing records...
+2025-04-02 15:25:06,625 - INFO - Existing records deleted.
+2025-04-02 15:25:06,648 - ERROR - An error occurred: table customer has no column named CustomerID
+2025-04-02 15:31:32,245 - INFO - Creating schema...
+2025-04-02 15:31:32,247 - INFO - Schema created successfully.
+2025-04-02 15:31:32,247 - INFO - Deleting existing records...
+2025-04-02 15:31:32,338 - INFO - Existing records deleted.
+2025-04-02 15:31:32,358 - ERROR - An error occurred: table customer has no column named customerid
+2025-04-02 15:35:15,586 - INFO - Creating schema...
+2025-04-02 15:35:15,653 - INFO - Schema created successfully.
+2025-04-02 15:35:15,653 - INFO - Deleting existing records...
+2025-04-02 15:35:15,654 - INFO - Existing records deleted.
+2025-04-02 15:35:15,663 - ERROR - An error occurred: table customer has no column named customerid
+2025-04-02 15:36:05,529 - INFO - Creating schema...
+2025-04-02 15:36:05,593 - INFO - Schema created successfully.
+2025-04-02 15:36:05,593 - INFO - Deleting existing records...
+2025-04-02 15:36:05,595 - INFO - Existing records deleted.
+2025-04-02 15:36:05,603 - ERROR - An error occurred: table customer has no column named customerid
+2025-04-02 15:39:19,949 - INFO - Creating schema...
+2025-04-02 15:39:20,097 - INFO - Schema created successfully.
+2025-04-02 15:39:20,098 - INFO - Deleting existing records...
+2025-04-02 15:39:20,113 - INFO - Existing records deleted.
+2025-04-02 15:39:20,122 - ERROR - An error occurred: table customer has no column named customerid
+2025-04-02 15:43:56,194 - INFO - Creating schema...
+2025-04-02 15:43:56,262 - INFO - Schema created successfully.
+2025-04-02 15:43:56,262 - INFO - Deleting existing records...
+2025-04-02 15:43:56,265 - INFO - Existing records deleted.
+2025-04-02 15:43:56,276 - ERROR - An error occurred: table customer has no column named customerid
+2025-04-02 16:30:49,126 - ERROR - Failed to inject data into customer: table customer has no column named CustomerID
+2025-04-02 16:30:49,129 - ERROR - Failed to inject data into product: table product has no column named productid
+2025-04-02 16:30:49,131 - ERROR - Failed to inject data into sale: table sale has no column named transactionid
+2025-04-02 16:42:17,993 - INFO - Creating schema...
+2025-04-02 16:42:18,012 - INFO - Schema created successfully.
+2025-04-02 16:42:18,016 - ERROR - An error occurred during data injection: table customer has no column named LoyaltyPoints
+2025-04-02 16:42:33,200 - INFO - Creating schema...
+2025-04-02 16:42:33,218 - INFO - Schema created successfully.
+2025-04-02 16:42:33,222 - ERROR - An error occurred during data injection: table customer has no column named LoyaltyPoints
+2025-04-02 16:43:44,053 - INFO - Creating schema...
+2025-04-02 16:43:44,075 - INFO - Schema created successfully.
+2025-04-02 16:43:44,079 - ERROR - Failed to inject data into customer: table customer has no column named PreferredContactMethod
+2025-04-02 16:43:44,081 - ERROR - Failed to inject data into product: table product has no column named unitprice
+2025-04-02 16:43:44,083 - ERROR - Failed to inject data into sale: table sale has no column named storeid
+2025-04-02 16:47:48,155 - INFO - Creating schema...
+2025-04-02 16:47:48,173 - INFO - Schema created successfully.
+2025-04-02 16:47:48,180 - INFO - Data successfully injected into customer
+2025-04-02 16:47:48,183 - ERROR - Failed to inject data into product: table product has no column named stockquantity
+2025-04-02 16:47:48,185 - ERROR - Failed to inject data into sale: table sale has no column named campaignid
+2025-04-02 16:50:37,106 - INFO - Creating schema...
+2025-04-02 16:50:37,129 - INFO - Schema created successfully.
+2025-04-02 16:50:37,136 - INFO - Data successfully injected into customer
+2025-04-02 16:50:37,139 - ERROR - Failed to inject data into product: table product has no column named supplier
+2025-04-02 16:50:37,141 - ERROR - Failed to inject data into sale: table sale has no column named bonuspoints
+2025-04-02 16:54:02,163 - INFO - Creating schema...
+2025-04-02 16:54:02,185 - INFO - Schema created successfully.
+2025-04-02 16:54:02,192 - INFO - Data successfully injected into customer
+2025-04-02 16:54:02,195 - ERROR - Failed to inject data into product: UNIQUE constraint failed: product.ProductID
+2025-04-02 16:54:02,198 - ERROR - Failed to inject data into sale: table sale has no column named paymenttype
+2025-04-02 16:56:02,514 - INFO - Creating schema...
+2025-04-02 16:56:02,533 - INFO - Schema created successfully.
+2025-04-02 16:56:02,540 - INFO - Data successfully injected into customer
+2025-04-02 16:56:02,542 - ERROR - Failed to inject data into product: Index(['ProductID'], dtype='object')
+2025-04-02 16:56:02,544 - ERROR - Failed to inject data into sale: Index(['TransactionID'], dtype='object')
+2025-04-02 16:57:33,391 - INFO - Creating schema...
+2025-04-02 16:57:33,413 - INFO - Schema created successfully.
+2025-04-02 16:57:33,420 - INFO - Data successfully injected into customer
+2025-04-02 16:57:33,421 - ERROR - Failed to inject data into product: Index(['ProductID'], dtype='object')
+2025-04-02 16:57:33,423 - ERROR - Failed to inject data into sale: Index(['TransactionID'], dtype='object')
+2025-04-02 17:06:23,594 - INFO - Creating schema...
+2025-04-02 17:06:23,615 - INFO - Schema created successfully.
+2025-04-02 17:06:23,625 - INFO - Data successfully injected into customer
+2025-04-02 17:06:23,627 - ERROR - Failed to inject data into product: Index(['ProductID'], dtype='object')
+2025-04-02 17:06:23,628 - ERROR - Failed to inject data into sale: Index(['TransactionID'], dtype='object')
+2025-04-02 17:12:42,497 - INFO - Creating schema...
+2025-04-02 17:12:42,517 - INFO - Schema created successfully.
+2025-04-02 17:12:42,525 - INFO - Injected data into customer successfully
+2025-04-02 17:12:42,528 - ERROR - Failed to inject data into product: "None of [Index(['ProductID', 'ProductName', 'Category', 'UnitPrice', 'StockQuantity',\n       'Supplier'],\n      dtype='object')] are in the [columns]"
+2025-04-02 17:12:42,529 - ERROR - Failed to inject data into sale: "None of [Index(['TransactionID', 'CustomerID', 'ProductID', 'SaleAmount', 'SaleDate',\n       'StoreID', 'CampaignID', 'BonusPoints', 'PaymentType'],\n      dtype='object')] are in the [columns]"
+2025-04-02 17:19:58,456 - INFO - Creating schema...
+2025-04-02 17:19:58,478 - INFO - Schema created successfully.
+2025-04-02 17:19:58,485 - INFO - Injected data into customer successfully
+2025-04-02 17:19:58,487 - ERROR - Failed to inject data into product: "None of [Index(['ProductID', 'ProductName', 'Category', 'UnitPrice', 'StockQuantity',\n       'Supplier'],\n      dtype='object')] are in the [columns]"
+2025-04-02 17:19:58,489 - ERROR - Failed to inject data into sale: "None of [Index(['TransactionID', 'CustomerID', 'ProductID', 'SaleAmount', 'SaleDate',\n       'StoreID', 'CampaignID', 'BonusPoints', 'PaymentType'],\n      dtype='object')] are in the [columns]"
+2025-04-02 17:22:19,280 - INFO - Creating schema...
+2025-04-02 17:22:19,303 - INFO - Schema created successfully.
+2025-04-02 17:22:19,310 - INFO - Injected data into customer successfully
+2025-04-02 17:22:19,316 - INFO - Injected data into product successfully
+2025-04-02 17:22:19,322 - INFO - Injected data into sale successfully
+2025-04-02 17:25:09,490 - INFO - Creating schema...
+2025-04-02 17:25:09,508 - INFO - Schema created successfully.
+2025-04-02 17:25:09,522 - INFO - Injected data into customer successfully
+2025-04-02 17:25:09,532 - INFO - Injected data into product successfully
+2025-04-02 17:25:09,547 - INFO - Injected data into sale successfully
+2025-04-02 17:44:45,672 - ERROR - Failed to inject data into customer: UNIQUE constraint failed: customer.customer_id
+2025-04-02 17:44:45,693 - ERROR - Failed to inject data into product: UNIQUE constraint failed: product.product_id
+2025-04-02 17:44:45,719 - ERROR - Failed to inject data into sale: UNIQUE constraint failed: sale.sale_id
+2025-04-02 17:50:30,296 - ERROR - Failed to inject data into customer: "['join_date'] not in index"
+2025-04-02 17:50:30,300 - ERROR - Failed to inject data into product: "['product_name'] not in index"
+2025-04-02 17:50:30,304 - ERROR - Failed to inject data into sale: "['customer_id', 'product_id', 'sale_date', 'sale_amount'] not in index"
+2025-04-02 17:54:08,352 - ERROR - Failed to inject data into customer: "['join_date'] not in index"
+2025-04-02 17:54:08,356 - ERROR - Failed to inject data into product: "['product_name'] not in index"
+2025-04-02 17:54:08,360 - ERROR - Failed to inject data into sale: "['customer_id', 'product_id', 'sale_date', 'sale_amount'] not in index"
+2025-04-02 17:56:25,260 - ERROR - Failed to inject data into product: UNIQUE constraint failed: product.product_id
+2025-04-02 22:18:28,974 - ERROR - Failed to inject data into product: UNIQUE constraint failed: product.product_id
+2025-04-02 22:20:07,362 - ERROR - Failed to inject data into product: UNIQUE constraint failed: product.product_id

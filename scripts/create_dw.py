@@ -65,7 +65,7 @@ def create_dw():
 def convert_data_type(sqlite_type):
     """Convert SQLite types to user-friendly types."""
     type_mapping = {
-        "TEXT": "STR",
+        "TEXT": "TEXT",
         "REAL": "FLOAT",
         "INTEGER": "INTEGER",
         "DATE": "DATE"
@@ -94,7 +94,7 @@ def fetch_schema():
             data_type = convert_data_type(sqlite_type)
             description = get_description(table, column_name)
             print(f"| {column_name:<20} | {data_type:<9} | {description:<33} |")
-
+# Close the connection
     conn.close()
 
 def get_description(table_name, column_name):
