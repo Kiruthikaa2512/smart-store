@@ -258,9 +258,9 @@ The star schema consists of:
    JOIN product p ON s.product_id = p.product_id
    LIMIT 5;
 4. Output should appear as show below for each table:
-   ![Customer Table](C:\Projects\smart-store-kiruthikaa\images\Customer_Table.png)
-   ![Products Table](C:\Projects\smart-store-kiruthikaa\images\Products_Table.png)
-   ![Sales Table](C:\Projects\smart-store-kiruthikaa\images\Sales_Table.png)
+   ![Customer Table](C:\\Projects\\smart-store-kiruthikaa\\images\\Customer_Table.png)
+   ![Products Table](C:\\Projects\\smart-store-kiruthikaa\\images\\Products_Table.png)
+   ![Sales Table](C:\\Projects\\smart-store-kiruthikaa\\images\\Sales_Table.png)
 
    ```
 #### **Challenges Encountered**
