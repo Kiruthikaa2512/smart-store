@@ -11,131 +11,155 @@ logging.basicConfig(
 )
 
 # Paths
-DB_PATH = pathlib.Path("scripts/.venv/data/smart_sales.db")
-PREPARED_DATA_DIR = pathlib.Path("data/prepared")
+DB_PATH = "scripts/.venv/data/smart_sales.db"  # Update this path if needed
+CLEANED_DATA_DIR = pathlib.Path("data/cleaned")  # Directory for cleaned CSV files
 
-def create_schema(cursor: sqlite3.Cursor) -> None:
-    """Create tables with schemas matching the CSV files."""
-    cursor.execute("DROP TABLE IF EXISTS customer")
-    cursor.execute("DROP TABLE IF EXISTS product")
-    cursor.execute("DROP TABLE IF EXISTS sale")
+# Table metadata: schema and file mapping
+TABLE_METADATA = {
+    "customer": {
+        "file_name": "customer_data_cleaned.csv",
+        "columns": {
+            "CustomerID": "customer_id",
+            "Name": "name",
+            "Region": "region",
+            "JoinDate": "join_date",
+            "LoyaltyPoints": "loyaltypoints",
+            "PreferredContactMethod": "preferredcontactmethod"
+        },
+        "schema": """
+            CREATE TABLE customer (
+                customer_id INTEGER PRIMARY KEY,
+                name TEXT,
+                region TEXT,
+                join_date TEXT,
+                loyaltypoints REAL CHECK(loyaltypoints >= 0),
+                preferredcontactmethod TEXT
+            )
+        """
+    },
+    "product": {
+        "file_name": "product_data_cleaned.csv",
+        "columns": {
+            "productid": "product_id",
+            "productname": "product_name",
+            "category": "category",
+            "unitprice": "unitprice",
+            "stockquantity": "stockquantity",
+            "supplier": "supplier"
+        },
+        "schema": """
+            CREATE TABLE product (
+                product_id INTEGER PRIMARY KEY,
+                product_name TEXT,
+                category TEXT,
+                unitprice REAL CHECK(unitprice >= 0),
+                stockquantity INTEGER CHECK(stockquantity >= 0),
+                supplier TEXT
+            )
+        """
+    },
+    "sale": {
+        "file_name": "sale_data_cleaned.csv",
+        "columns": {
+            "transactionid": "sale_id",
+            "saledate": "sale_date",
+            "customerid": "customer_id",
+            "productid": "product_id",
+            "storeid": "storeid",
+            "campaignid": "campaignid",
+            "saleamount": "sale_amount",
+            "bonuspoints": "bonuspoints",
+            "paymenttype": "paymenttype"
+        },
+        "schema": """
+            CREATE TABLE sale (
+                sale_id INTEGER PRIMARY KEY,
+                sale_date TEXT,
+                customer_id INTEGER,
+                product_id INTEGER,
+                storeid INTEGER,  -- Store ID column
+                campaignid INTEGER,
+                sale_amount REAL CHECK(sale_amount >= 0),
+                bonuspoints REAL CHECK(bonuspoints >= 0),
+                paymenttype TEXT,
+                FOREIGN KEY (customer_id) REFERENCES customer (customer_id),
+                FOREIGN KEY (product_id) REFERENCES product (product_id)
+            )
+        """
+    }
+}
 
-    # Customer table schema
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS customer (
-            customer_id INTEGER PRIMARY KEY,
-            name TEXT,
-            region TEXT,
-            join_date TEXT,
-            loyaltypoints REAL,
-            preferredcontactmethod TEXT
-        )
-    """)
+##############################################
+# Helper Functions
+##############################################
 
-    # Product table schema
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS product (
-            product_id INTEGER PRIMARY KEY,
-            product_name TEXT,
-            category TEXT,
-            unitprice REAL,
-            stockquantity INTEGER,
-            supplier TEXT
-        )
-    """)
+def create_tables(cursor: sqlite3.Cursor):
+    """Drop and recreate all tables based on metadata."""
+    for table_name, metadata in TABLE_METADATA.items():
+        cursor.execute(f"DROP TABLE IF EXISTS {table_name}")
+        cursor.execute(metadata["schema"])
 
-    # Sale table schema
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS sale (
-            sale_id INTEGER PRIMARY KEY,
-            customer_id INTEGER,
-            product_id INTEGER,
-            sale_date TEXT,
-            storeid TEXT,
-            campaignid TEXT,
-            sale_amount REAL,
-            bonuspoints REAL,
-            paymenttype TEXT,
-            FOREIGN KEY (customer_id) REFERENCES customer (customer_id),
-            FOREIGN KEY (product_id) REFERENCES product (product_id)
-        )
-    """)
-
-def preprocess_data(df: pd.DataFrame, table_name: str) -> pd.DataFrame:
-    """Preprocess data: fix IDs, handle NaN values, and validate completeness."""
-    if table_name == "customer":
-        df.rename(columns={"CustomerID": "customer_id", "Name": "name", "Region": "region", "JoinDate": "join_date", "LoyaltyPoints": "loyaltypoints", "PreferredContactMethod": "preferredcontactmethod"}, inplace=True)
-        df["customer_id"] = df["customer_id"].fillna(pd.Series(range(1, len(df) + 1))).astype(int)
-    elif table_name == "product":
-        df.rename(columns={"productid": "product_id", "productname": "product_name", "category": "category", "unitprice": "unitprice", "stockquantity": "stockquantity", "supplier": "supplier"}, inplace=True)
-        df["product_id"] = df["product_id"].fillna(pd.Series(range(1, len(df) + 1))).astype(int)
-
-        # Deduplicate product_id column
-        df.drop_duplicates(subset=["product_id"], inplace=True)
-    elif table_name == "sale":
-        df.rename(columns={"transactionid": "sale_id", "saledate": "sale_date", "customerid": "customer_id", "productid": "product_id", "storeid": "storeid", "campaignid": "campaignid", "saleamount": "sale_amount", "bonuspoints": "bonuspoints", "paymenttype": "paymenttype"}, inplace=True)
-        df["sale_id"] = df["sale_id"].fillna(pd.Series(range(1, len(df) + 1))).astype(int)
-
-    # Fill NaN values with sensible defaults
-    df.fillna({
-        "loyaltypoints": 0.0,
-        "preferredcontactmethod": "Unknown",
-        "unitprice": 0.0,
-        "stockquantity": 0,
-        "supplier": "Unknown",
-        "sale_amount": 0.0,
-        "bonuspoints": 0.0,
-        "paymenttype": "Unknown",
-    }, inplace=True)
-
+def load_and_prepare_data(table_name: str) -> pd.DataFrame:
+    """Load and prepare data for the given table."""
+    metadata = TABLE_METADATA[table_name]
+    file_path = CLEANED_DATA_DIR / metadata["file_name"]
+    df = pd.read_csv(file_path)
+    df.rename(columns=metadata["columns"], inplace=True)
+    df.dropna(how="all", inplace=True)  # Drop fully blank rows
     return df
 
-def inject_data_to_table(csv_file: pathlib.Path, table_name: str, conn: sqlite3.Connection) -> None:
-    """Inject data into tables with preprocessing and validation."""
+def inject_data(table_name: str, df: pd.DataFrame, conn: sqlite3.Connection):
+    """Inject data into the specified table."""
     try:
-        if not csv_file.exists():
-            raise FileNotFoundError(f"{csv_file} not found!")
+        print(f"Injecting data into '{table_name}'...")
+        print(f"Columns: {df.columns.tolist()}")
+        print(f"First 5 rows:\n{df.head()}")
+        print(f"Total rows in '{table_name}' data: {len(df)}")
 
-        df = pd.read_csv(csv_file)
-
-        # Preprocess data
-        df = preprocess_data(df, table_name)
-
-        # Debugging: Log DataFrame preview
-        print(f"\n--- Preview for {table_name} ---")
-        print(df.info())  # Detailed column info
-        print(df.head())  # First few rows for visual validation
-
-        # Insert data into the database
         df.to_sql(table_name, conn, if_exists="append", index=False)
-        print(f"Data successfully injected into {table_name}.")
-    except Exception as e:
-        print(f"Failed to inject data into {table_name}: {e}")
-        logging.error(f"Failed to inject data into {table_name}: {e}")
 
-def load_data_to_db() -> None:
-    """Main function to create schema and load data."""
-    conn = None
+        cursor = conn.cursor()
+        cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+        row_count = cursor.fetchone()[0]
+        print(f"Rows in '{table_name}' table after insertion: {row_count}")
+    except Exception as e:
+        print(f"Error inserting data into '{table_name}': {e}")
+
+def display_table_contents(table_name: str, conn: sqlite3.Connection):
+    """Display all contents of a given table."""
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT * FROM {table_name}")
+    rows = cursor.fetchall()
+
+    print(f"Contents of table '{table_name}' ({len(rows)} rows):")
+    for row in rows:
+        print(row)
+
+##############################################
+# Main Workflow
+##############################################
+
+if __name__ == "__main__":
     try:
+        # Connect to the database
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
 
-        # Create table schemas
-        create_schema(cursor)
+        # Step 1: Create tables
+        create_tables(cursor)
 
-        # Inject data into tables
-        inject_data_to_table(PREPARED_DATA_DIR.joinpath("customers_data_prepared.csv"), "customer", conn)
-        inject_data_to_table(PREPARED_DATA_DIR.joinpath("products_data_prepared.csv"), "product", conn)
-        inject_data_to_table(PREPARED_DATA_DIR.joinpath("sales_data_prepared.csv"), "sale", conn)
+        # Step 2: Load, prepare, and inject data into tables
+        for table_name in TABLE_METADATA.keys():
+            df = load_and_prepare_data(table_name)
+            inject_data(table_name, df, conn)
+
+        # Step 3: Display contents of each table
+        for table_name in TABLE_METADATA.keys():
+            display_table_contents(table_name, conn)
 
         conn.commit()
-        print("All data successfully loaded into the database!")
+        print("ETL process completed successfully!")
     except Exception as e:
-        print(f"An error occurred: {e}")
-        logging.error(f"An error occurred: {e}")
+        print(f"An error occurred during the ETL process: {e}")
     finally:
-        if conn:
-            conn.close()
-
-if __name__ == "__main__":
-    load_data_to_db()
+        conn.close()
