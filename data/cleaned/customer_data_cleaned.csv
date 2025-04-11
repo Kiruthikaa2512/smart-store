@@ -1,0 +1,12 @@
+CustomerID,Name,Region,JoinDate,LoyaltyPoints,PreferredContactMethod
+1001,William White,East,11/11/2021,50.0,Email 
+1002,Wylie Coyote,East,2/14/2023,100.0,Phone
+1003,Dan Brown,West,10/19/2023,1000.0,Email 
+1004,Chewbacca,West,11/9/2022,300.0,Phone
+1006,Tiffany James,South,6/7/2021,300.0,Email 
+1007,Susan Johnson,South,6/30/2023,80.0,Phone
+1008,Tony Stark,North,5/1/2020,1000.0,Email 
+1009,Jason Bourne,West,12/1/2020,700.0,Phone
+1010,Hermione Granger,East,12/9/2022,700.0,Email 
+1012,Hermione Grager,East,12/9/2022,60.0,Phone
+1014,Unknown,West,4/4/2000,1000.0,Email 

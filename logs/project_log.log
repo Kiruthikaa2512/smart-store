@@ -157,3 +157,1272 @@
 2025-04-02 17:56:25,260 - ERROR - Failed to inject data into product: UNIQUE constraint failed: product.product_id
 2025-04-02 22:18:28,974 - ERROR - Failed to inject data into product: UNIQUE constraint failed: product.product_id
 2025-04-02 22:20:07,362 - ERROR - Failed to inject data into product: UNIQUE constraint failed: product.product_id
+2025-04-03 12:12:04,916 - ERROR - SQL file not found at C:\Projects\smart-store-kiruthikaa\sql\dw_tables.sql
+2025-04-03 12:12:04,916 - ERROR - Error during ETL process: [Errno 2] No such file or directory: 'C:\\Projects\\smart-store-kiruthikaa\\sql\\dw_tables.sql'
+2025-04-03 12:15:17,827 - ERROR - SQL file not found at C:\Projects\smart-store-kiruthikaa\sql\dw_tables.sql
+2025-04-03 12:15:17,827 - ERROR - Error during ETL process: [Errno 2] No such file or directory: 'C:\\Projects\\smart-store-kiruthikaa\\sql\\dw_tables.sql'
+2025-04-03 13:33:11,246 - ERROR - SQL file not found at C:\Projects\smart-store-kiruthikaa\sql\dw_tables.sql
+2025-04-03 13:33:11,247 - ERROR - Error during ETL process: [Errno 2] No such file or directory: 'C:\\Projects\\smart-store-kiruthikaa\\sql\\dw_tables.sql'
+2025-04-03 13:37:11,757 - ERROR - SQL file test_query.sql not found!
+2025-04-03 13:37:11,757 - ERROR - Error during ETL process: [Errno 2] No such file or directory: 'C:\\Projects\\smart-store-kiruthikaa\\sql\\test_query.sql'
+2025-04-03 13:37:22,377 - ERROR - SQL file test_query.sql not found!
+2025-04-03 13:37:22,377 - ERROR - Error during ETL process: [Errno 2] No such file or directory: 'C:\\Projects\\smart-store-kiruthikaa\\sql\\test_query.sql'
+2025-04-03 13:37:36,530 - ERROR - SQL file test_query.sql not found!
+2025-04-03 13:37:36,530 - ERROR - Error during ETL process: [Errno 2] No such file or directory: 'C:\\Projects\\smart-store-kiruthikaa\\sql\\test_query.sql'
+2025-04-03 13:40:18,971 - ERROR - Error while creating schema: no such table: sales
+2025-04-03 13:40:18,971 - ERROR - Error during ETL process: no such table: sales
+2025-04-03 13:41:21,930 - ERROR - Error while creating schema: no such table: sales
+2025-04-03 13:41:21,930 - ERROR - Error during ETL process: no such table: sales
+2025-04-03 13:45:49,324 - ERROR - Error while creating schema: no such table: sales
+2025-04-03 13:45:49,324 - ERROR - Error during ETL process: no such table: sales
+2025-04-03 13:48:41,901 - ERROR - Error during ETL process: 'unit_price'
+2025-04-03 14:04:12,158 - WARNING - Negative value -50.0 found in loyaltypoints, setting to 0
+2025-04-03 14:04:12,160 - INFO - 
+--- Data validation for customer ---
+2025-04-03 14:04:12,165 - INFO - None
+2025-04-03 14:04:12,165 - INFO - 
+Sample data:
+2025-04-03 14:04:12,169 - INFO -    customer_id           name region   join_date  loyaltypoints preferredcontactmethod
+0         1001  William White   East  11/11/2021           50.0                  Email
+1         1002   Wylie Coyote   East   2/14/2023          100.0                  Phone
+2         1003      Dan Brown   West  10/19/2023         1000.0                  Email
+3         1004      Chewbacca   West   11/9/2022          300.0                  Phone
+4         1005         Dr Who  North   8/18/2023            0.0                  Email
+2025-04-03 14:04:12,177 - INFO - Data successfully injected into customer.
+2025-04-03 14:04:12,185 - INFO - 
+--- Data validation for product ---
+2025-04-03 14:04:12,192 - INFO - None
+2025-04-03 14:04:12,192 - INFO - 
+Sample data:
+2025-04-03 14:04:12,196 - INFO -    product_id product_name     category  unitprice  stockquantity supplier
+0         101       laptop  Electronics     793.12           1000      HCL
+1         102       hoodie     Clothing      39.10            280    Bloom
+2         103        cable  Electronics      22.76            300      NKT
+3         104          hat     Clothing      43.10            400  Haptics
+4         105     football       Sports      19.78              0   Wilson
+2025-04-03 14:04:12,204 - INFO - Data successfully injected into product.
+2025-04-03 14:04:12,212 - INFO - 
+--- Data validation for sale ---
+2025-04-03 14:04:12,217 - INFO - None
+2025-04-03 14:04:12,217 - INFO - 
+Sample data:
+2025-04-03 14:04:12,221 - INFO -    sale_id   sale_date  customer_id  product_id  storeid  campaignid  sale_amount  bonuspoints paymenttype
+0      550  2024-01-06         1008         102      404           0        39.10         50.0        Cash
+1      551  2024-01-06         1009         105      403           0        19.78         20.0       Debit
+2      552  2024-01-16         1004         107      404           0       335.10         50.0      Credit
+3      553  2024-01-16         1006         102      406           0       195.50         70.0        Cash
+4      554  2024-01-25         1005         102      405           0       117.30          0.0        Cash
+2025-04-03 14:04:12,228 - INFO - Data successfully injected into sale.
+2025-04-03 14:04:12,229 - INFO - All data successfully loaded into the database!
+2025-04-03 14:10:29,319 - ERROR - Failed to load data into customer: CHECK constraint failed: loyaltypoints >= 0
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 189, in inject_data_to_table
+    df.to_sql(
+    ~~~~~~~~~^
+        table_name,
+        ^^^^^^^^^^^
+    ...<2 lines>...
+        index=False
+        ^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: loyaltypoints >= 0
+2025-04-03 14:10:29,328 - ERROR - ETL process failed: CHECK constraint failed: loyaltypoints >= 0
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 222, in load_data_to_db
+    inject_data_to_table(csv_path, table, conn)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 189, in inject_data_to_table
+    df.to_sql(
+    ~~~~~~~~~^
+        table_name,
+        ^^^^^^^^^^^
+    ...<2 lines>...
+        index=False
+        ^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: loyaltypoints >= 0
+2025-04-03 14:20:08,902 - ERROR - Failed to inject data into customer: 'loyaltypoints'
+2025-04-03 14:20:08,956 - ERROR - Failed to inject data into product: 'product_name'
+2025-04-03 14:20:08,959 - ERROR - Failed to inject data into sale: 'sale_amount'
+2025-04-03 14:21:33,313 - ERROR - Failed to inject data into customer: 'loyaltypoints'
+2025-04-03 14:21:33,318 - ERROR - Failed to inject data into product: 'product_name'
+2025-04-03 14:21:33,320 - ERROR - Failed to inject data into sale: 'sale_amount'
+2025-04-03 14:22:53,106 - INFO - Loaded 13 records from data\prepared\customers_data_prepared.csv for customer.
+2025-04-03 14:22:53,106 - ERROR - Failed to inject data into customer: 'loyaltypoints'
+2025-04-03 14:22:53,108 - INFO - Loaded 8 records from data\prepared\products_data_prepared.csv for product.
+2025-04-03 14:22:53,113 - ERROR - Failed to inject data into product: 'product_name'
+2025-04-03 14:22:53,115 - INFO - Loaded 92 records from data\prepared\sales_data_prepared.csv for sale.
+2025-04-03 14:22:53,115 - ERROR - Failed to inject data into sale: 'sale_amount'
+2025-04-03 14:22:53,115 - INFO - All data successfully loaded into the database.
+2025-04-03 14:24:59,176 - INFO - Loaded 13 records from data\prepared\customers_data_prepared.csv for customer.
+2025-04-03 14:24:59,177 - ERROR - Failed to inject data into customer: 'loyaltypoints'
+2025-04-03 14:24:59,178 - INFO - Loaded 8 records from data\prepared\products_data_prepared.csv for product.
+2025-04-03 14:24:59,183 - ERROR - Failed to inject data into product: 'product_name'
+2025-04-03 14:24:59,185 - INFO - Loaded 92 records from data\prepared\sales_data_prepared.csv for sale.
+2025-04-03 14:24:59,185 - ERROR - Failed to inject data into sale: 'sale_amount'
+2025-04-03 14:24:59,185 - INFO - All data successfully loaded into the database.
+2025-04-03 14:26:28,084 - INFO - Loaded 13 records from data\prepared\customers_data_prepared.csv for customer.
+2025-04-03 14:26:28,085 - ERROR - Failed to inject data into customer: 'loyaltypoints'
+2025-04-03 14:26:28,086 - INFO - Loaded 8 records from data\prepared\products_data_prepared.csv for product.
+2025-04-03 14:26:28,091 - ERROR - Failed to inject data into product: 'product_name'
+2025-04-03 14:26:28,093 - INFO - Loaded 92 records from data\prepared\sales_data_prepared.csv for sale.
+2025-04-03 14:26:28,093 - ERROR - Failed to inject data into sale: 'sale_amount'
+2025-04-03 14:26:28,093 - INFO - All data successfully loaded into the database.
+2025-04-03 15:22:29,996 - INFO - Loaded 13 records from customers_data_prepared.csv
+2025-04-03 15:22:29,997 - ERROR - Error processing customers_data_prepared.csv: Column name 'loyaltypoints' not found in the DataFrame.
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'loyaltypoints'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\data_scrubber.py", line 110, in filter_column_outliers
+    self.df = self.df[(self.df[column] >= lower_bound) & (self.df[column] <= upper_bound)]
+                       ~~~~~~~^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'loyaltypoints'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 48, in scrub_file
+    scrubber.filter_column_outliers("loyaltypoints", lower_bound=0, upper_bound=1e6)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\scripts\data_scrubber.py", line 113, in filter_column_outliers
+    raise ValueError(f"Column name '{column}' not found in the DataFrame.")
+ValueError: Column name 'loyaltypoints' not found in the DataFrame.
+2025-04-03 15:22:30,009 - INFO - Loaded 8 records from products_data_prepared.csv
+2025-04-03 15:22:30,037 - INFO - Cleaned data summary for product:
+        productid   unitprice  stockquantity
+count    7.000000    7.000000       7.000000
+mean   104.428571  254.000000     468.571429
+std      2.819997  368.613175     383.293994
+min    101.000000   19.780000       0.000000
+25%    102.500000   30.930000     290.000000
+50%    104.000000   43.100000     300.000000
+75%    106.000000  430.070000     700.000000
+max    109.000000  793.120000    1000.000000
+2025-04-03 15:22:30,043 - INFO - Cleaned data saved to C:\Projects\smart-store-kiruthikaa\data\cleaned\product_data_cleaned.csv
+2025-04-03 15:22:30,045 - INFO - Loaded 92 records from sales_data_prepared.csv
+2025-04-03 15:22:30,046 - ERROR - Error processing sales_data_prepared.csv: Column name 'sale_amount' not found in the DataFrame.
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'sale_amount'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\data_scrubber.py", line 110, in filter_column_outliers
+    self.df = self.df[(self.df[column] >= lower_bound) & (self.df[column] <= upper_bound)]
+                       ~~~~~~~^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'sale_amount'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 55, in scrub_file
+    scrubber.filter_column_outliers("sale_amount", lower_bound=0, upper_bound=1e9)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\scripts\data_scrubber.py", line 113, in filter_column_outliers
+    raise ValueError(f"Column name '{column}' not found in the DataFrame.")
+ValueError: Column name 'sale_amount' not found in the DataFrame.
+2025-04-03 15:22:30,049 - ERROR - Failed to inject data into customer: File C:\Projects\smart-store-kiruthikaa\data\cleaned\customer_data_cleaned.csv not found!
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 118, in inject_data_to_table
+    raise FileNotFoundError(f"File {csv_file} not found!")
+FileNotFoundError: File C:\Projects\smart-store-kiruthikaa\data\cleaned\customer_data_cleaned.csv not found!
+2025-04-03 15:22:30,053 - ERROR - Failed to inject data into product: table product has no column named productid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 124, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table product has no column named productid
+2025-04-03 15:22:30,058 - ERROR - Failed to inject data into sale: File C:\Projects\smart-store-kiruthikaa\data\cleaned\sale_data_cleaned.csv not found!
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 118, in inject_data_to_table
+    raise FileNotFoundError(f"File {csv_file} not found!")
+FileNotFoundError: File C:\Projects\smart-store-kiruthikaa\data\cleaned\sale_data_cleaned.csv not found!
+2025-04-03 15:22:30,058 - INFO - All data successfully loaded into the database.
+2025-04-03 15:31:18,637 - INFO - Loaded 13 records from customers_data_prepared.csv
+2025-04-03 15:31:18,638 - INFO - Cleaning data for customer. Initial rows: 13
+2025-04-03 15:31:18,645 - INFO - Data cleaned for customer. Rows remaining: 11
+2025-04-03 15:31:18,656 - INFO - Cleaned data summary for customer:
+        CustomerID  LoyaltyPoints
+count    11.000000      11.000000
+mean   1006.909091     480.909091
+std       4.182213     404.782770
+min    1001.000000      50.000000
+25%    1003.500000      90.000000
+50%    1007.000000     300.000000
+75%    1009.500000     850.000000
+max    1014.000000    1000.000000
+2025-04-03 15:31:18,658 - INFO - Cleaned data saved to C:\Projects\smart-store-kiruthikaa\data\cleaned\customer_data_cleaned.csv
+2025-04-03 15:31:18,660 - INFO - Loaded 8 records from products_data_prepared.csv
+2025-04-03 15:31:18,661 - INFO - Cleaning data for product. Initial rows: 8
+2025-04-03 15:31:18,664 - INFO - Data cleaned for product. Rows remaining: 7
+2025-04-03 15:31:18,674 - INFO - Cleaned data summary for product:
+        productid   unitprice  stockquantity
+count    7.000000    7.000000       7.000000
+mean   104.428571  254.000000     468.571429
+std      2.819997  368.613175     383.293994
+min    101.000000   19.780000       0.000000
+25%    102.500000   30.930000     290.000000
+50%    104.000000   43.100000     300.000000
+75%    106.000000  430.070000     700.000000
+max    109.000000  793.120000    1000.000000
+2025-04-03 15:31:18,675 - INFO - Cleaned data saved to C:\Projects\smart-store-kiruthikaa\data\cleaned\product_data_cleaned.csv
+2025-04-03 15:31:18,677 - INFO - Loaded 92 records from sales_data_prepared.csv
+2025-04-03 15:31:18,677 - INFO - Cleaning data for sale. Initial rows: 92
+2025-04-03 15:31:18,682 - INFO - Data cleaned for sale. Rows remaining: 92
+2025-04-03 15:31:18,698 - INFO - Cleaned data summary for sale:
+       transactionid   customerid   productid     storeid  campaignid   saleamount  bonuspoints
+count      92.000000    92.000000   92.000000   92.000000   92.000000    92.000000    92.000000
+mean      595.521739  1005.684783  104.369565  403.315217    0.402174  1173.766957    49.945652
+std        26.739475     3.196596    2.562268    1.741096    0.865197  2072.855667    25.032886
+min       550.000000  1001.000000  101.000000  401.000000    0.000000    12.560000     0.000000
+25%       572.750000  1003.000000  102.000000  402.000000    0.000000   113.040000    30.000000
+50%       595.500000  1006.000000  104.000000  403.000000    0.000000   258.600000    50.000000
+75%       618.250000  1008.000000  107.000000  405.000000    0.000000   732.160000    70.000000
+max       642.000000  1011.000000  108.000000  406.000000    3.000000  7931.200000   100.000000
+2025-04-03 15:31:18,703 - INFO - Cleaned data saved to C:\Projects\smart-store-kiruthikaa\data\cleaned\sale_data_cleaned.csv
+2025-04-03 15:31:18,709 - ERROR - Failed to inject data into customer: table customer has no column named CustomerID
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 130, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table customer has no column named CustomerID
+2025-04-03 15:31:18,718 - ERROR - Failed to inject data into product: table product has no column named productid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 130, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table product has no column named productid
+2025-04-03 15:31:18,723 - ERROR - Failed to inject data into sale: table sale has no column named transactionid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 130, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table sale has no column named transactionid
+2025-04-03 15:31:18,725 - INFO - All data successfully loaded into the database.
+2025-04-03 15:33:30,297 - INFO - Loaded 13 records from customers_data_prepared.csv
+2025-04-03 15:33:30,298 - INFO - Cleaning data for customer. Initial rows: 13
+2025-04-03 15:33:30,303 - INFO - Data cleaned for customer. Rows remaining: 11
+2025-04-03 15:33:30,312 - INFO - Cleaned data summary for customer:
+        CustomerID  LoyaltyPoints
+count    11.000000      11.000000
+mean   1006.909091     480.909091
+std       4.182213     404.782770
+min    1001.000000      50.000000
+25%    1003.500000      90.000000
+50%    1007.000000     300.000000
+75%    1009.500000     850.000000
+max    1014.000000    1000.000000
+2025-04-03 15:33:30,314 - INFO - Cleaned data saved to C:\Projects\smart-store-kiruthikaa\data\cleaned\customer_data_cleaned.csv
+2025-04-03 15:33:30,315 - INFO - Loaded 8 records from products_data_prepared.csv
+2025-04-03 15:33:30,316 - INFO - Cleaning data for product. Initial rows: 8
+2025-04-03 15:33:30,319 - INFO - Data cleaned for product. Rows remaining: 7
+2025-04-03 15:33:30,329 - INFO - Cleaned data summary for product:
+        productid   unitprice  stockquantity
+count    7.000000    7.000000       7.000000
+mean   104.428571  254.000000     468.571429
+std      2.819997  368.613175     383.293994
+min    101.000000   19.780000       0.000000
+25%    102.500000   30.930000     290.000000
+50%    104.000000   43.100000     300.000000
+75%    106.000000  430.070000     700.000000
+max    109.000000  793.120000    1000.000000
+2025-04-03 15:33:30,330 - INFO - Cleaned data saved to C:\Projects\smart-store-kiruthikaa\data\cleaned\product_data_cleaned.csv
+2025-04-03 15:33:30,332 - INFO - Loaded 92 records from sales_data_prepared.csv
+2025-04-03 15:33:30,332 - INFO - Cleaning data for sale. Initial rows: 92
+2025-04-03 15:33:30,337 - INFO - Data cleaned for sale. Rows remaining: 92
+2025-04-03 15:33:30,354 - INFO - Cleaned data summary for sale:
+       transactionid   customerid   productid     storeid  campaignid   saleamount  bonuspoints
+count      92.000000    92.000000   92.000000   92.000000   92.000000    92.000000    92.000000
+mean      595.521739  1005.684783  104.369565  403.315217    0.402174  1173.766957    49.945652
+std        26.739475     3.196596    2.562268    1.741096    0.865197  2072.855667    25.032886
+min       550.000000  1001.000000  101.000000  401.000000    0.000000    12.560000     0.000000
+25%       572.750000  1003.000000  102.000000  402.000000    0.000000   113.040000    30.000000
+50%       595.500000  1006.000000  104.000000  403.000000    0.000000   258.600000    50.000000
+75%       618.250000  1008.000000  107.000000  405.000000    0.000000   732.160000    70.000000
+max       642.000000  1011.000000  108.000000  406.000000    3.000000  7931.200000   100.000000
+2025-04-03 15:33:30,355 - INFO - Cleaned data saved to C:\Projects\smart-store-kiruthikaa\data\cleaned\sale_data_cleaned.csv
+2025-04-03 15:33:30,359 - INFO - Attempting to insert 11 rows into 'customer' table...
+2025-04-03 15:33:30,360 - ERROR - Failed to inject data into customer: table customer has no column named CustomerID
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 131, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table customer has no column named CustomerID
+2025-04-03 15:33:30,368 - INFO - Attempting to insert 7 rows into 'product' table...
+2025-04-03 15:33:30,369 - ERROR - Failed to inject data into product: table product has no column named productid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 131, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table product has no column named productid
+2025-04-03 15:33:30,373 - INFO - Attempting to insert 92 rows into 'sale' table...
+2025-04-03 15:33:30,375 - ERROR - Failed to inject data into sale: table sale has no column named transactionid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 131, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table sale has no column named transactionid
+2025-04-03 15:33:30,377 - INFO - All data successfully loaded into the database.
+2025-04-03 15:39:12,480 - INFO - Loaded 13 records from customers_data_prepared.csv
+2025-04-03 15:39:12,481 - INFO - Cleaning data for customer. Initial rows: 13
+2025-04-03 15:39:12,485 - INFO - Data cleaned for customer. Rows remaining: 11
+2025-04-03 15:39:12,499 - INFO - Cleaned data summary for customer:
+        CustomerID  LoyaltyPoints
+count    11.000000      11.000000
+mean   1006.909091     480.909091
+std       4.182213     404.782770
+min    1001.000000      50.000000
+25%    1003.500000      90.000000
+50%    1007.000000     300.000000
+75%    1009.500000     850.000000
+max    1014.000000    1000.000000
+2025-04-03 15:39:12,502 - INFO - Cleaned data saved to C:\Projects\smart-store-kiruthikaa\data\cleaned\customer_data_cleaned.csv
+2025-04-03 15:39:12,505 - INFO - Loaded 8 records from products_data_prepared.csv
+2025-04-03 15:39:12,505 - INFO - Cleaning data for product. Initial rows: 8
+2025-04-03 15:39:12,508 - INFO - Data cleaned for product. Rows remaining: 7
+2025-04-03 15:39:12,520 - INFO - Cleaned data summary for product:
+        productid   unitprice  stockquantity
+count    7.000000    7.000000       7.000000
+mean   104.428571  254.000000     468.571429
+std      2.819997  368.613175     383.293994
+min    101.000000   19.780000       0.000000
+25%    102.500000   30.930000     290.000000
+50%    104.000000   43.100000     300.000000
+75%    106.000000  430.070000     700.000000
+max    109.000000  793.120000    1000.000000
+2025-04-03 15:39:12,521 - INFO - Cleaned data saved to C:\Projects\smart-store-kiruthikaa\data\cleaned\product_data_cleaned.csv
+2025-04-03 15:39:12,523 - INFO - Loaded 92 records from sales_data_prepared.csv
+2025-04-03 15:39:12,524 - INFO - Cleaning data for sale. Initial rows: 92
+2025-04-03 15:39:12,529 - INFO - Data cleaned for sale. Rows remaining: 92
+2025-04-03 15:39:12,547 - INFO - Cleaned data summary for sale:
+       transactionid   customerid   productid     storeid  campaignid   saleamount  bonuspoints
+count      92.000000    92.000000   92.000000   92.000000   92.000000    92.000000    92.000000
+mean      595.521739  1005.684783  104.369565  403.315217    0.402174  1173.766957    49.945652
+std        26.739475     3.196596    2.562268    1.741096    0.865197  2072.855667    25.032886
+min       550.000000  1001.000000  101.000000  401.000000    0.000000    12.560000     0.000000
+25%       572.750000  1003.000000  102.000000  402.000000    0.000000   113.040000    30.000000
+50%       595.500000  1006.000000  104.000000  403.000000    0.000000   258.600000    50.000000
+75%       618.250000  1008.000000  107.000000  405.000000    0.000000   732.160000    70.000000
+max       642.000000  1011.000000  108.000000  406.000000    3.000000  7931.200000   100.000000
+2025-04-03 15:39:12,549 - INFO - Cleaned data saved to C:\Projects\smart-store-kiruthikaa\data\cleaned\sale_data_cleaned.csv
+2025-04-03 15:39:12,552 - INFO - Attempting to insert 11 rows into 'customer' table...
+2025-04-03 15:39:12,554 - ERROR - Failed to inject data into customer: table customer has no column named CustomerID
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 131, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table customer has no column named CustomerID
+2025-04-03 15:39:12,562 - INFO - Attempting to insert 7 rows into 'product' table...
+2025-04-03 15:39:12,563 - ERROR - Failed to inject data into product: table product has no column named productid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 131, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table product has no column named productid
+2025-04-03 15:39:12,567 - INFO - Attempting to insert 92 rows into 'sale' table...
+2025-04-03 15:39:12,569 - ERROR - Failed to inject data into sale: table sale has no column named transactionid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 131, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table sale has no column named transactionid
+2025-04-03 15:39:12,571 - INFO - All data successfully loaded into the database.
+2025-04-03 15:43:48,764 - INFO - Attempting to insert 11 rows into 'customer' table...
+2025-04-03 15:43:48,765 - ERROR - Failed to inject data into customer: table customer has no column named CustomerID
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 79, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table customer has no column named CustomerID
+2025-04-03 15:43:48,773 - INFO - Attempting to insert 7 rows into 'product' table...
+2025-04-03 15:43:48,774 - ERROR - Failed to inject data into product: table product has no column named productid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 79, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table product has no column named productid
+2025-04-03 15:43:48,778 - INFO - Attempting to insert 92 rows into 'sale' table...
+2025-04-03 15:43:48,779 - ERROR - Failed to inject data into sale: table sale has no column named transactionid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 79, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table sale has no column named transactionid
+2025-04-03 15:43:48,781 - INFO - All data successfully loaded into the database.
+2025-04-03 15:47:56,060 - INFO - Attempting to insert 11 rows into 'customer' table...
+2025-04-03 15:47:56,062 - ERROR - Failed to inject data into customer: table customer has no column named CustomerID
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 79, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table customer has no column named CustomerID
+2025-04-03 15:47:56,071 - INFO - Attempting to insert 7 rows into 'product' table...
+2025-04-03 15:47:56,072 - ERROR - Failed to inject data into product: table product has no column named productid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 79, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table product has no column named productid
+2025-04-03 15:47:56,076 - INFO - Attempting to insert 92 rows into 'sale' table...
+2025-04-03 15:47:56,078 - ERROR - Failed to inject data into sale: table sale has no column named transactionid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 79, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table sale has no column named transactionid
+2025-04-03 15:47:56,080 - INFO - All data successfully loaded into the database.
+2025-04-03 16:01:48,035 - INFO - Preparing to insert data for customer. File: C:\Projects\smart-store-kiruthikaa\data\cleaned\customer_data_cleaned.csv
+2025-04-03 16:01:48,036 - INFO - Rows in DataFrame: 11
+2025-04-03 16:01:48,045 - INFO - Sample data for customer:
+   CustomerID           Name Region    JoinDate  LoyaltyPoints PreferredContactMethod
+0        1001  William White   East  11/11/2021           50.0                 Email 
+1        1002   Wylie Coyote   East   2/14/2023          100.0                  Phone
+2        1003      Dan Brown   West  10/19/2023         1000.0                 Email 
+3        1004      Chewbacca   West   11/9/2022          300.0                  Phone
+4        1006  Tiffany James  South    6/7/2021          300.0                 Email 
+2025-04-03 16:01:48,045 - INFO - Inserting 11 rows into 'customer' table...
+2025-04-03 16:01:48,046 - ERROR - Failed to inject data into customer: table customer has no column named CustomerID
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 81, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table customer has no column named CustomerID
+2025-04-03 16:01:48,054 - INFO - Preparing to insert data for product. File: C:\Projects\smart-store-kiruthikaa\data\cleaned\product_data_cleaned.csv
+2025-04-03 16:01:48,054 - INFO - Rows in DataFrame: 7
+2025-04-03 16:01:48,061 - INFO - Sample data for product:
+   productid productname     category  unitprice  stockquantity supplier
+0        101      laptop  Electronics     793.12         1000.0      HCL
+1        102      hoodie     Clothing      39.10          280.0    Bloom
+2        103       cable  Electronics      22.76          300.0      NKT
+3        104         hat     Clothing      43.10          400.0  Haptics
+4        105    football       Sports      19.78            0.0   Wilson
+2025-04-03 16:01:48,061 - INFO - Inserting 7 rows into 'product' table...
+2025-04-03 16:01:48,062 - ERROR - Failed to inject data into product: table product has no column named productid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 81, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table product has no column named productid
+2025-04-03 16:01:48,066 - INFO - Preparing to insert data for sale. File: C:\Projects\smart-store-kiruthikaa\data\cleaned\sale_data_cleaned.csv
+2025-04-03 16:01:48,066 - INFO - Rows in DataFrame: 92
+2025-04-03 16:01:48,075 - INFO - Sample data for sale:
+   transactionid    saledate  customerid  ...  saleamount  bonuspoints  paymenttype
+0            550  2024-01-06        1008  ...       39.10         50.0         Cash
+1            551  2024-01-06        1009  ...       19.78         20.0        Debit
+2            552  2024-01-16        1004  ...      335.10         50.0       Credit
+3            553  2024-01-16        1006  ...      195.50         70.0         Cash
+4            554  2024-01-25        1005  ...      117.30          0.0         Cash
+
+[5 rows x 9 columns]
+2025-04-03 16:01:48,075 - INFO - Inserting 92 rows into 'sale' table...
+2025-04-03 16:01:48,077 - ERROR - Failed to inject data into sale: table sale has no column named transactionid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 81, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table sale has no column named transactionid
+2025-04-03 16:01:48,079 - INFO - No data found in 'customer' table.
+2025-04-03 16:01:48,080 - INFO - No data found in 'product' table.
+2025-04-03 16:01:48,080 - INFO - No data found in 'sale' table.
+2025-04-03 16:01:48,080 - INFO - All data successfully loaded into the database and displayed.
+2025-04-03 16:09:43,400 - INFO - Preparing to insert data for customer. File: C:\Projects\smart-store-kiruthikaa\data\cleaned\customer_data_cleaned.csv
+2025-04-03 16:09:43,400 - INFO - Rows in DataFrame: 11
+2025-04-03 16:09:43,409 - INFO - Sample data for customer:
+   CustomerID           Name Region    JoinDate  LoyaltyPoints PreferredContactMethod
+0        1001  William White   East  11/11/2021           50.0                 Email 
+1        1002   Wylie Coyote   East   2/14/2023          100.0                  Phone
+2        1003      Dan Brown   West  10/19/2023         1000.0                 Email 
+3        1004      Chewbacca   West   11/9/2022          300.0                  Phone
+4        1006  Tiffany James  South    6/7/2021          300.0                 Email 
+2025-04-03 16:09:43,409 - INFO - Inserting 11 rows into 'customer' table...
+2025-04-03 16:09:43,410 - ERROR - Failed to inject data into customer: table customer has no column named CustomerID
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 78, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table customer has no column named CustomerID
+2025-04-03 16:09:43,418 - INFO - Preparing to insert data for product. File: C:\Projects\smart-store-kiruthikaa\data\cleaned\product_data_cleaned.csv
+2025-04-03 16:09:43,418 - INFO - Rows in DataFrame: 7
+2025-04-03 16:09:43,425 - INFO - Sample data for product:
+   productid productname     category  unitprice  stockquantity supplier
+0        101      laptop  Electronics     793.12         1000.0      HCL
+1        102      hoodie     Clothing      39.10          280.0    Bloom
+2        103       cable  Electronics      22.76          300.0      NKT
+3        104         hat     Clothing      43.10          400.0  Haptics
+4        105    football       Sports      19.78            0.0   Wilson
+2025-04-03 16:09:43,425 - INFO - Inserting 7 rows into 'product' table...
+2025-04-03 16:09:43,426 - ERROR - Failed to inject data into product: table product has no column named productid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 78, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table product has no column named productid
+2025-04-03 16:09:43,430 - INFO - Preparing to insert data for sale. File: C:\Projects\smart-store-kiruthikaa\data\cleaned\sale_data_cleaned.csv
+2025-04-03 16:09:43,430 - INFO - Rows in DataFrame: 92
+2025-04-03 16:09:43,439 - INFO - Sample data for sale:
+   transactionid    saledate  customerid  ...  saleamount  bonuspoints  paymenttype
+0            550  2024-01-06        1008  ...       39.10         50.0         Cash
+1            551  2024-01-06        1009  ...       19.78         20.0        Debit
+2            552  2024-01-16        1004  ...      335.10         50.0       Credit
+3            553  2024-01-16        1006  ...      195.50         70.0         Cash
+4            554  2024-01-25        1005  ...      117.30          0.0         Cash
+
+[5 rows x 9 columns]
+2025-04-03 16:09:43,439 - INFO - Inserting 92 rows into 'sale' table...
+2025-04-03 16:09:43,441 - ERROR - Failed to inject data into sale: table sale has no column named transactionid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 78, in inject_data_to_table
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Projects\smart-store-kiruthikaa\venv\Lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table sale has no column named transactionid
+2025-04-03 16:09:43,443 - INFO - No data found in 'customer' table.
+2025-04-03 16:09:43,444 - INFO - No data found in 'product' table.
+2025-04-03 16:09:43,444 - INFO - No data found in 'sale' table.
+2025-04-03 16:09:43,444 - INFO - All data successfully loaded into the database and displayed.

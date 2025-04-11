@@ -1,0 +1,233 @@
+2025-03-25 13:32:32.918 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 13:32:32.918 | INFO     | __main__:main:227 - ==================================
+2025-03-25 13:32:32.919 | INFO     | __main__:main:228 - STARTING prepare_products_data.py
+2025-03-25 13:32:32.919 | INFO     | __main__:main:229 - ==================================
+2025-03-25 13:32:32.919 | INFO     | __main__:main:231 - Root project folder: C:\Projects\smart-store-kiruthikaa
+2025-03-25 13:32:32.919 | INFO     | __main__:main:232 - data / raw folder: C:\Projects\smart-store-kiruthikaa\data\raw
+2025-03-25 13:32:32.920 | INFO     | __main__:main:233 - data / prepared folder: C:\Projects\smart-store-kiruthikaa\data\prepared
+2025-03-25 13:32:32.920 | INFO     | __main__:read_raw_data:59 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-03-25 13:32:32.920 | INFO     | __main__:read_raw_data:61 - Reading data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv
+2025-03-25 13:32:32.923 | INFO     | __main__:read_raw_data:63 - Loaded dataframe with 10 rows and 6 columns
+2025-03-25 13:32:32.924 | INFO     | __main__:main:242 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, StockQuantity, Supplier
+2025-03-25 13:32:32.924 | INFO     | __main__:main:243 - Initial dataframe shape: (10, 6)
+2025-03-25 13:32:32.926 | INFO     | __main__:main:252 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, StockQuantity -> stockquantity, Supplier -> supplier
+2025-03-25 13:32:32.926 | INFO     | __main__:remove_duplicates:96 - FUNCTION START: remove_duplicates with dataframe shape=(10, 6)
+2025-03-25 13:32:32.928 | INFO     | __main__:remove_duplicates:106 - Removed 0 duplicate rows
+2025-03-25 13:32:32.929 | INFO     | __main__:remove_duplicates:107 - 10 records remaining after removing duplicates.
+2025-03-25 13:32:32.929 | INFO     | __main__:handle_missing_values:121 - FUNCTION START: handle_missing_values with dataframe shape=(10, 6)
+2025-03-25 13:32:32.930 | INFO     | __main__:handle_missing_values:126 - Missing values by column before handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    1
+supplier         0
+dtype: int64
+2025-03-25 13:32:32.932 | INFO     | __main__:handle_missing_values:140 - Missing values by column after handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    1
+supplier         0
+dtype: int64
+2025-03-25 13:32:32.932 | INFO     | __main__:handle_missing_values:141 - 10 records remaining after handling missing values.
+2025-03-25 13:32:32.933 | INFO     | __main__:standardize_formats:188 - FUNCTION START: standardize_formats with dataframe shape=(10, 6)
+2025-03-25 13:32:32.933 | INFO     | __main__:standardize_formats:198 - Completed standardizing formats
+2025-03-25 13:32:32.933 | INFO     | __main__:remove_outliers:155 - FUNCTION START: remove_outliers with dataframe shape=(10, 6)
+2025-03-25 13:32:32.934 | INFO     | __main__:remove_outliers:174 - Removed 0 outlier rows
+2025-03-25 13:32:32.934 | INFO     | __main__:remove_outliers:175 - 10 records remaining after removing outliers.
+2025-03-25 13:32:32.934 | INFO     | __main__:validate_data:211 - FUNCTION START: validate_data with dataframe shape=(10, 6)
+2025-03-25 13:32:32.934 | INFO     | __main__:validate_data:220 - Data validation complete
+2025-03-25 13:32:32.935 | INFO     | __main__:save_prepared_data:81 - FUNCTION START: save_prepared_data with file_name=products_data_prepared.csv, dataframe shape=(10, 6)
+2025-03-25 13:32:32.937 | INFO     | __main__:save_prepared_data:84 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 13:32:32.937 | INFO     | __main__:main:264 - ==================================
+2025-03-25 13:32:32.938 | INFO     | __main__:main:265 - FINISHED prepare_products_data.py
+2025-03-25 13:32:32.938 | INFO     | __main__:main:266 - ==================================
+2025-03-25 13:42:58.497 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 13:42:58.497 | INFO     | __main__:main:76 - ==================================
+2025-03-25 13:42:58.497 | INFO     | __main__:main:77 - STARTING prepare_products_data.py
+2025-03-25 13:42:58.497 | INFO     | __main__:main:78 - ==================================
+2025-03-25 13:42:58.498 | INFO     | __main__:read_raw_data:24 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv
+2025-03-25 13:42:58.501 | INFO     | __main__:remove_duplicates:35 - FUNCTION START: remove_duplicates with dataframe shape=(10, 6)
+2025-03-25 13:42:58.503 | INFO     | __main__:remove_duplicates:37 - Dataframe shape after removing duplicates: (9, 6)
+2025-03-25 13:42:58.503 | INFO     | __main__:handle_missing_values:42 - FUNCTION START: handle_missing_values with dataframe shape=(9, 6)
+2025-03-25 13:42:58.505 | INFO     | __main__:handle_missing_values:44 - Dataframe shape after handling missing values: (9, 6)
+2025-03-25 13:42:58.505 | INFO     | __main__:remove_outliers:49 - FUNCTION START: remove_outliers with dataframe shape=(9, 6)
+2025-03-25 13:42:58.507 | INFO     | __main__:remove_outliers:52 - Dataframe shape after removing outliers: (6, 6)
+2025-03-25 13:42:58.507 | INFO     | __main__:exclude_specific_rows:57 - FUNCTION START: exclude_specific_rows with dataframe shape=(6, 6)
+2025-03-25 13:42:58.508 | INFO     | __main__:exclude_specific_rows:59 - Dataframe shape after excluding specific rows: (6, 6)
+2025-03-25 13:42:58.508 | INFO     | __main__:standardize_formats:64 - FUNCTION START: standardize_formats with dataframe shape=(6, 6)
+2025-03-25 13:42:58.510 | INFO     | __main__:standardize_formats:67 - Dataframe shape after standardizing formats: (6, 6)
+2025-03-25 13:42:58.513 | INFO     | __main__:save_prepared_data:31 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 13:42:58.514 | INFO     | __main__:main:96 - ==================================
+2025-03-25 13:42:58.514 | INFO     | __main__:main:97 - FINISHED prepare_products_data.py
+2025-03-25 13:42:58.515 | INFO     | __main__:main:98 - ==================================
+2025-03-25 13:43:13.833 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 13:43:13.833 | INFO     | __main__:main:76 - ==================================
+2025-03-25 13:43:13.834 | INFO     | __main__:main:77 - STARTING prepare_products_data.py
+2025-03-25 13:43:13.834 | INFO     | __main__:main:78 - ==================================
+2025-03-25 13:43:13.834 | INFO     | __main__:read_raw_data:24 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv
+2025-03-25 13:43:13.837 | INFO     | __main__:remove_duplicates:35 - FUNCTION START: remove_duplicates with dataframe shape=(10, 6)
+2025-03-25 13:43:13.839 | INFO     | __main__:remove_duplicates:37 - Dataframe shape after removing duplicates: (9, 6)
+2025-03-25 13:43:13.839 | INFO     | __main__:handle_missing_values:42 - FUNCTION START: handle_missing_values with dataframe shape=(9, 6)
+2025-03-25 13:43:13.840 | INFO     | __main__:handle_missing_values:44 - Dataframe shape after handling missing values: (9, 6)
+2025-03-25 13:43:13.840 | INFO     | __main__:remove_outliers:49 - FUNCTION START: remove_outliers with dataframe shape=(9, 6)
+2025-03-25 13:43:13.841 | INFO     | __main__:remove_outliers:52 - Dataframe shape after removing outliers: (6, 6)
+2025-03-25 13:43:13.842 | INFO     | __main__:exclude_specific_rows:57 - FUNCTION START: exclude_specific_rows with dataframe shape=(6, 6)
+2025-03-25 13:43:13.842 | INFO     | __main__:exclude_specific_rows:59 - Dataframe shape after excluding specific rows: (6, 6)
+2025-03-25 13:43:13.843 | INFO     | __main__:standardize_formats:64 - FUNCTION START: standardize_formats with dataframe shape=(6, 6)
+2025-03-25 13:43:13.844 | INFO     | __main__:standardize_formats:67 - Dataframe shape after standardizing formats: (6, 6)
+2025-03-25 13:43:13.847 | INFO     | __main__:save_prepared_data:31 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 13:43:13.847 | INFO     | __main__:main:96 - ==================================
+2025-03-25 13:43:13.847 | INFO     | __main__:main:97 - FINISHED prepare_products_data.py
+2025-03-25 13:43:13.847 | INFO     | __main__:main:98 - ==================================
+2025-03-25 13:44:22.698 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 13:44:22.699 | INFO     | __main__:main:76 - ==================================
+2025-03-25 13:44:22.699 | INFO     | __main__:main:77 - STARTING prepare_products_data.py
+2025-03-25 13:44:22.699 | INFO     | __main__:main:78 - ==================================
+2025-03-25 13:44:22.699 | INFO     | __main__:read_raw_data:24 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv
+2025-03-25 13:44:22.703 | INFO     | __main__:remove_duplicates:35 - FUNCTION START: remove_duplicates with dataframe shape=(10, 6)
+2025-03-25 13:44:22.704 | INFO     | __main__:remove_duplicates:37 - Dataframe shape after removing duplicates: (9, 6)
+2025-03-25 13:44:22.704 | INFO     | __main__:handle_missing_values:42 - FUNCTION START: handle_missing_values with dataframe shape=(9, 6)
+2025-03-25 13:44:22.706 | INFO     | __main__:handle_missing_values:44 - Dataframe shape after handling missing values: (9, 6)
+2025-03-25 13:44:22.706 | INFO     | __main__:remove_outliers:49 - FUNCTION START: remove_outliers with dataframe shape=(9, 6)
+2025-03-25 13:44:22.707 | INFO     | __main__:remove_outliers:52 - Dataframe shape after removing outliers: (6, 6)
+2025-03-25 13:44:22.707 | INFO     | __main__:exclude_last_duplicate:57 - FUNCTION START: exclude_last_duplicate with dataframe shape=(6, 6)
+2025-03-25 13:44:22.708 | INFO     | __main__:exclude_last_duplicate:59 - Dataframe shape after excluding last duplicate: (5, 6)
+2025-03-25 13:44:22.708 | INFO     | __main__:standardize_formats:64 - FUNCTION START: standardize_formats with dataframe shape=(5, 6)
+2025-03-25 13:44:22.709 | INFO     | __main__:standardize_formats:67 - Dataframe shape after standardizing formats: (5, 6)
+2025-03-25 13:44:22.711 | INFO     | __main__:save_prepared_data:31 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 13:44:22.711 | INFO     | __main__:main:96 - ==================================
+2025-03-25 13:44:22.712 | INFO     | __main__:main:97 - FINISHED prepare_products_data.py
+2025-03-25 13:44:22.712 | INFO     | __main__:main:98 - ==================================
+2025-03-25 13:49:15.630 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 13:49:15.631 | INFO     | __main__:main:103 - ==================================
+2025-03-25 13:49:15.631 | INFO     | __main__:main:104 - STARTING prepare_products_data.py
+2025-03-25 13:49:15.631 | INFO     | __main__:main:105 - ==================================
+2025-03-25 13:49:15.631 | INFO     | __main__:read_raw_data:51 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv
+2025-03-25 13:49:15.634 | INFO     | __main__:remove_duplicates:62 - FUNCTION START: remove_duplicates with dataframe shape=(10, 6)
+2025-03-25 13:49:15.636 | INFO     | __main__:remove_duplicates:64 - Dataframe shape after removing duplicates: (9, 6)
+2025-03-25 13:49:15.637 | INFO     | __main__:handle_missing_values:69 - FUNCTION START: handle_missing_values with dataframe shape=(9, 6)
+2025-03-25 13:49:15.638 | INFO     | __main__:handle_missing_values:71 - Dataframe shape after handling missing values: (9, 6)
+2025-03-25 13:49:15.638 | INFO     | __main__:remove_outliers:76 - FUNCTION START: remove_outliers with dataframe shape=(9, 6)
+2025-03-25 13:49:15.639 | INFO     | __main__:remove_outliers:79 - Dataframe shape after removing outliers: (6, 6)
+2025-03-25 13:49:15.639 | INFO     | __main__:exclude_last_duplicate:84 - FUNCTION START: exclude_last_duplicate with dataframe shape=(6, 6)
+2025-03-25 13:49:15.640 | INFO     | __main__:exclude_last_duplicate:86 - Dataframe shape after excluding last duplicate: (5, 6)
+2025-03-25 13:49:15.641 | INFO     | __main__:standardize_formats:91 - FUNCTION START: standardize_formats with dataframe shape=(5, 6)
+2025-03-25 13:49:15.643 | INFO     | __main__:standardize_formats:94 - Dataframe shape after standardizing formats: (5, 6)
+2025-03-25 13:49:15.645 | INFO     | __main__:save_prepared_data:58 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 13:49:15.646 | INFO     | __main__:main:123 - ==================================
+2025-03-25 13:49:15.646 | INFO     | __main__:main:124 - FINISHED prepare_products_data.py
+2025-03-25 13:49:15.646 | INFO     | __main__:main:125 - ==================================
+2025-03-25 21:58:57.053 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 21:58:57.053 | INFO     | __main__:main:227 - ==================================
+2025-03-25 21:58:57.053 | INFO     | __main__:main:228 - STARTING prepare_products_data.py
+2025-03-25 21:58:57.053 | INFO     | __main__:main:229 - ==================================
+2025-03-25 21:58:57.054 | INFO     | __main__:main:231 - Root project folder: C:\Projects\smart-store-kiruthikaa
+2025-03-25 21:58:57.054 | INFO     | __main__:main:232 - data / raw folder: C:\Projects\smart-store-kiruthikaa\data\raw
+2025-03-25 21:58:57.054 | INFO     | __main__:main:233 - data / prepared folder: C:\Projects\smart-store-kiruthikaa\data\prepared
+2025-03-25 21:58:57.054 | INFO     | __main__:read_raw_data:59 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-03-25 21:58:57.055 | INFO     | __main__:read_raw_data:61 - Reading data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv
+2025-03-25 21:58:57.058 | INFO     | __main__:read_raw_data:63 - Loaded dataframe with 10 rows and 6 columns
+2025-03-25 21:58:57.058 | INFO     | __main__:main:242 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, StockQuantity, Supplier
+2025-03-25 21:58:57.058 | INFO     | __main__:main:243 - Initial dataframe shape: (10, 6)
+2025-03-25 21:58:57.059 | INFO     | __main__:main:252 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, StockQuantity -> stockquantity, Supplier -> supplier
+2025-03-25 21:58:57.060 | INFO     | __main__:remove_duplicates:96 - FUNCTION START: remove_duplicates with dataframe shape=(10, 6)
+2025-03-25 21:58:57.061 | INFO     | __main__:remove_duplicates:106 - Removed 0 duplicate rows
+2025-03-25 21:58:57.062 | INFO     | __main__:remove_duplicates:107 - 10 records remaining after removing duplicates.
+2025-03-25 21:58:57.062 | INFO     | __main__:handle_missing_values:121 - FUNCTION START: handle_missing_values with dataframe shape=(10, 6)
+2025-03-25 21:58:57.063 | INFO     | __main__:handle_missing_values:126 - Missing values by column before handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    1
+supplier         0
+dtype: int64
+2025-03-25 21:58:57.065 | INFO     | __main__:handle_missing_values:140 - Missing values by column after handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    1
+supplier         0
+dtype: int64
+2025-03-25 21:58:57.065 | INFO     | __main__:handle_missing_values:141 - 10 records remaining after handling missing values.
+2025-03-25 21:58:57.065 | INFO     | __main__:standardize_formats:188 - FUNCTION START: standardize_formats with dataframe shape=(10, 6)
+2025-03-25 21:58:57.065 | INFO     | __main__:standardize_formats:198 - Completed standardizing formats
+2025-03-25 21:58:57.066 | INFO     | __main__:remove_outliers:155 - FUNCTION START: remove_outliers with dataframe shape=(10, 6)
+2025-03-25 21:58:57.066 | INFO     | __main__:remove_outliers:174 - Removed 0 outlier rows
+2025-03-25 21:58:57.066 | INFO     | __main__:remove_outliers:175 - 10 records remaining after removing outliers.
+2025-03-25 21:58:57.067 | INFO     | __main__:validate_data:211 - FUNCTION START: validate_data with dataframe shape=(10, 6)
+2025-03-25 21:58:57.068 | INFO     | __main__:validate_data:220 - Data validation complete
+2025-03-25 21:58:57.068 | INFO     | __main__:save_prepared_data:81 - FUNCTION START: save_prepared_data with file_name=products_data_prepared.csv, dataframe shape=(10, 6)
+2025-03-25 21:58:57.070 | INFO     | __main__:save_prepared_data:84 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 21:58:57.071 | INFO     | __main__:main:264 - ==================================
+2025-03-25 21:58:57.071 | INFO     | __main__:main:265 - FINISHED prepare_products_data.py
+2025-03-25 21:58:57.071 | INFO     | __main__:main:266 - ==================================
+2025-03-25 22:00:56.517 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:00:56.517 | INFO     | __main__:main:103 - ==================================
+2025-03-25 22:00:56.517 | INFO     | __main__:main:104 - STARTING prepare_products_data.py
+2025-03-25 22:00:56.518 | INFO     | __main__:main:105 - ==================================
+2025-03-25 22:00:56.518 | INFO     | __main__:read_raw_data:51 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv
+2025-03-25 22:00:56.521 | INFO     | __main__:remove_duplicates:62 - FUNCTION START: remove_duplicates with dataframe shape=(10, 6)
+2025-03-25 22:00:56.523 | INFO     | __main__:remove_duplicates:64 - Dataframe shape after removing duplicates: (9, 6)
+2025-03-25 22:00:56.523 | INFO     | __main__:handle_missing_values:69 - FUNCTION START: handle_missing_values with dataframe shape=(9, 6)
+2025-03-25 22:00:56.524 | INFO     | __main__:handle_missing_values:71 - Dataframe shape after handling missing values: (9, 6)
+2025-03-25 22:00:56.525 | INFO     | __main__:remove_outliers:76 - FUNCTION START: remove_outliers with dataframe shape=(9, 6)
+2025-03-25 22:00:56.526 | INFO     | __main__:remove_outliers:79 - Dataframe shape after removing outliers: (6, 6)
+2025-03-25 22:00:56.526 | INFO     | __main__:exclude_last_duplicate:84 - FUNCTION START: exclude_last_duplicate with dataframe shape=(6, 6)
+2025-03-25 22:00:56.527 | INFO     | __main__:exclude_last_duplicate:86 - Dataframe shape after excluding last duplicate: (5, 6)
+2025-03-25 22:00:56.527 | INFO     | __main__:standardize_formats:91 - FUNCTION START: standardize_formats with dataframe shape=(5, 6)
+2025-03-25 22:00:56.529 | INFO     | __main__:standardize_formats:94 - Dataframe shape after standardizing formats: (5, 6)
+2025-03-25 22:00:56.533 | INFO     | __main__:save_prepared_data:58 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 22:00:56.533 | INFO     | __main__:main:123 - ==================================
+2025-03-25 22:00:56.533 | INFO     | __main__:main:124 - FINISHED prepare_products_data.py
+2025-03-25 22:00:56.534 | INFO     | __main__:main:125 - ==================================
+2025-03-25 22:06:27.966 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:06:27.966 | INFO     | __main__:main:227 - ==================================
+2025-03-25 22:06:27.967 | INFO     | __main__:main:228 - STARTING prepare_products_data.py
+2025-03-25 22:06:27.967 | INFO     | __main__:main:229 - ==================================
+2025-03-25 22:06:27.968 | INFO     | __main__:main:231 - Root project folder: C:\Projects\smart-store-kiruthikaa
+2025-03-25 22:06:27.968 | INFO     | __main__:main:232 - data / raw folder: C:\Projects\smart-store-kiruthikaa\data\raw
+2025-03-25 22:06:27.968 | INFO     | __main__:main:233 - data / prepared folder: C:\Projects\smart-store-kiruthikaa\data\prepared
+2025-03-25 22:06:27.969 | INFO     | __main__:read_raw_data:59 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-03-25 22:06:27.969 | INFO     | __main__:read_raw_data:61 - Reading data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv
+2025-03-25 22:06:27.977 | INFO     | __main__:read_raw_data:63 - Loaded dataframe with 10 rows and 6 columns
+2025-03-25 22:06:27.977 | INFO     | __main__:main:242 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, StockQuantity, Supplier
+2025-03-25 22:06:27.978 | INFO     | __main__:main:243 - Initial dataframe shape: (10, 6)
+2025-03-25 22:06:27.979 | INFO     | __main__:main:252 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, StockQuantity -> stockquantity, Supplier -> supplier
+2025-03-25 22:06:27.979 | INFO     | __main__:remove_duplicates:96 - FUNCTION START: remove_duplicates with dataframe shape=(10, 6)
+2025-03-25 22:06:27.982 | INFO     | __main__:remove_duplicates:106 - Removed 0 duplicate rows
+2025-03-25 22:06:27.983 | INFO     | __main__:remove_duplicates:107 - 10 records remaining after removing duplicates.
+2025-03-25 22:06:27.983 | INFO     | __main__:handle_missing_values:121 - FUNCTION START: handle_missing_values with dataframe shape=(10, 6)
+2025-03-25 22:06:27.985 | INFO     | __main__:handle_missing_values:126 - Missing values by column before handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    1
+supplier         0
+dtype: int64
+2025-03-25 22:06:27.987 | INFO     | __main__:handle_missing_values:140 - Missing values by column after handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    1
+supplier         0
+dtype: int64
+2025-03-25 22:06:27.987 | INFO     | __main__:handle_missing_values:141 - 10 records remaining after handling missing values.
+2025-03-25 22:06:27.987 | INFO     | __main__:standardize_formats:188 - FUNCTION START: standardize_formats with dataframe shape=(10, 6)
+2025-03-25 22:06:27.988 | INFO     | __main__:standardize_formats:198 - Completed standardizing formats
+2025-03-25 22:06:27.988 | INFO     | __main__:remove_outliers:155 - FUNCTION START: remove_outliers with dataframe shape=(10, 6)
+2025-03-25 22:06:27.989 | INFO     | __main__:remove_outliers:174 - Removed 0 outlier rows
+2025-03-25 22:06:27.989 | INFO     | __main__:remove_outliers:175 - 10 records remaining after removing outliers.
+2025-03-25 22:06:27.989 | INFO     | __main__:validate_data:211 - FUNCTION START: validate_data with dataframe shape=(10, 6)
+2025-03-25 22:06:27.990 | INFO     | __main__:validate_data:220 - Data validation complete
+2025-03-25 22:06:27.990 | INFO     | __main__:save_prepared_data:81 - FUNCTION START: save_prepared_data with file_name=products_data_prepared.csv, dataframe shape=(10, 6)
+2025-03-25 22:06:27.994 | INFO     | __main__:save_prepared_data:84 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 22:06:27.994 | INFO     | __main__:main:264 - ==================================
+2025-03-25 22:06:27.995 | INFO     | __main__:main:265 - FINISHED prepare_products_data.py
+2025-03-25 22:06:27.995 | INFO     | __main__:main:266 - ==================================

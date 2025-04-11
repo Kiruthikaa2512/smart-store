@@ -11,7 +11,7 @@ logging.basicConfig(
 )
 
 # Paths
-DB_PATH = "scripts/.venv/data/smart_sales.db"  # Update this path if needed
+DB_PATH = "C:/Projects/smart-store-kiruthikaa/data/smart_sales.db"  # Update this path if needed
 CLEANED_DATA_DIR = pathlib.Path("data/cleaned")  # Directory for cleaned CSV files
 
 # Table metadata: schema and file mapping

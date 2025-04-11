@@ -1,0 +1,489 @@
+2025-03-25 22:12:28.091 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:12:28.093 | INFO     | __main__:main:123 - ======================
+2025-03-25 22:12:28.094 | INFO     | __main__:main:124 - STARTING data_prep.py
+2025-03-25 22:12:28.095 | INFO     | __main__:main:125 - ======================
+2025-03-25 22:12:28.095 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:12:28.096 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:12:28.096 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:12:28.098 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:12:28.118 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 22:12:28.119 | INFO     | __main__:clean_products:59 - ========================
+2025-03-25 22:12:28.119 | INFO     | __main__:clean_products:60 - Starting PRODUCTS prep
+2025-03-25 22:12:28.120 | INFO     | __main__:clean_products:61 - ========================
+2025-03-25 22:12:28.121 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv.
+2025-03-25 22:17:05.800 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:17:05.803 | INFO     | __main__:main:123 - ======================
+2025-03-25 22:17:05.803 | INFO     | __main__:main:124 - STARTING data_prep.py
+2025-03-25 22:17:05.804 | INFO     | __main__:main:125 - ======================
+2025-03-25 22:17:05.805 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:17:05.805 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:17:05.805 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:17:05.806 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:17:05.880 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 22:17:05.881 | INFO     | __main__:clean_products:59 - ========================
+2025-03-25 22:17:05.881 | INFO     | __main__:clean_products:60 - Starting PRODUCTS prep
+2025-03-25 22:17:05.881 | INFO     | __main__:clean_products:61 - ========================
+2025-03-25 22:17:05.882 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv.
+2025-03-25 22:21:15.063 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:21:15.067 | INFO     | __main__:main:134 - ======================
+2025-03-25 22:21:15.067 | INFO     | __main__:main:135 - STARTING data_prep.py
+2025-03-25 22:21:15.067 | INFO     | __main__:main:136 - ======================
+2025-03-25 22:21:15.068 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:21:15.068 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:21:15.069 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:21:15.070 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:21:15.107 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 22:21:15.108 | INFO     | __main__:clean_products:59 - ========================
+2025-03-25 22:21:15.108 | INFO     | __main__:clean_products:60 - Starting PRODUCTS prep
+2025-03-25 22:21:15.109 | INFO     | __main__:clean_products:61 - ========================
+2025-03-25 22:21:15.110 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv.
+2025-03-25 22:21:15.130 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 22:21:15.131 | INFO     | __main__:clean_sales:102 - ========================
+2025-03-25 22:21:15.132 | INFO     | __main__:clean_sales:103 - Starting SALES prep
+2025-03-25 22:21:15.132 | INFO     | __main__:clean_sales:104 - ========================
+2025-03-25 22:21:15.133 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\sales_data.csv.
+2025-03-25 22:21:15.155 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\sales_data_prepared.csv
+2025-03-25 22:21:15.156 | INFO     | __main__:main:142 - ======================
+2025-03-25 22:21:15.156 | INFO     | __main__:main:143 - FINISHED data_prep.py
+2025-03-25 22:21:15.157 | INFO     | __main__:main:144 - ======================
+2025-03-25 22:26:40.353 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:26:40.355 | INFO     | __main__:main:153 - ======================
+2025-03-25 22:26:40.356 | INFO     | __main__:main:154 - STARTING data_prep.py
+2025-03-25 22:26:40.356 | INFO     | __main__:main:155 - ======================
+2025-03-25 22:26:40.357 | INFO     | __main__:clean_customers:66 - ========================
+2025-03-25 22:26:40.357 | INFO     | __main__:clean_customers:67 - Starting CUSTOMERS prep
+2025-03-25 22:26:40.358 | INFO     | __main__:clean_customers:68 - ========================
+2025-03-25 22:26:40.358 | INFO     | __main__:read_raw_data:49 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:28:56.786 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:28:56.789 | INFO     | __main__:main:133 - ======================
+2025-03-25 22:28:56.789 | INFO     | __main__:main:134 - STARTING data_prep.py
+2025-03-25 22:28:56.789 | INFO     | __main__:main:135 - ======================
+2025-03-25 22:28:56.790 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:28:56.791 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:28:56.792 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:28:56.792 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:30:21.135 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:32:17.281 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:32:17.284 | INFO     | __main__:main:134 - ======================
+2025-03-25 22:32:17.285 | INFO     | __main__:main:135 - STARTING data_prep.py
+2025-03-25 22:32:17.285 | INFO     | __main__:main:136 - ======================
+2025-03-25 22:32:17.286 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:32:17.286 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:32:17.287 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:32:17.287 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:32:17.310 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 22:32:17.314 | INFO     | __main__:clean_products:72 - ========================
+2025-03-25 22:32:17.317 | INFO     | __main__:clean_products:73 - Starting PRODUCTS prep
+2025-03-25 22:32:17.318 | INFO     | __main__:clean_products:74 - ========================
+2025-03-25 22:32:17.319 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv.
+2025-03-25 22:34:48.875 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:34:48.878 | INFO     | __main__:main:132 - ======================
+2025-03-25 22:34:48.878 | INFO     | __main__:main:133 - STARTING data_prep.py
+2025-03-25 22:34:48.878 | INFO     | __main__:main:134 - ======================
+2025-03-25 22:34:48.879 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:34:48.879 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:34:48.879 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:34:48.880 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:35:06.097 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:35:06.100 | INFO     | __main__:main:132 - ======================
+2025-03-25 22:35:06.100 | INFO     | __main__:main:133 - STARTING data_prep.py
+2025-03-25 22:35:06.100 | INFO     | __main__:main:134 - ======================
+2025-03-25 22:35:06.101 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:35:06.101 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:35:06.101 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:35:06.101 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:37:07.059 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:37:07.061 | INFO     | __main__:main:132 - ======================
+2025-03-25 22:37:07.062 | INFO     | __main__:main:133 - STARTING data_prep.py
+2025-03-25 22:37:07.063 | INFO     | __main__:main:134 - ======================
+2025-03-25 22:37:07.063 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:37:07.064 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:37:07.064 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:37:07.064 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:38:48.131 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:38:48.134 | INFO     | __main__:main:132 - ======================
+2025-03-25 22:38:48.134 | INFO     | __main__:main:133 - STARTING data_prep.py
+2025-03-25 22:38:48.134 | INFO     | __main__:main:134 - ======================
+2025-03-25 22:38:48.134 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:38:48.135 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:38:48.135 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:38:48.136 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:40:23.875 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:40:23.877 | INFO     | __main__:main:141 - ======================
+2025-03-25 22:40:23.877 | INFO     | __main__:main:142 - STARTING data_prep.py
+2025-03-25 22:40:23.878 | INFO     | __main__:main:143 - ======================
+2025-03-25 22:40:23.878 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:40:23.878 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:40:23.879 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:40:23.879 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:40:23.898 | WARNING  | __main__:clean_customers:66 - Consistency check failed: Data still contains null values after cleaning.
+2025-03-25 22:40:23.902 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 22:40:23.902 | INFO     | __main__:clean_products:71 - ========================
+2025-03-25 22:40:23.903 | INFO     | __main__:clean_products:72 - Starting PRODUCTS prep
+2025-03-25 22:40:23.903 | INFO     | __main__:clean_products:73 - ========================
+2025-03-25 22:40:23.904 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv.
+2025-03-25 22:40:23.916 | WARNING  | __main__:clean_products:101 - Consistency check failed: Data still contains null values after cleaning.
+2025-03-25 22:40:23.920 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 22:40:23.921 | INFO     | __main__:clean_sales:106 - ========================
+2025-03-25 22:40:23.921 | INFO     | __main__:clean_sales:107 - Starting SALES prep
+2025-03-25 22:40:23.921 | INFO     | __main__:clean_sales:108 - ========================
+2025-03-25 22:40:23.922 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\sales_data.csv.
+2025-03-25 22:40:23.939 | WARNING  | __main__:clean_sales:136 - Consistency check failed: Data still contains null values after cleaning.
+2025-03-25 22:40:23.942 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\sales_data_prepared.csv
+2025-03-25 22:40:23.943 | INFO     | __main__:main:149 - ======================
+2025-03-25 22:40:23.943 | INFO     | __main__:main:150 - FINISHED data_prep.py
+2025-03-25 22:40:23.943 | INFO     | __main__:main:151 - ======================
+2025-03-25 22:42:51.544 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:42:51.547 | INFO     | __main__:main:158 - ======================
+2025-03-25 22:42:51.547 | INFO     | __main__:main:159 - STARTING data_prep.py
+2025-03-25 22:42:51.548 | INFO     | __main__:main:160 - ======================
+2025-03-25 22:42:51.548 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:42:51.549 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:42:51.549 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:42:51.550 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:42:51.557 | INFO     | __main__:clean_customers:45 - Initial customers data shape: (14, 6)
+2025-03-25 22:42:51.565 | INFO     | __main__:clean_customers:52 - Dropping rows with missing critical fields (CustomerID, Name)...
+2025-03-25 22:42:51.567 | INFO     | __main__:clean_customers:57 - Fixing negative LoyaltyPoints...
+2025-03-25 22:42:51.569 | INFO     | __main__:clean_customers:62 - Correcting name typos and replacing unknown/missing names...
+2025-03-25 22:42:51.571 | INFO     | __main__:clean_customers:69 - Final customers data shape: (13, 6)
+2025-03-25 22:45:09.024 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:45:09.027 | INFO     | __main__:main:164 - ======================
+2025-03-25 22:45:09.027 | INFO     | __main__:main:165 - STARTING data_prep.py
+2025-03-25 22:45:09.027 | INFO     | __main__:main:166 - ======================
+2025-03-25 22:45:09.028 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:45:09.028 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:45:09.029 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:45:09.029 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:45:09.035 | INFO     | __main__:clean_customers:45 - Initial customers data shape: (14, 6)
+2025-03-25 22:45:09.043 | INFO     | __main__:clean_customers:52 - Dropping rows with missing CustomerID or Name...
+2025-03-25 22:45:09.046 | INFO     | __main__:clean_customers:57 - Fixing negative LoyaltyPoints...
+2025-03-25 22:45:09.053 | INFO     | __main__:clean_customers:63 - Replacing missing names and correcting typos...
+2025-03-25 22:45:09.057 | INFO     | __main__:clean_customers:71 - Null counts after cleaning:
+CustomerID                0
+Name                      0
+Region                    0
+JoinDate                  0
+LoyaltyPoints             0
+PreferredContactMethod    0
+dtype: int64
+2025-03-25 22:45:09.064 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 22:45:09.064 | INFO     | __main__:clean_products:82 - ========================
+2025-03-25 22:45:09.065 | INFO     | __main__:clean_products:83 - Starting PRODUCTS prep
+2025-03-25 22:45:09.065 | INFO     | __main__:clean_products:84 - ========================
+2025-03-25 22:45:09.066 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv.
+2025-03-25 22:45:09.069 | INFO     | __main__:clean_products:87 - Initial products data shape: (10, 6)
+2025-03-25 22:45:09.074 | INFO     | __main__:clean_products:94 - Handling missing values and removing negative StockQuantity...
+2025-03-25 22:45:09.076 | INFO     | __main__:clean_products:102 - Filtering outliers in UnitPrice...
+2025-03-25 22:45:09.078 | INFO     | __main__:clean_products:108 - Correcting typos in Category column...
+2025-03-25 22:45:09.081 | INFO     | __main__:clean_products:117 - Null counts after cleaning:
+ProductID        0
+ProductName      0
+Category         0
+UnitPrice        0
+StockQuantity    0
+Supplier         0
+dtype: int64
+2025-03-25 22:45:09.084 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 22:45:09.085 | INFO     | __main__:clean_sales:124 - ========================
+2025-03-25 22:45:09.085 | INFO     | __main__:clean_sales:125 - Starting SALES prep
+2025-03-25 22:45:09.086 | INFO     | __main__:clean_sales:126 - ========================
+2025-03-25 22:45:09.086 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\sales_data.csv.
+2025-03-25 22:45:09.089 | INFO     | __main__:clean_sales:129 - Initial sales data shape: (96, 9)
+2025-03-25 22:45:09.092 | INFO     | __main__:clean_sales:136 - Handling missing values and invalid data in sales...
+2025-03-25 22:45:09.100 | INFO     | __main__:clean_sales:149 - Correcting typos in PaymentType column...
+2025-03-25 22:45:09.103 | INFO     | __main__:clean_sales:157 - Null counts after cleaning:
+TransactionID    0
+SaleDate         0
+CustomerID       0
+ProductID        0
+StoreID          0
+CampaignID       0
+SaleAmount       0
+BonusPoints      0
+PaymentType      0
+dtype: int64
+2025-03-25 22:47:28.685 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:47:28.687 | INFO     | __main__:main:163 - ======================
+2025-03-25 22:47:28.687 | INFO     | __main__:main:164 - STARTING data_prep.py
+2025-03-25 22:47:28.688 | INFO     | __main__:main:165 - ======================
+2025-03-25 22:47:28.688 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:47:28.688 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:47:28.688 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:47:28.688 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:47:28.693 | INFO     | __main__:clean_customers:45 - Initial customers data shape: (14, 6)
+2025-03-25 22:47:28.696 | INFO     | __main__:clean_customers:52 - Dropping rows with missing CustomerID or Name...
+2025-03-25 22:47:28.698 | INFO     | __main__:clean_customers:57 - Fixing negative LoyaltyPoints...
+2025-03-25 22:47:28.702 | INFO     | __main__:clean_customers:63 - Replacing missing names and correcting typos...
+2025-03-25 22:47:28.706 | INFO     | __main__:clean_customers:71 - Null counts after cleaning:
+CustomerID                0
+Name                      0
+Region                    0
+JoinDate                  0
+LoyaltyPoints             0
+PreferredContactMethod    0
+dtype: int64
+2025-03-25 22:47:28.716 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 22:47:28.716 | INFO     | __main__:clean_products:79 - ========================
+2025-03-25 22:47:28.717 | INFO     | __main__:clean_products:80 - Starting PRODUCTS prep
+2025-03-25 22:47:28.717 | INFO     | __main__:clean_products:81 - ========================
+2025-03-25 22:47:28.717 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv.
+2025-03-25 22:47:28.720 | INFO     | __main__:clean_products:84 - Initial products data shape: (10, 6)
+2025-03-25 22:47:28.723 | INFO     | __main__:clean_products:93 - Handling missing values and removing negative StockQuantity...
+2025-03-25 22:47:28.726 | INFO     | __main__:clean_products:101 - Filtering outliers in UnitPrice...
+2025-03-25 22:47:28.730 | INFO     | __main__:clean_products:106 - Correcting typos in Category column...
+2025-03-25 22:47:28.732 | INFO     | __main__:clean_products:115 - Null counts after cleaning:
+ProductID        0
+ProductName      0
+Category         0
+UnitPrice        0
+StockQuantity    1
+Supplier         0
+dtype: int64
+2025-03-25 22:49:06.285 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:49:06.287 | INFO     | __main__:main:94 - ======================
+2025-03-25 22:49:06.288 | INFO     | __main__:main:95 - STARTING data_prep.py
+2025-03-25 22:49:06.288 | INFO     | __main__:main:96 - ======================
+2025-03-25 22:49:06.289 | INFO     | __main__:clean_products:40 - ========================
+2025-03-25 22:49:06.289 | INFO     | __main__:clean_products:41 - Starting PRODUCTS prep
+2025-03-25 22:49:06.290 | INFO     | __main__:clean_products:42 - ========================
+2025-03-25 22:49:06.290 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv.
+2025-03-25 22:49:06.296 | INFO     | __main__:clean_products:45 - Initial products data shape: (10, 6)
+2025-03-25 22:49:06.299 | INFO     | __main__:clean_products:50 - Removed duplicates, new shape: (10, 6)
+2025-03-25 22:49:06.299 | INFO     | __main__:clean_products:53 - Handling null values in each column...
+2025-03-25 22:49:06.387 | INFO     | __main__:clean_products:66 - Filtering UnitPrice outliers...
+2025-03-25 22:49:06.391 | INFO     | __main__:clean_products:78 - Null counts after cleaning:
+ProductID        0
+ProductName      0
+Category         0
+UnitPrice        0
+StockQuantity    0
+Supplier         0
+dtype: int64
+2025-03-25 22:49:06.397 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 22:49:06.400 | INFO     | __main__:main:100 - ======================
+2025-03-25 22:49:06.401 | INFO     | __main__:main:101 - FINISHED data_prep.py
+2025-03-25 22:49:06.402 | INFO     | __main__:main:102 - ======================
+2025-03-25 22:49:20.185 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:49:20.188 | INFO     | __main__:main:94 - ======================
+2025-03-25 22:49:20.188 | INFO     | __main__:main:95 - STARTING data_prep.py
+2025-03-25 22:49:20.189 | INFO     | __main__:main:96 - ======================
+2025-03-25 22:49:20.190 | INFO     | __main__:clean_products:40 - ========================
+2025-03-25 22:49:20.190 | INFO     | __main__:clean_products:41 - Starting PRODUCTS prep
+2025-03-25 22:49:20.191 | INFO     | __main__:clean_products:42 - ========================
+2025-03-25 22:49:20.191 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv.
+2025-03-25 22:49:20.197 | INFO     | __main__:clean_products:45 - Initial products data shape: (10, 6)
+2025-03-25 22:49:20.202 | INFO     | __main__:clean_products:50 - Removed duplicates, new shape: (10, 6)
+2025-03-25 22:49:20.203 | INFO     | __main__:clean_products:53 - Handling null values in each column...
+2025-03-25 22:49:20.211 | INFO     | __main__:clean_products:66 - Filtering UnitPrice outliers...
+2025-03-25 22:49:20.216 | INFO     | __main__:clean_products:78 - Null counts after cleaning:
+ProductID        0
+ProductName      0
+Category         0
+UnitPrice        0
+StockQuantity    0
+Supplier         0
+dtype: int64
+2025-03-25 22:49:20.222 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 22:49:20.222 | INFO     | __main__:main:100 - ======================
+2025-03-25 22:49:20.223 | INFO     | __main__:main:101 - FINISHED data_prep.py
+2025-03-25 22:49:20.223 | INFO     | __main__:main:102 - ======================
+2025-03-25 22:55:58.824 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 22:55:58.827 | INFO     | __main__:main:168 - ======================
+2025-03-25 22:55:58.827 | INFO     | __main__:main:169 - STARTING data_prep.py
+2025-03-25 22:55:58.828 | INFO     | __main__:main:170 - ======================
+2025-03-25 22:55:58.829 | INFO     | __main__:clean_customers:40 - ========================
+2025-03-25 22:55:58.830 | INFO     | __main__:clean_customers:41 - Starting CUSTOMERS prep
+2025-03-25 22:55:58.830 | INFO     | __main__:clean_customers:42 - ========================
+2025-03-25 22:55:58.831 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 22:55:58.838 | INFO     | __main__:clean_customers:45 - Initial customers data shape: (14, 6)
+2025-03-25 22:55:58.847 | INFO     | __main__:clean_customers:52 - Dropping rows with missing CustomerID or Name...
+2025-03-25 22:55:58.850 | INFO     | __main__:clean_customers:57 - Fixing negative LoyaltyPoints...
+2025-03-25 22:55:58.853 | INFO     | __main__:clean_customers:62 - Replacing missing names and correcting typos...
+2025-03-25 22:55:58.855 | INFO     | __main__:clean_customers:70 - Consolidating duplicate names and combining LoyaltyPoints...
+2025-03-25 22:55:58.912 | INFO     | __main__:clean_customers:79 - Null counts after cleaning:
+Name             0
+CustomerID       0
+LoyaltyPoints    0
+JoinDate         0
+dtype: int64
+2025-03-25 22:55:58.916 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 22:55:58.917 | INFO     | __main__:clean_products:88 - ========================
+2025-03-25 22:55:58.917 | INFO     | __main__:clean_products:89 - Starting PRODUCTS prep
+2025-03-25 22:55:58.918 | INFO     | __main__:clean_products:90 - ========================
+2025-03-25 22:55:58.918 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv.
+2025-03-25 22:55:58.921 | INFO     | __main__:clean_products:93 - Initial products data shape: (10, 6)
+2025-03-25 22:55:58.924 | INFO     | __main__:clean_products:98 - Removed duplicates, new shape: (10, 6)
+2025-03-25 22:55:58.931 | INFO     | __main__:clean_products:112 - Filtering UnitPrice outliers...
+2025-03-25 22:55:58.934 | INFO     | __main__:clean_products:126 - Null counts after cleaning:
+ProductID        0
+ProductName      0
+Category         0
+UnitPrice        0
+StockQuantity    0
+Supplier         0
+dtype: int64
+2025-03-25 22:55:58.939 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 22:55:58.939 | INFO     | __main__:clean_sales:135 - ========================
+2025-03-25 22:55:58.940 | INFO     | __main__:clean_sales:136 - Starting SALES prep
+2025-03-25 22:55:58.940 | INFO     | __main__:clean_sales:137 - ========================
+2025-03-25 22:55:58.941 | INFO     | __main__:read_raw_data:23 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\sales_data.csv.
+2025-03-25 22:55:58.943 | INFO     | __main__:clean_sales:140 - Initial sales data shape: (96, 9)
+2025-03-25 22:55:58.947 | INFO     | __main__:clean_sales:147 - Handling missing values and invalid BonusPoints...
+2025-03-25 22:55:58.960 | INFO     | __main__:clean_sales:159 - Null counts after cleaning:
+TransactionID    0
+SaleDate         0
+CustomerID       0
+ProductID        0
+StoreID          0
+CampaignID       0
+SaleAmount       0
+BonusPoints      0
+PaymentType      2
+dtype: int64
+2025-03-25 23:00:53.308 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 23:00:53.311 | INFO     | __main__:main:173 - ======================
+2025-03-25 23:00:53.311 | INFO     | __main__:main:174 - STARTING data_prep.py
+2025-03-25 23:00:53.311 | INFO     | __main__:main:175 - ======================
+2025-03-25 23:00:53.312 | INFO     | __main__:clean_customers:43 - ========================
+2025-03-25 23:00:53.312 | INFO     | __main__:clean_customers:44 - Starting CUSTOMERS prep
+2025-03-25 23:00:53.313 | INFO     | __main__:clean_customers:45 - ========================
+2025-03-25 23:00:53.314 | INFO     | __main__:read_raw_data:24 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 23:00:53.320 | INFO     | __main__:clean_customers:48 - Initial customers data shape: (14, 6)
+2025-03-25 23:00:53.325 | INFO     | __main__:clean_customers:55 - Dropping rows with missing CustomerID or Name...
+2025-03-25 23:00:53.327 | INFO     | __main__:clean_customers:60 - Fixing LoyaltyPoints...
+2025-03-25 23:00:53.329 | INFO     | __main__:clean_customers:65 - Replacing missing names and correcting typos...
+2025-03-25 23:00:53.331 | INFO     | __main__:clean_customers:73 - Consolidating duplicate names and combining LoyaltyPoints...
+2025-03-25 23:00:53.336 | INFO     | __main__:clean_customers:82 - Null counts after cleaning:
+Name             0
+CustomerID       0
+LoyaltyPoints    0
+JoinDate         0
+dtype: int64
+2025-03-25 23:00:53.341 | INFO     | __main__:save_prepared_data:38 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 23:00:53.341 | INFO     | __main__:clean_products:92 - ========================
+2025-03-25 23:00:53.342 | INFO     | __main__:clean_products:93 - Starting PRODUCTS prep
+2025-03-25 23:00:53.342 | INFO     | __main__:clean_products:94 - ========================
+2025-03-25 23:00:53.342 | INFO     | __main__:read_raw_data:24 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv.
+2025-03-25 23:00:53.345 | INFO     | __main__:clean_products:97 - Initial products data shape: (10, 6)
+2025-03-25 23:00:53.348 | INFO     | __main__:clean_products:102 - Removed duplicates, new shape: (10, 6)
+2025-03-25 23:00:53.352 | INFO     | __main__:clean_products:116 - Filtering UnitPrice outliers...
+2025-03-25 23:00:53.356 | INFO     | __main__:clean_products:129 - Null counts after cleaning:
+ProductID        0
+ProductName      0
+Category         0
+UnitPrice        0
+StockQuantity    0
+Supplier         0
+dtype: int64
+2025-03-25 23:04:22.896 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 23:04:22.899 | INFO     | __main__:main:149 - ======================
+2025-03-25 23:04:22.899 | INFO     | __main__:main:150 - STARTING data_prep.py
+2025-03-25 23:04:22.900 | INFO     | __main__:main:151 - ======================
+2025-03-25 23:04:22.900 | INFO     | __main__:clean_customers:41 - ========================
+2025-03-25 23:04:22.900 | INFO     | __main__:clean_customers:42 - Starting CUSTOMERS prep
+2025-03-25 23:04:22.901 | INFO     | __main__:clean_customers:43 - ========================
+2025-03-25 23:04:22.901 | INFO     | __main__:read_raw_data:22 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\customers_data.csv.
+2025-03-25 23:04:22.909 | INFO     | __main__:clean_customers:46 - Initial customers data shape: (14, 6)
+2025-03-25 23:04:22.932 | INFO     | __main__:save_prepared_data:36 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 23:04:22.933 | INFO     | __main__:clean_products:82 - ========================
+2025-03-25 23:04:22.934 | INFO     | __main__:clean_products:83 - Starting PRODUCTS prep
+2025-03-25 23:04:22.934 | INFO     | __main__:clean_products:84 - ========================
+2025-03-25 23:04:22.934 | INFO     | __main__:read_raw_data:22 - Reading raw data from C:\Projects\smart-store-kiruthikaa\data\raw\products_data.csv.
+2025-03-25 23:04:22.937 | INFO     | __main__:clean_products:87 - Initial products data shape: (10, 6)
+2025-03-25 23:06:17.549 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 23:06:17.551 | INFO     | __main__:main:59 - ======================
+2025-03-25 23:06:17.552 | INFO     | __main__:main:60 - STARTING data_prep.py
+2025-03-25 23:06:17.552 | INFO     | __main__:main:61 - ======================
+2025-03-25 23:06:17.553 | INFO     | __main__:main:63 - ========================
+2025-03-25 23:06:17.553 | INFO     | __main__:main:64 - Starting CUSTOMERS prep
+2025-03-25 23:06:17.554 | INFO     | __main__:main:65 - ========================
+2025-03-25 23:06:17.600 | INFO     | __main__:save_prepared_data:55 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 23:06:17.601 | INFO     | __main__:main:85 - ========================
+2025-03-25 23:06:17.601 | INFO     | __main__:main:86 - Starting PRODUCTS prep
+2025-03-25 23:06:17.602 | INFO     | __main__:main:87 - ========================
+2025-03-25 23:15:44.883 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 23:15:44.886 | INFO     | __main__:main:108 - ======================
+2025-03-25 23:15:44.886 | INFO     | __main__:main:109 - STARTING data_prep.py
+2025-03-25 23:15:44.886 | INFO     | __main__:main:110 - ======================
+2025-03-25 23:15:44.886 | INFO     | __main__:main:113 - ========================
+2025-03-25 23:15:44.887 | INFO     | __main__:main:114 - Starting CUSTOMERS prep
+2025-03-25 23:15:44.887 | INFO     | __main__:main:115 - ========================
+2025-03-25 23:15:44.924 | INFO     | __main__:save_prepared_data:41 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 23:15:44.924 | INFO     | __main__:main:121 - ========================
+2025-03-25 23:15:44.925 | INFO     | __main__:main:122 - Starting PRODUCTS prep
+2025-03-25 23:15:44.925 | INFO     | __main__:main:123 - ========================
+2025-03-25 23:18:29.428 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 23:18:29.430 | INFO     | __main__:main:111 - ======================
+2025-03-25 23:18:29.431 | INFO     | __main__:main:112 - STARTING data_prep.py
+2025-03-25 23:18:29.431 | INFO     | __main__:main:113 - ======================
+2025-03-25 23:18:29.432 | INFO     | __main__:main:116 - Processing CUSTOMERS data
+2025-03-25 23:18:29.457 | INFO     | __main__:save_prepared_data:44 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 23:18:29.458 | INFO     | __main__:main:122 - Processing PRODUCTS data
+2025-03-25 23:23:08.563 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 23:23:08.566 | INFO     | __main__:main:132 - === STARTING DATA PREP ===
+2025-03-25 23:23:08.573 | INFO     | __main__:read_raw_data:29 - Successfully read customers_data.csv.
+2025-03-25 23:23:08.598 | INFO     | __main__:clean_customers_data:74 - Cleaned customers data: 12 rows remain.
+2025-03-25 23:23:08.602 | INFO     | __main__:save_prepared_data:43 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 23:23:08.606 | INFO     | __main__:read_raw_data:29 - Successfully read products_data.csv.
+2025-03-25 23:23:08.611 | INFO     | __main__:clean_products_data:100 - Cleaned products data: 9 rows remain.
+2025-03-25 23:23:08.614 | INFO     | __main__:save_prepared_data:43 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 23:23:08.618 | INFO     | __main__:read_raw_data:29 - Successfully read sales_data.csv.
+2025-03-25 23:23:08.628 | INFO     | __main__:clean_sales_data:126 - Cleaned sales data: 92 rows remain.
+2025-03-25 23:23:08.631 | INFO     | __main__:save_prepared_data:43 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\sales_data_prepared.csv
+2025-03-25 23:23:08.632 | INFO     | __main__:main:149 - === DATA PREP FINISHED ===
+2025-03-25 23:28:10.048 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 23:28:10.050 | INFO     | __main__:main:122 - === STARTING DATA PREP ===
+2025-03-25 23:28:10.051 | INFO     | __main__:main:125 - Processing CUSTOMERS data...
+2025-03-25 23:28:10.059 | INFO     | __main__:read_raw_data:27 - Successfully read customers_data.csv.
+2025-03-25 23:28:10.083 | INFO     | __main__:clean_customers_data:66 - Cleaned customers data: 11 rows remain.
+2025-03-25 23:28:10.087 | INFO     | __main__:save_prepared_data:41 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 23:28:10.088 | INFO     | __main__:main:131 - Processing PRODUCTS data...
+2025-03-25 23:28:10.091 | INFO     | __main__:read_raw_data:27 - Successfully read products_data.csv.
+2025-03-25 23:28:10.096 | INFO     | __main__:clean_products_data:84 - Cleaned products data: 8 rows remain.
+2025-03-25 23:28:10.098 | INFO     | __main__:save_prepared_data:41 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 23:28:10.099 | INFO     | __main__:main:137 - Processing SALES data...
+2025-03-25 23:28:10.104 | INFO     | __main__:read_raw_data:27 - Successfully read sales_data.csv.
+2025-03-25 23:28:10.116 | INFO     | __main__:clean_sales_data:116 - Cleaned sales data: 92 rows remain.
+2025-03-25 23:28:10.119 | INFO     | __main__:save_prepared_data:41 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\sales_data_prepared.csv
+2025-03-25 23:28:10.119 | INFO     | __main__:main:142 - === DATA PREP FINISHED ===
+2025-03-25 23:34:07.346 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-25 23:34:07.348 | INFO     | __main__:main:121 - === STARTING DATA PREP ===
+2025-03-25 23:34:07.348 | INFO     | __main__:main:124 - Processing CUSTOMERS data...
+2025-03-25 23:34:07.351 | INFO     | __main__:read_raw_data:26 - Successfully read customers_data.csv.
+2025-03-25 23:34:07.358 | INFO     | __main__:clean_customers_data:65 - Cleaned customers data: 11 rows remain.
+2025-03-25 23:34:07.360 | INFO     | __main__:save_prepared_data:40 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-25 23:34:07.360 | INFO     | __main__:main:130 - Processing PRODUCTS data...
+2025-03-25 23:34:07.361 | INFO     | __main__:read_raw_data:26 - Successfully read products_data.csv.
+2025-03-25 23:34:07.364 | INFO     | __main__:clean_products_data:83 - Cleaned products data: 8 rows remain.
+2025-03-25 23:34:07.365 | INFO     | __main__:save_prepared_data:40 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-25 23:34:07.365 | INFO     | __main__:main:136 - Processing SALES data...
+2025-03-25 23:34:07.366 | INFO     | __main__:read_raw_data:26 - Successfully read sales_data.csv.
+2025-03-25 23:34:07.371 | INFO     | __main__:clean_sales_data:115 - Cleaned sales data: 92 rows remain.
+2025-03-25 23:34:07.372 | INFO     | __main__:save_prepared_data:40 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\sales_data_prepared.csv
+2025-03-25 23:34:07.372 | INFO     | __main__:main:141 - === DATA PREP FINISHED ===
+2025-03-26 00:25:29.511 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-26 00:25:29.513 | INFO     | __main__:main:148 - === STARTING DATA PREP ===
+2025-03-26 00:25:29.513 | INFO     | __main__:main:151 - Processing CUSTOMERS data...
+2025-03-26 00:25:29.516 | INFO     | __main__:read_raw_data:53 - Successfully read customers_data.csv.
+2025-03-26 00:25:29.523 | INFO     | __main__:clean_customers_data:92 - Cleaned customers data: 11 rows remain.
+2025-03-26 00:25:29.525 | INFO     | __main__:save_prepared_data:67 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\customers_data_prepared.csv
+2025-03-26 00:25:29.525 | INFO     | __main__:main:157 - Processing PRODUCTS data...
+2025-03-26 00:25:29.526 | INFO     | __main__:read_raw_data:53 - Successfully read products_data.csv.
+2025-03-26 00:25:29.529 | INFO     | __main__:clean_products_data:110 - Cleaned products data: 8 rows remain.
+2025-03-26 00:25:29.530 | INFO     | __main__:save_prepared_data:67 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\products_data_prepared.csv
+2025-03-26 00:25:29.531 | INFO     | __main__:main:163 - Processing SALES data...
+2025-03-26 00:25:29.532 | INFO     | __main__:read_raw_data:53 - Successfully read sales_data.csv.
+2025-03-26 00:25:29.538 | INFO     | __main__:clean_sales_data:142 - Cleaned sales data: 92 rows remain.
+2025-03-26 00:25:29.539 | INFO     | __main__:save_prepared_data:67 - Data saved to C:\Projects\smart-store-kiruthikaa\data\prepared\sales_data_prepared.csv
+2025-03-26 00:25:29.540 | INFO     | __main__:main:168 - === DATA PREP FINISHED ===
+2025-03-30 22:33:22.695 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-30 22:33:22.742 | INFO     | __main__:main:84 - Starting data warehouse creation...
+2025-03-30 22:33:22.769 | INFO     | __main__:create_dw:72 - Data warehouse schema created successfully.
+2025-03-30 22:33:22.770 | INFO     | __main__:main:86 - Data warehouse creation complete!
+2025-03-31 12:16:09.288 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-03-31 12:16:09.289 | INFO     | __main__:main:64 - Starting data warehouse creation...
+2025-03-31 12:16:09.296 | INFO     | __main__:create_dw:55 - Data warehouse schema created successfully.
+2025-03-31 12:16:09.296 | INFO     | __main__:main:66 - Data warehouse creation complete!
+2025-04-08 15:05:31.989 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
+2025-04-09 07:29:13,721 - ERROR - An error occurred during the ETL process: File not found: C:\Projects\smart-store-kiruthikaa\scripts\data\cleaned\customer_data_cleaned.csv
+2025-04-09 07:32:08,692 - ERROR - An error occurred during the ETL process: File not found: C:\Projects\smart-store-kiruthikaa\scripts\data\cleaned\customer_data_cleaned.csv

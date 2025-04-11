@@ -266,10 +266,6 @@ The star schema consists of:
 #### **Challenges Encountered**
 - **Column Mapping Issues**:
   -Certainly! Here's the modified section, focusing on the hardest challenge we encountered:
-
----
-
-#### **Challenges Encountered**
 - **Foreign Key Validation Issues**:
   - **Problem**: Ensuring that the `sale` fact table's foreign keys matched valid entries in the `customer` and `product` dimension tables was particularly challenging due to missing or invalid keys.
   - **Solution**: Validated relationships between tables and used surrogate keys (e.g., `-1`) for unknown values to maintain database integrity.
@@ -277,6 +273,49 @@ The star schema consists of:
   - Solution: Designed a star schema with as the fact table and dimension tables
 - **ETL Pipeline Misalignment**:
   - Solution:  implemented modular ETL steps to clean, validate, and load data correctly.   
+
+# Reporting with Power BI  - Week 5
+This week, I focused on creating dynamic and insightful visuals using Power BI, aimed at understanding sales trends and customer behavior effectively. My efforts were centered around building a dashboard that combines interactivity, clarity, and meaningful insights.
+
+### **Visuals Created**
+1. **Bar Chart for Top Customers**:
+   - Displays the top customers based on total spending. This is the only query used for this reporting activity. 
+   - Helps identify high-value customers who drive revenue.
+   - **Challenge Encountered**: While working on this visual, I faced a data aggregation challenge. To resolve this, I refined the query using Power Query's M language. I grouped data by customer names, aggregated their total spending, and sorted it in descending order to display only the top N customers. Here’s the solution:
+     ```m
+     let
+         GroupedData = Table.Group(SalesTable, {"Customer Name"}, {{"Total Spending", each List.Sum([Spending]), type number}}),
+         SortedData = Table.Sort(GroupedData, {{"Total Spending", Order.Descending}}),
+         TopCustomers = Table.FirstN(SortedData, 10)
+     in
+         TopCustomers
+     ```
+     Screenshot of Top_Customer Query. 
+     ![Model View](./images/Top_Customer_Query.png)
+
+   - **Outcome**: The bar chart dynamically displays the top 10 customers by spending, providing key insights at a glance.
+
+2. **Line Chart for Sales Trends**:
+   - Shows monthly sales trends across different product categories.
+   - Provides a detailed view of fluctuations in sales performance over time.
+
+3. **Slicer for Product Categories**:
+   - Enables interactive filtering by product categories like Clothing, Electronics, and Sports.
+   - Enhances the dashboard’s ability to focus on specific segments dynamically.
+
+![Interactive Dashboard](/images/Interactive%20_Dashboard.png)
+![Model View](./images/Model_View.png)
+
+### **Dashboard Explanation**
+The dashboard combines all visuals onto a single page for a cohesive and interactive experience:
+- **Bar Chart**: Positioned to highlight customer spending patterns. Useful for identifying customer behavior trends and revenue concentration.
+- **Line Chart**: Placed alongside the bar chart to visualize how sales evolve month-by-month across various categories.
+- **Product Category Slicer**: Located for easy access, allowing users to filter both charts interactively by specific product categories. This adds flexibility to analyze targeted segments.
+
+#### **Design Philosophy**
+- **Interactive Filtering**: The slicer provides real-time filtering, making it intuitive to zoom in on specific data points.
+- **Clear Insights**: Visuals are well-arranged to avoid clutter while ensuring accessibility to key insights.
+- **Functional Layout**: All components are unified on one page to provide a streamlined user experience.
 
 # Initialize the Git Repository
 git init  

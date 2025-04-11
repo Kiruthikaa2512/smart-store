@@ -1,49 +1,13 @@
-# Python-specific
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-
-# Virtual environments
-env/
-venv/
-
-# Logs and temporary files
-*.log
-*.tmp
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# OS-specific
-.DS_Store
-Thumbs.db
-
-# IDE and editor configs
-.vscode/
-.idea/
-
-# Git merge conflicts
-*.orig
-
-# Ignore environment files
-.env
-
-# Exclude datasets or large files, if any
-datasets/
-*.csv
-*.xlsx
-
-# Ignore compiled Python files
 *.so
-*.dll
 
-# Build outputs
-build/
-dist/
+# Virtual environment
+.venv/
 
-# Cache directories
-.cache/
+# Jupyter notebooks
+*.ipynb_checkpoints
 
-# Allow tracking of smart_sales.db
-!scripts/.venv/data/dw/smart_sales.db
+# macOS
+.DS_Store
