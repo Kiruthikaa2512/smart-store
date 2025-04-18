@@ -320,8 +320,7 @@ The dashboard combines all visuals onto a single page for a cohesive and interac
 
 # Smart Sales Insights: OLAP Module Weekly Summary  - Week 6
 
-## Section 1: Business Goals Explored This Week
-
+## 1. Business Goals
 This week, I explored **four key business goals** that reflect real-world retail performance analysis. Each goal was implemented step-by-step using Python and visualized using Matplotlib. Here's a breakdown of each:
 
 ### Goal 1: Sales Growth Over Time  
@@ -341,13 +340,13 @@ This week, I explored **four key business goals** that reflect real-world retail
 
 ---
 
-### Goal 3: Discount Impact Evaluation  
-**Objective:** Understand if offering discounts boosts sales.  
+### Goal 3: Bonus Points Evaluation  
+**Objective:** Understand if awarding bonus points encourages more sales. 
 **What I did:**  
-- Compared average sale amounts with and without discounts.
-- Visualized the difference using grouped bar charts.
-- Derived insight into whether discounting strategies are helping or hurting revenue.
-
+- Identified and filtered sales transactions associated with bonus point usage.
+- Compared average sale amounts and transaction counts between bonus point and non-bonus point purchases.
+- Visualized differences using grouped bar charts.
+- Derived insights into how effective the bonus points strategy is in driving customer engagement and increasing revenue.
 ---
 
 ### Goal 4: Anomalies in Sales Trends  
@@ -360,12 +359,21 @@ This week, I explored **four key business goals** that reflect real-world retail
 
 ---
 
-To achieve this I first chose to do the OLAP Cubing. 
+## Section 2. Data Source
+To achieve the analysis, I started by working directly with data from a data warehouse (smart_sales.db), a SQLite database file containing structured sales information. I chose to perform OLAP Cubing as the foundation for my insights.
+The cube was built using a SQL query that grouped and summarized data across different business dimensions. Specifically, I used the following columns from the respective tables:
+From the sale table: sale_date, sale_amount, paymenttype, sale_id
+**From the product table: category
+From the customer table: region**
+These columns were aggregated by month, region, product category, and payment type to compute two key measures:
+
+**Total Sales (SUM(sale_amount))
+Transaction Count (COUNT(sale_id))**
+
+The final output was saved as a CSV file and used as the base for further analysis.
 
 ## OLAP Cubing Summary
 To get a multi-dimensional view of sales performance, I implemented a basic OLAP cube-style summary using Python and pandas. In the OLAP cubing step, I first defined the database path (smart_sales.db) and the output CSV location (OLAP_Analysis/sales_cube.csv), then opened a connection to SQLite. I executed a single SQL query that groups sales by month (using STRFTIME('%Y-%m', sale_date)), region, product category and payment type—calculating both SUM(sale_amount) as total sales and COUNT(sale_id) as transaction count. After loading the result into a pandas DataFrame and printing the first five rows for verification, I closed the database connection, created the OLAP_Analysis folder if needed, and saved the full cube out to sales_cube.csv, finishing with a confirmation message.
-
-## Section 2: Data Source
 
 - **Database Name:** `smart_sales.db`  
 - **Location:** `C:/Projects/smart-store-kiruthikaa/data/dw/`  
@@ -374,11 +382,11 @@ To get a multi-dimensional view of sales performance, I implemented a basic OLAP
   - `sale_date` – date of sale  
   - `sale_amount` – revenue on that day  
   - `customer_id` (for loyalty goal)  
-  - `is_discounted` (for discount evaluation goal)
+  - `bonuspoints` (for bonuspoints evaluation goal)
 
 ---
 
-## 🛠️ Section 3: Tools Used
+## Section 3: Tools Used
 
 | Tool           | Purpose                              |
 |----------------|--------------------------------------|
@@ -389,14 +397,14 @@ To get a multi-dimensional view of sales performance, I implemented a basic OLAP
 
 ---
 
-## Section 4: Workflow Logic Overview
+## Section 4: Workflow & Logic
 
 All goals followed this general process:
 
 1. **Connect to the SQLite database** and pull necessary fields.
 2. **Convert dates** and organize the data using pandas.
 3. **Apply goal-specific logic**:
-   - Use `.groupby()` for customer and discount goals.
+   - Use `.groupby()` for customer and bonuspoints goals.
    - Use `.mean()` and `.std()` for anomaly detection.
 4. **Label or calculate metrics** as per the business question.
 5. **Visualize the result** using bar charts, line graphs, or scatter plots.
@@ -407,30 +415,55 @@ All goals followed this general process:
 ## Section 5: Results & Visualizations
 
 ### Goal 1: Sales Growth Over Time
-- Line chart showed that while there was general stability, some days had noticeable drops or spikes.
-- Helped recognize slower sales periods.
+### **Sales Growth Over Time**
+- **Objective**: Track trends in total sales over ten months from January 2024 to October 2024.
+- **Findings**:
+  - Sales fluctuated significantly, with periods of growth and decline.
+  - Highest sales (~20,000) occurred in **May 2024**, while the lowest sales (~5,000) were in **August 2024**.
+- **Insights**:
+  - Sales peaks could be tied to seasonal factors or successful marketing campaigns.
+- **Recommendations**:
+  - Investigate causes of the growth in May and replicate them during low-sales months like August.
   
   ![Model View](./images/1_sales_growth_overtime.png)
 
 
 ### Goal 2: Customer Loyalty
-- Many customers purchased only once.
-- A smaller group showed loyalty by returning multiple times — indicating potential for retention campaigns.
+### **Repeat Customers Purchase Count**
+- **Objective**: Analyze the number of purchases made by repeat customers.
+- **Findings**:
+  - Customer **1006** made the most purchases (12), while customer **1004** made the fewest (5).
+- **Insights**:
+  - Identifying top repeat customers can help prioritize loyalty programs.
+- **Recommendations**:
+  - Design tailored offers for customers with high purchase counts to sustain their engagement.
   
 ![Model View](./images/2_repeat_customers_analysis.png)
 
 
-### Goal 3: Discount Impact
-- Sales from discounted purchases were slightly higher, but not always significantly.
-- Indicated that not all discounts lead to better revenue — suggesting selective discounting might work better.
+### Goal 3: Bonus Points Impact Evaluation
+
+- **Objective**: Analyze the effect of bonus points on customer spending.
+- **Findings**:
+  - Customers in the **"0-99" range** show higher average spending (~1200) compared to those in the **"100-199" range** (~1000).
+- **Insights**:
+  - High bonus points don’t necessarily lead to increased spending.
+- **Recommendations**:
+  - Investigate redemption patterns and create campaigns targeting higher ranges to boost spending.
   
   ![Model View](./images/3_bonuspoints_impact_evaluation.png)
 
 
 ### Goal 4: Anomaly Detection
-- Clearly marked **high-performing days in red** and **underperforming days in green**.
-- Normal days were shown in blue for baseline comparison.
-- Helped quickly flag sales issues or investigate campaign impact.
+### **Sales Anomalies Evaluation**
+- **Objective**: Detect unusual spikes and dips in daily sales trends from January to October 2024.
+- **Findings**:
+  - **High anomalies** (red dots) occurred at sales peaks, indicating exceptional performance days.
+  - **Low anomalies** (green dots) marked sales troughs, highlighting underperforming days.
+- **Insights**:
+  - Anomalies could be tied to specific events, promotions, or seasonal fluctuations.
+- **Recommendations**:
+  - Investigate high anomaly days for repeatable success strategies and low anomaly days to address potential issues.
 
 ![Model View](./images/4_sales_anomaly_detection.png)
 ---
@@ -438,12 +471,23 @@ All goals followed this general process:
 ## Section 6: Suggested Business Actions
 
 Based on each goal’s results, here are suggested actions:
+### **Suggested Business Actions**
 
-- **Sales Growth:** Focus marketing during historically low-sale periods.
-- **Customer Loyalty:** Introduce loyalty programs or personalized offers to encourage repeat purchases.
-- **Discount Impact:** Review current discount strategies; consider testing smaller, targeted promotions.
-- **Anomalies:** Investigate low-sale days to find operational issues (e.g., supply problems, low footfall).
+1. **Sales Growth Over Time**:
+   - Focus marketing efforts during high-performing months like May 2024 to replicate success.
+   - Address low-performing months like August 2024 by introducing promotions or seasonal campaigns.
 
+2. **Repeat Customers Purchase Count**:
+   - Design loyalty programs to reward frequent customers like customer 1006.
+   - Target less active repeat customers (e.g., customer 1004) with personalized engagement strategies.
+
+3. **Bonus Points Impact Evaluation**:
+   - Optimize bonus point redemption policies to increase spending in higher point ranges.
+   - Investigate why customers with fewer bonus points spend more and realign incentives accordingly.
+
+4. **Sales Anomalies Evaluation**:
+   - Capitalize on patterns observed on high anomaly days by replicating promotions or events.
+   - Analyze low anomaly days to identify and resolve issues in product availability or marketing reach.
 ---
 
 ## Section 7: Challenges Faced
