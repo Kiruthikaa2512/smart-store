@@ -373,7 +373,8 @@ Transaction Count (COUNT(sale_id))**
 The final output was saved as a CSV file and used as the base for further analysis.
 
 ## OLAP Cubing Summary
-To get a multi-dimensional view of sales performance, I implemented a basic OLAP cube-style summary using Python and pandas. In the OLAP cubing step, I first defined the database path (smart_sales.db) and the output CSV location (OLAP_Analysis/sales_cube.csv), then opened a connection to SQLite. I executed a single SQL query that groups sales by month (using STRFTIME('%Y-%m', sale_date)), region, product category and payment type—calculating both SUM(sale_amount) as total sales and COUNT(sale_id) as transaction count. After loading the result into a pandas DataFrame and printing the first five rows for verification, I closed the database connection, created the OLAP_Analysis folder if needed, and saved the full cube out to sales_cube.csv, finishing with a confirmation message.
+To get a multi-dimensional view of sales performance, I implemented a basic OLAP cube-style summary using Python and pandas. In the OLAP cubing step, I first defined the database path (smart_sales.db) and the output CSV location (OLAP_Analysis/sales_cube.csv), then opened a connection to SQLite. I executed a single SQL query that groups sales by month (using STRFTIME('%Y-%m', sale_date)), region, product category and payment type—calculating both SUM(sale_amount) as total sales and COUNT(sale_id) as transaction count. After loading the result into a pandas DataFrame and printing the first five rows for verification, I closed the database connection, created the OLAP_Analysis folder if needed, and saved the full cube out to sales_cube.csv, finishing with a confirmation message. OLAP Cube is saved as CSV `C:/Projects/smart-store-kiruthikaa/scripts/OLAP/OLAP_Analysis/sales_cube.csv/`
+
 
 - **Database Name:** `smart_sales.db`  
 - **Location:** `C:/Projects/smart-store-kiruthikaa/data/dw/`  
