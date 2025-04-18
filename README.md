@@ -316,22 +316,15 @@ The dashboard combines all visuals onto a single page for a cohesive and interac
 - **Interactive Filtering**: The slicer provides real-time filtering, making it intuitive to zoom in on specific data points.
 - **Clear Insights**: Visuals are well-arranged to avoid clutter while ensuring accessibility to key insights.
 - **Functional Layout**: All components are unified on one page to provide a streamlined user experience.
-
-Absolutely! Here's your **fully integrated and enhanced README** with all the required sections, written from your perspective, and beginner-friendly yet professional.
-
 ---
 
-Got it, Kiruthikaa! Here's your full **README OLAP Module Summary** — covering **all four business goals** you explored this week, each broken down creatively and clearly, just like you asked. I’ve used simple and beginner-friendly language while keeping it professional and reflective of the great work you've done.
+# Smart Sales Insights: OLAP Module Weekly Summary  - Week 6
 
----
-
-# 📊 Smart Sales Insights: OLAP Module Weekly Summary  - Week 6
-
-## ✨ Section 1: Business Goals Explored This Week
+## Section 1: Business Goals Explored This Week
 
 This week, I explored **four key business goals** that reflect real-world retail performance analysis. Each goal was implemented step-by-step using Python and visualized using Matplotlib. Here's a breakdown of each:
 
-### 🌱 Goal 1: Sales Growth Over Time  
+### Goal 1: Sales Growth Over Time  
 **Objective:** Analyze how sales evolved over a period.  
 **What I did:**  
 - Tracked and visualized total daily sales across time.
@@ -339,7 +332,7 @@ This week, I explored **four key business goals** that reflect real-world retail
 
 ---
 
-### 🤝 Goal 2: Customer Loyalty Analysis  
+### Goal 2: Customer Loyalty Analysis  
 **Objective:** Measure repeat customer behavior.  
 **What I did:**  
 - Identified which customers came back more than once.
@@ -348,7 +341,7 @@ This week, I explored **four key business goals** that reflect real-world retail
 
 ---
 
-### 💰 Goal 3: Discount Impact Evaluation  
+### Goal 3: Discount Impact Evaluation  
 **Objective:** Understand if offering discounts boosts sales.  
 **What I did:**  
 - Compared average sale amounts with and without discounts.
@@ -357,7 +350,7 @@ This week, I explored **four key business goals** that reflect real-world retail
 
 ---
 
-### 🧪 Goal 4: Anomalies in Sales Trends  
+### Goal 4: Anomalies in Sales Trends  
 **Objective:** Spot unusually high or low sales days.  
 **What I did:**  
 - Calculated average sales and standard deviation.
@@ -372,7 +365,7 @@ To achieve this I first chose to do the OLAP Cubing.
 ## OLAP Cubing Summary
 To get a multi-dimensional view of sales performance, I implemented a basic OLAP cube-style summary using Python and pandas. In the OLAP cubing step, I first defined the database path (smart_sales.db) and the output CSV location (OLAP_Analysis/sales_cube.csv), then opened a connection to SQLite. I executed a single SQL query that groups sales by month (using STRFTIME('%Y-%m', sale_date)), region, product category and payment type—calculating both SUM(sale_amount) as total sales and COUNT(sale_id) as transaction count. After loading the result into a pandas DataFrame and printing the first five rows for verification, I closed the database connection, created the OLAP_Analysis folder if needed, and saved the full cube out to sales_cube.csv, finishing with a confirmation message.
 
-## 🗂️ Section 2: Data Source
+## Section 2: Data Source
 
 - **Database Name:** `smart_sales.db`  
 - **Location:** `C:/Projects/smart-store-kiruthikaa/data/dw/`  
@@ -396,7 +389,7 @@ To get a multi-dimensional view of sales performance, I implemented a basic OLAP
 
 ---
 
-## 🔁 Section 4: Workflow Logic Overview
+## Section 4: Workflow Logic Overview
 
 All goals followed this general process:
 
@@ -411,30 +404,30 @@ All goals followed this general process:
 
 ---
 
-## 📈 Section 5: Results & Visualizations
+## Section 5: Results & Visualizations
 
-### 📊 Goal 1: Sales Growth Over Time
+### Goal 1: Sales Growth Over Time
 - Line chart showed that while there was general stability, some days had noticeable drops or spikes.
 - Helped recognize slower sales periods.
   
   ![Model View](./images/1_sales_growth_overtime.png)
 
 
-### 👥 Goal 2: Customer Loyalty
+### Goal 2: Customer Loyalty
 - Many customers purchased only once.
 - A smaller group showed loyalty by returning multiple times — indicating potential for retention campaigns.
   
 ![Model View](./images/2_repeat_customers_analysis.png)
 
 
-### 💸 Goal 3: Discount Impact
+### Goal 3: Discount Impact
 - Sales from discounted purchases were slightly higher, but not always significantly.
 - Indicated that not all discounts lead to better revenue — suggesting selective discounting might work better.
   
   ![Model View](./images/3_bonuspoints_impact_evaluation.png)
 
 
-### 🚨 Goal 4: Anomaly Detection
+### Goal 4: Anomaly Detection
 - Clearly marked **high-performing days in red** and **underperforming days in green**.
 - Normal days were shown in blue for baseline comparison.
 - Helped quickly flag sales issues or investigate campaign impact.
@@ -442,7 +435,7 @@ All goals followed this general process:
 ![Model View](./images/4_sales_anomaly_detection.png)
 ---
 
-## 💡 Section 6: Suggested Business Actions
+## Section 6: Suggested Business Actions
 
 Based on each goal’s results, here are suggested actions:
 
@@ -453,7 +446,7 @@ Based on each goal’s results, here are suggested actions:
 
 ---
 
-## ⚠️ Section 7: Challenges Faced
+## Section 7: Challenges Faced
 
 During the week, I encountered a few challenges that helped me learn more deeply. At first, I struggled with how to detect anomalies properly. The logic around standard deviation and why it helps find "unusual" sales wasn’t very clear. To solve this, I went with a very simple approach using average ± 2 standard deviations and broke the logic into easy-to-follow steps.
 
