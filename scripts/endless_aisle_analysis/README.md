@@ -83,11 +83,13 @@ Analyzed **high-performing regions/products, return reasons, and loyalty-based p
 
 ### **Final Power BI Dashboard Groupings**  
 **Dashboard 1:** **Sales & Fulfillment Overview** (EA vs. Standard) 
-![Model View](./images/1_Endless Aisle Sales & Fulfillment Performance.png) 
+![Model View](./images/1_EA.png)
+
 **Dashboard 2:** **Loyalty-Based Revenue & Discount Impact** 
-![Model View](./images/2_ Customer Behavior & Loyalty Impact.png)  
+![Model View](./images/2_EA.png)
+
 **Dashboard 3:** **Operational Efficiency & Return Rate Analysis** 
-![Model View](./images/3_Endless Aisle Fulfillment_Operational Efficiency_ Delivery & Returns Breakdown.png)
+![Model View](./images/3_EA.png)
 
 ## **Section 6: Suggested Business Actions**  
 ✔ **Optimize fulfillment logistics** in high-delay regions to **reduce return rates.**  
