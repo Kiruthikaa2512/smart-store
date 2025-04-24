@@ -82,9 +82,12 @@ Analyzed **high-performing regions/products, return reasons, and loyalty-based p
 ✔ **Bulk preorders via Endless Aisle spike seasonal sales but require refined logistics planning.**  
 
 ### **Final Power BI Dashboard Groupings**  
-**Dashboard 1:** **Sales & Fulfillment Overview** (EA vs. Standard) ![Model View](./images/2_repeat_customers_analysis.png) 
-**Dashboard 2:** **Loyalty-Based Revenue & Discount Impact**  
-**Dashboard 3:** **Operational Efficiency & Return Rate Analysis**  
+**Dashboard 1:** **Sales & Fulfillment Overview** (EA vs. Standard) 
+![Model View](./images/1_Endless Aisle Sales & Fulfillment Performance.png) 
+**Dashboard 2:** **Loyalty-Based Revenue & Discount Impact** 
+![Model View](./images/2_ Customer Behavior & Loyalty Impact.png)  
+**Dashboard 3:** **Operational Efficiency & Return Rate Analysis** 
+![Model View](./images/3_Endless Aisle Fulfillment_Operational Efficiency_ Delivery & Returns Breakdown.png)
 
 ## **Section 6: Suggested Business Actions**  
 ✔ **Optimize fulfillment logistics** in high-delay regions to **reduce return rates.**  
