@@ -1,0 +1,10 @@
+2025-04-20 19:40:08,175 - INFO - Customers with zero loyalty points: 0
+2025-04-20 19:40:08,179 - INFO - Fulfillment type distribution:
+  fulfillment_type  count
+0              POS     92
+2025-04-20 19:40:08,187 - INFO - Discount amount stats:
+   min  max  avg
+0  0.0  0.0  0.0
+2025-04-20 19:40:08,187 - INFO - Repeat customer stats:
+   is_repeat_customer  count
+0                   1     92

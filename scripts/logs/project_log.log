@@ -487,3 +487,261 @@ dtype: int64
 2025-04-08 15:05:31.989 | INFO     | utils.logger:<module>:39 - Logging to file: logs\project_log.log
 2025-04-09 07:29:13,721 - ERROR - An error occurred during the ETL process: File not found: C:\Projects\smart-store-kiruthikaa\scripts\data\cleaned\customer_data_cleaned.csv
 2025-04-09 07:32:08,692 - ERROR - An error occurred during the ETL process: File not found: C:\Projects\smart-store-kiruthikaa\scripts\data\cleaned\customer_data_cleaned.csv
+2025-04-20 16:50:28,284 - INFO - Project root: C:\Projects\smart-store-kiruthikaa
+2025-04-20 16:50:28,284 - INFO - Database path: C:\Projects\smart-store-kiruthikaa\data\smart_sales.db
+2025-04-20 16:50:28,284 - INFO - Cleaned data directory: C:\Projects\smart-store-kiruthikaa\data\cleaned
+2025-04-20 16:50:28,300 - INFO - Created table: customer
+2025-04-20 16:50:28,312 - INFO - Created table: product
+2025-04-20 16:50:28,323 - INFO - Created table: sale
+2025-04-20 16:50:28,323 - INFO - Loading data from: C:\Projects\smart-store-kiruthikaa\data\cleaned\customer_data_cleaned.csv
+2025-04-20 16:50:28,329 - INFO - Inserting 11 rows into customer
+2025-04-20 16:50:28,336 - INFO - Total rows in customer: 11
+2025-04-20 16:50:28,336 - INFO - Loading data from: C:\Projects\smart-store-kiruthikaa\data\cleaned\product_data_cleaned.csv
+2025-04-20 16:50:28,339 - INFO - Inserting 7 rows into product
+2025-04-20 16:50:28,345 - INFO - Total rows in product: 7
+2025-04-20 16:50:28,345 - INFO - Loading data from: C:\Projects\smart-store-kiruthikaa\data\cleaned\sale_data_cleaned.csv
+2025-04-20 16:50:28,348 - INFO - Inserting 92 rows into sale
+2025-04-20 16:50:28,350 - ERROR - Error inserting into sale: FOREIGN KEY constraint failed
+2025-04-20 16:50:28,351 - CRITICAL - ETL process failed: FOREIGN KEY constraint failed
+2025-04-20 16:50:28,351 - INFO - Database connection closed
+2025-04-20 16:54:57,366 - INFO - Starting ETL for Endless Aisle Impact Analysis
+2025-04-20 16:54:57,367 - ERROR - ETL failed: name 'create_tables' is not defined
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 216, in <module>
+    create_tables(cursor)
+NameError: name 'create_tables' is not defined
+2025-04-20 16:56:59,001 - INFO - Starting ETL for Endless Aisle Impact Analysis
+2025-04-20 16:56:59,002 - INFO - ETL completed successfully with Endless Aisle analytics columns
+2025-04-20 17:00:26,992 - INFO - Starting ETL for Endless Aisle Impact Analysis
+2025-04-20 17:00:26,993 - INFO - ETL completed successfully with Endless Aisle analytics columns
+2025-04-20 17:11:27,536 - INFO - Starting ETL Process
+2025-04-20 17:11:27,590 - INFO - Table 'customer' ready.
+2025-04-20 17:11:27,597 - INFO - Table 'product' ready.
+2025-04-20 17:11:27,606 - INFO - Table 'sale' ready.
+2025-04-20 17:11:27,616 - ERROR - ETL process failed: table customer has no column named LoyaltyPoints
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 180, in <module>
+    inject_data(table_name, df, conn)
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 158, in inject_data
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+sqlite3.OperationalError: table customer has no column named LoyaltyPoints
+2025-04-20 17:13:42,183 - INFO - Starting ETL Process
+2025-04-20 17:13:42,242 - INFO - Created table 'customer' with columns: ['customer_id', 'name', 'email', 'gender', 'age', 'city', 'region', 'join_date', 'loyalty_points', 'preferred_contact_method']
+2025-04-20 17:13:42,250 - ERROR - Error loading customer data: Missing columns in customer data: {'Email', 'City', 'Gender', 'Age'}
+2025-04-20 17:13:42,250 - ERROR - ETL failed: Missing columns in customer data: {'Email', 'City', 'Gender', 'Age'}
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 174, in <module>
+    df = load_and_prepare_data(table_name)
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 111, in load_and_prepare_data
+    raise ValueError(f"Missing columns in {table_name} data: {missing_cols}")
+ValueError: Missing columns in customer data: {'Email', 'City', 'Gender', 'Age'}
+2025-04-20 17:14:17,742 - INFO - Starting ETL Process
+2025-04-20 17:14:17,796 - INFO - Added missing column 'CustomerID' to 'customer'
+2025-04-20 17:14:17,803 - INFO - Added missing column 'JoinDate' to 'customer'
+2025-04-20 17:14:17,809 - INFO - Added missing column 'LoyaltyPoints' to 'customer'
+2025-04-20 17:14:17,820 - INFO - Added missing column 'PreferredContactMethod' to 'customer'
+2025-04-20 17:14:17,830 - INFO - Added missing column 'ProductID' to 'product'
+2025-04-20 17:14:17,838 - INFO - Added missing column 'ProductName' to 'product'
+2025-04-20 17:14:17,845 - INFO - Added missing column 'UnitPrice' to 'product'
+2025-04-20 17:14:17,854 - INFO - Added missing column 'StockQuantity' to 'product'
+2025-04-20 17:14:17,862 - INFO - Added missing column 'SaleID' to 'sale'
+2025-04-20 17:14:17,870 - INFO - Added missing column 'CustomerID' to 'sale'
+2025-04-20 17:14:17,870 - INFO - Added missing column 'ProductID' to 'sale'
+2025-04-20 17:14:17,885 - INFO - Added missing column 'StoreID' to 'sale'
+2025-04-20 17:14:17,890 - INFO - Added missing column 'CampaignID' to 'sale'
+2025-04-20 17:14:17,895 - INFO - Added missing column 'SaleAmount' to 'sale'
+2025-04-20 17:14:17,897 - INFO - Added missing column 'BonusPoints' to 'sale'
+2025-04-20 17:14:17,907 - INFO - Added missing column 'PaymentType' to 'sale'
+2025-04-20 17:14:17,912 - INFO - Added missing column 'FulfillmentType' to 'sale'
+2025-04-20 17:14:17,918 - INFO - Added missing column 'SalesChannel' to 'sale'
+2025-04-20 17:14:17,924 - INFO - Added missing column 'OrderStatus' to 'sale'
+2025-04-20 17:14:17,929 - INFO - Added missing column 'DiscountAmount' to 'sale'
+2025-04-20 17:14:17,936 - INFO - Added missing column 'IsEndlessAisle' to 'sale'
+2025-04-20 17:14:17,942 - INFO - Added missing column 'AdjustedSalesPerformance' to 'sale'
+2025-04-20 17:14:17,956 - INFO - Data inserted into 'customer' successfully.
+2025-04-20 17:14:17,965 - INFO - Data inserted into 'product' successfully.
+2025-04-20 17:14:17,972 - ERROR - ETL process failed: table sale has no column named transactionid
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 184, in <module>
+    inject_data(table_name, df, conn)
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 162, in inject_data
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+sqlite3.OperationalError: table sale has no column named transactionid
+2025-04-20 17:15:51,791 - INFO - Starting ETL Process
+2025-04-20 17:15:51,843 - INFO - Added missing column 'TransactionID' to 'sale'
+2025-04-20 17:15:51,849 - ERROR - ETL process failed: UNIQUE constraint failed: customer.customer_id
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 188, in <module>
+    inject_data(table_name, df, conn)
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 166, in inject_data
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+sqlite3.IntegrityError: UNIQUE constraint failed: customer.customer_id
+2025-04-20 17:21:17,941 - INFO - Starting ETL Process
+2025-04-20 17:21:17,971 - INFO - Created table 'customer' with columns: ['customer_id', 'name', 'region', 'join_date', 'loyalty_points', 'preferred_contact_method', 'email', 'city', 'gender', 'age']
+2025-04-20 17:21:17,985 - INFO - Created table 'product' with columns: ['product_id', 'product_name', 'category', 'unit_price', 'stock_quantity', 'supplier', 'is_endless_aisle', 'lead_time_days']
+2025-04-20 17:21:17,999 - INFO - Created table 'sale' with columns: ['sale_id', 'date', 'customer_id', 'product_id', 'store_id', 'campaign_id', 'sale_amount', 'bonus_points', 'payment_type', 'fulfillment_type', 'sales_channel', 'order_status', 'discount_amount', 'is_endless_aisle', 'adjusted_sales_performance']
+2025-04-20 17:21:18,032 - INFO - Inserted 11 rows into customer (total now: 11)
+2025-04-20 17:21:18,034 - ERROR - Error loading product data: Missing required columns in product data: {'ProductID', 'ProductName'}
+2025-04-20 17:21:18,034 - ERROR - ETL failed: Missing required columns in product data: {'ProductID', 'ProductName'}
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 255, in <module>
+    df = load_and_prepare_data(table_name)
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 179, in load_and_prepare_data
+    raise ValueError(f"Missing required columns in {table_name} data: {missing_required}")
+ValueError: Missing required columns in product data: {'ProductID', 'ProductName'}
+2025-04-20 17:22:31,226 - INFO - Starting ETL Process
+2025-04-20 17:22:31,275 - INFO - Added missing column 'CustomerID' to 'customer'
+2025-04-20 17:22:31,280 - INFO - Added missing column 'JoinDate' to 'customer'
+2025-04-20 17:22:31,285 - INFO - Added missing column 'LoyaltyPoints' to 'customer'
+2025-04-20 17:22:31,291 - INFO - Added missing column 'PreferredContactMethod' to 'customer'
+2025-04-20 17:22:31,295 - INFO - Added missing column 'ProductID' to 'product'
+2025-04-20 17:22:31,301 - INFO - Added missing column 'ProductName' to 'product'
+2025-04-20 17:22:31,307 - INFO - Added missing column 'UnitPrice' to 'product'
+2025-04-20 17:22:31,312 - INFO - Added missing column 'StockQuantity' to 'product'
+2025-04-20 17:22:31,318 - INFO - Added missing column 'SaleID' to 'sale'
+2025-04-20 17:22:31,326 - INFO - Added missing column 'CustomerID' to 'sale'
+2025-04-20 17:22:31,331 - INFO - Added missing column 'ProductID' to 'sale'
+2025-04-20 17:22:31,338 - INFO - Added missing column 'StoreID' to 'sale'
+2025-04-20 17:22:31,345 - INFO - Added missing column 'CampaignID' to 'sale'
+2025-04-20 17:22:31,351 - INFO - Added missing column 'SaleAmount' to 'sale'
+2025-04-20 17:22:31,356 - INFO - Added missing column 'BonusPoints' to 'sale'
+2025-04-20 17:22:31,362 - INFO - Added missing column 'TransactionID' to 'sale'
+2025-04-20 17:22:31,369 - INFO - Added missing column 'PaymentType' to 'sale'
+2025-04-20 17:22:31,373 - INFO - Added missing column 'FulfillmentType' to 'sale'
+2025-04-20 17:22:31,378 - INFO - Added missing column 'SalesChannel' to 'sale'
+2025-04-20 17:22:31,383 - INFO - Added missing column 'OrderStatus' to 'sale'
+2025-04-20 17:22:31,387 - INFO - Added missing column 'DiscountAmount' to 'sale'
+2025-04-20 17:22:31,391 - INFO - Added missing column 'IsEndlessAisle' to 'sale'
+2025-04-20 17:22:31,395 - INFO - Added missing column 'AdjustedSalesPerformance' to 'sale'
+2025-04-20 17:22:31,401 - ERROR - ETL process failed: Index(['city', 'gender', 'email', 'age'], dtype='object')
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 190, in <module>
+    df = load_and_prepare_data(table_name)
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 161, in load_and_prepare_data
+    df.drop_duplicates(subset=list(metadata["columns"].values()), inplace=True)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\frame.py", line 6818, in drop_duplicates
+    result = self[-self.duplicated(subset, keep=keep)]
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\frame.py", line 6950, in duplicated
+    raise KeyError(Index(diff))
+KeyError: Index(['city', 'gender', 'email', 'age'], dtype='object')
+2025-04-20 17:23:52,657 - INFO - Starting ETL Process
+2025-04-20 17:23:52,687 - ERROR - Integrity error while inserting into 'customer': UNIQUE constraint failed: customer.customer_id
+2025-04-20 17:23:52,706 - ERROR - Integrity error while inserting into 'product': UNIQUE constraint failed: product.product_id
+2025-04-20 17:23:52,722 - ERROR - ETL process failed: table sale has no column named saledate
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 199, in <module>
+    inject_data(table_name, df, conn)
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 175, in inject_data
+    df.to_sql(table_name, conn, if_exists="append", index=False)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 2851, in to_sql
+    return table.insert(chunksize, method)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\kirut\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\sql.py", line 2547, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+sqlite3.OperationalError: table sale has no column named saledate
+2025-04-20 17:24:34,465 - INFO - Starting ETL Process
+2025-04-20 17:24:34,527 - INFO - Created table 'customer' with columns: ['customer_id', 'name', 'region', 'join_date', 'loyalty_points', 'preferred_contact_method', 'email', 'city', 'gender', 'age']
+2025-04-20 17:24:34,543 - INFO - Created table 'product' with columns: ['product_id', 'product_name', 'category', 'unit_price', 'stock_quantity', 'supplier', 'is_endless_aisle', 'lead_time_days']
+2025-04-20 17:24:34,555 - INFO - Created table 'sale' with columns: ['sale_id', 'date', 'customer_id', 'product_id', 'store_id', 'campaign_id', 'sale_amount', 'bonus_points', 'payment_type', 'fulfillment_type', 'sales_channel', 'order_status', 'discount_amount', 'is_endless_aisle', 'adjusted_sales_performance']
+2025-04-20 17:24:34,555 - INFO - Processing customer...
+2025-04-20 17:24:34,575 - INFO - Inserted 11 rows into customer (total now: 11)
+2025-04-20 17:24:34,576 - INFO - Processing product...
+2025-04-20 17:24:34,590 - INFO - Inserted 7 rows into product (total now: 7)
+2025-04-20 17:24:34,590 - INFO - Processing sale...
+2025-04-20 17:24:34,594 - ERROR - Error loading sale data: Missing required columns in sale data: ['saleid', 'date']
+2025-04-20 17:24:34,614 - INFO - Sample data from sale_data_cleaned.csv:
+   transactionid    saledate  customerid  productid  storeid  campaignid  saleamount  bonuspoints paymenttype
+0            550  2024-01-06        1008        102      404           0       39.10         50.0        Cash
+1            551  2024-01-06        1009        105      403           0       19.78         20.0       Debit
+2            552  2024-01-16        1004        107      404           0      335.10         50.0      Credit
+3            553  2024-01-16        1006        102      406           0      195.50         70.0        Cash
+4            554  2024-01-25        1005        102      405           0      117.30          0.0        Cash
+2025-04-20 17:24:34,615 - INFO - Columns found: ['transactionid', 'saledate', 'customerid', 'productid', 'storeid', 'campaignid', 'saleamount', 'bonuspoints', 'paymenttype']
+2025-04-20 17:24:34,615 - INFO - Columns expected: ['saleid', 'date', 'customerid', 'productid', 'storeid', 'campaignid', 'saleamount', 'bonuspoints', 'paymenttype', 'fulfillmenttype', 'saleschannel', 'orderstatus', 'discountamount']
+2025-04-20 17:24:34,617 - ERROR - ETL failed: Missing required columns in sale data: ['saleid', 'date']
+Traceback (most recent call last):
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 254, in <module>
+    df = load_and_prepare_data(table_name)
+  File "C:\Projects\smart-store-kiruthikaa\scripts\etl_to_dw.py", line 179, in load_and_prepare_data
+    raise ValueError(f"Missing required columns in {table_name} data: {missing_required}")
+ValueError: Missing required columns in sale data: ['saleid', 'date']
+2025-04-20 17:25:58,431 - INFO - Starting ETL Process
+2025-04-20 17:25:58,482 - INFO - Added missing column 'CustomerID' to 'customer'
+2025-04-20 17:25:58,482 - INFO - Added missing column 'JoinDate' to 'customer'
+2025-04-20 17:25:58,497 - INFO - Added missing column 'LoyaltyPoints' to 'customer'
+2025-04-20 17:25:58,501 - INFO - Added missing column 'PreferredContactMethod' to 'customer'
+2025-04-20 17:25:58,507 - INFO - Added missing column 'ProductID' to 'product'
+2025-04-20 17:25:58,512 - INFO - Added missing column 'ProductName' to 'product'
+2025-04-20 17:25:58,522 - INFO - Added missing column 'UnitPrice' to 'product'
+2025-04-20 17:25:58,526 - INFO - Added missing column 'StockQuantity' to 'product'
+2025-04-20 17:25:58,534 - INFO - Added missing column 'SaleID' to 'sale'
+2025-04-20 17:25:58,541 - INFO - Added missing column 'SaleDate' to 'sale'
+2025-04-20 17:25:58,548 - INFO - Added missing column 'CustomerID' to 'sale'
+2025-04-20 17:25:58,554 - INFO - Added missing column 'ProductID' to 'sale'
+2025-04-20 17:25:58,613 - INFO - Added missing column 'StoreID' to 'sale'
+2025-04-20 17:25:58,621 - INFO - Added missing column 'CampaignID' to 'sale'
+2025-04-20 17:25:58,632 - INFO - Added missing column 'SaleAmount' to 'sale'
+2025-04-20 17:25:58,645 - INFO - Added missing column 'BonusPoints' to 'sale'
+2025-04-20 17:25:58,651 - INFO - Added missing column 'TransactionID' to 'sale'
+2025-04-20 17:25:58,656 - INFO - Added missing column 'PaymentType' to 'sale'
+2025-04-20 17:25:58,660 - INFO - Added missing column 'FulfillmentType' to 'sale'
+2025-04-20 17:25:58,668 - INFO - Added missing column 'SalesChannel' to 'sale'
+2025-04-20 17:25:58,673 - INFO - Added missing column 'OrderStatus' to 'sale'
+2025-04-20 17:25:58,674 - INFO - Added missing column 'DiscountAmount' to 'sale'
+2025-04-20 17:25:58,684 - INFO - Added missing column 'IsEndlessAisle' to 'sale'
+2025-04-20 17:25:58,690 - INFO - Added missing column 'AdjustedSalesPerformance' to 'sale'
+2025-04-20 17:25:58,700 - ERROR - Integrity error while inserting into 'customer': UNIQUE constraint failed: customer.customer_id
+2025-04-20 17:25:58,707 - ERROR - Integrity error while inserting into 'product': NOT NULL constraint failed: product.product_name
+2025-04-20 17:25:58,716 - ERROR - Integrity error while inserting into 'sale': NOT NULL constraint failed: sale.date
+2025-04-20 17:25:58,716 - INFO - ETL process completed successfully!
+2025-04-20 17:29:41,245 - INFO - Starting ETL Process
+2025-04-20 17:29:41,259 - ERROR - Integrity error while inserting into 'customer': UNIQUE constraint failed: customer.customer_id
+2025-04-20 17:29:41,270 - ERROR - Integrity error while inserting into 'product': NOT NULL constraint failed: product.product_name
+2025-04-20 17:29:41,388 - ERROR - Integrity error while inserting into 'sale': NOT NULL constraint failed: sale.date
+2025-04-20 17:29:41,388 - INFO - ETL process completed successfully!
+2025-04-21 14:12:14,110 - INFO - Creating tables...
+2025-04-21 14:12:14,120 - INFO - Processing customer table...
+2025-04-21 14:12:14,121 - ERROR - An error occurred during the ETL process: [Errno 2] No such file or directory: 'data\\cleaned\\customer_data_cleaned.csv'

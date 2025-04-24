@@ -1,0 +1,7 @@
+2025-04-21 14:36:17,505 - INFO - Customer records found: 11
+2025-04-21 14:36:17,505 - INFO - Product records found: 7
+2025-04-21 14:36:17,515 - INFO - Created sale table
+2025-04-21 14:36:17,524 - INFO - Loaded 92 sales records from sale_data_cleaned.csv
+2025-04-21 14:36:17,524 - WARNING - Found 2 invalid customer references
+2025-04-21 14:36:17,525 - WARNING - Found 2 invalid product references
+2025-04-21 14:36:17,525 - ERROR - Foreign key validation failed

@@ -1,0 +1,35 @@
+2025-04-21 14:32:31,454 - INFO - Created table: customer
+2025-04-21 14:32:31,454 - INFO - Created table: product
+2025-04-21 14:32:31,454 - INFO - Created table: sale
+2025-04-21 14:32:31,472 - INFO - Loaded 11 rows from customer_data_cleaned.csv
+2025-04-21 14:32:31,473 - DEBUG - Original columns: ['customerid', 'name', 'region', 'joindate', 'loyaltypoints', 'preferredcontactmethod']
+2025-04-21 14:32:31,477 - DEBUG - Processed columns: ['customer_id', 'name', 'region', 'join_date', 'loyalty_points', 'preferred_contact']
+2025-04-21 14:32:31,478 - DEBUG - Sample data:
+   customer_id           name region   join_date  loyalty_points preferred_contact
+0         1001  William White   East  2021-11-11            50.0             Email
+1         1002   Wylie Coyote   East  2023-02-14           100.0             Phone
+2025-04-21 14:32:31,478 - INFO - Loaded 7 rows from product_data_cleaned.csv
+2025-04-21 14:32:31,478 - DEBUG - Original columns: ['productid', 'productname', 'category', 'unitprice', 'stockquantity', 'supplier']
+2025-04-21 14:32:31,478 - DEBUG - Processed columns: ['product_id', 'product_name', 'category', 'unit_price', 'stock_quantity', 'supplier']
+2025-04-21 14:32:31,478 - DEBUG - Sample data:
+   product_id product_name     category  unit_price  stock_quantity supplier
+0         101       laptop  Electronics      793.12            1000      HCL
+1         102       hoodie     Clothing       39.10             280    Bloom
+2025-04-21 14:32:31,478 - INFO - Loaded 92 rows from sale_data_cleaned.csv
+2025-04-21 14:32:31,478 - DEBUG - Original columns: ['transactionid', 'saledate', 'customerid', 'productid', 'storeid', 'campaignid', 'saleamount', 'bonuspoints', 'paymenttype']
+2025-04-21 14:32:31,495 - DEBUG - Processed columns: ['sale_id', 'sale_date', 'customer_id', 'product_id', 'store_id', 'campaign_id', 'sale_amount', 'bonus_points', 'payment_type', 'fulfillment_type', 'is_repeat_customer', 'anomaly_flag']
+2025-04-21 14:32:31,503 - DEBUG - Sample data:
+  sale_id   sale_date  customer_id  ...  fulfillment_type  is_repeat_customer  anomaly_flag
+0     550  2024-01-06         1008  ...             'POS'                   0             0
+1     551  2024-01-06         1009  ...             'POS'                   0             0
+
+[2 rows x 12 columns]
+2025-04-21 14:32:31,503 - INFO - Inserted 11 customer records
+2025-04-21 14:32:31,512 - INFO - Inserted 7 product records
+2025-04-21 14:32:31,512 - WARNING - Found 2 invalid customer references
+2025-04-21 14:32:31,513 - WARNING - Found 2 invalid product references
+2025-04-21 14:32:31,518 - INFO - Inserted 60 sales records
+2025-04-21 14:32:31,519 - INFO - ETL process completed successfully!
+2025-04-21 14:32:31,519 - INFO - Final row count in customer: 11
+2025-04-21 14:32:31,519 - INFO - Final row count in product: 7
+2025-04-21 14:32:31,519 - INFO - Final row count in sale: 60

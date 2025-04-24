@@ -2,164 +2,224 @@ import pandas as pd
 import sqlite3
 import pathlib
 import logging
+import sys
 
-# Logging setup
+# Configure logging
 logging.basicConfig(
-    filename="logs/project_log.log",
     level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("etl_sales.log"),
+        logging.StreamHandler(sys.stdout)
+    ]
 )
 
 # Paths
-DB_PATH = "C:/Projects/smart-store-kiruthikaa/data/smart_sales.db"  # Update this path if needed
-CLEANED_DATA_DIR = pathlib.Path("data/cleaned")  # Directory for cleaned CSV files
+BASE_DIR = pathlib.Path(r"C:\Projects\smart-store-kiruthikaa")
+CLEANED_DATA_DIR = BASE_DIR / "data" / "cleaned"
+DB_PATH = BASE_DIR / "data" / "smart_store_sales.db"
 
-# Table metadata: schema and file mapping
-TABLE_METADATA = {
-    "customer": {
-        "file_name": "customer_data_cleaned.csv",
-        "columns": {
-            "CustomerID": "customer_id",
-            "Name": "name",
-            "Region": "region",
-            "JoinDate": "join_date",
-            "LoyaltyPoints": "loyaltypoints",
-            "PreferredContactMethod": "preferredcontactmethod"
-        },
-        "schema": """
-            CREATE TABLE customer (
-                customer_id INTEGER PRIMARY KEY,
-                name TEXT,
-                region TEXT,
-                join_date TEXT,
-                loyaltypoints REAL CHECK(loyaltypoints >= 0),
-                preferredcontactmethod TEXT
-            )
-        """
-    },
-    "product": {
-        "file_name": "product_data_cleaned.csv",
-        "columns": {
-            "productid": "product_id",
-            "productname": "product_name",
-            "category": "category",
-            "unitprice": "unitprice",
-            "stockquantity": "stockquantity",
-            "supplier": "supplier"
-        },
-        "schema": """
-            CREATE TABLE product (
-                product_id INTEGER PRIMARY KEY,
-                product_name TEXT,
-                category TEXT,
-                unitprice REAL CHECK(unitprice >= 0),
-                stockquantity INTEGER CHECK(stockquantity >= 0),
-                supplier TEXT
-            )
-        """
-    },
-    "sale": {
-        "file_name": "sale_data_cleaned.csv",
-        "columns": {
-            "transactionid": "sale_id",
-            "saledate": "sale_date",
-            "customerid": "customer_id",
-            "productid": "product_id",
-            "storeid": "storeid",
-            "campaignid": "campaignid",
-            "saleamount": "sale_amount",
-            "bonuspoints": "bonuspoints",
-            "paymenttype": "paymenttype"
-        },
-        "schema": """
-            CREATE TABLE sale (
-                sale_id INTEGER PRIMARY KEY,
-                sale_date TEXT,
-                customer_id INTEGER,
-                product_id INTEGER,
-                storeid INTEGER,  -- Store ID column
-                campaignid INTEGER,
-                sale_amount REAL CHECK(sale_amount >= 0),
-                bonuspoints REAL CHECK(bonuspoints >= 0),
-                paymenttype TEXT,
-                FOREIGN KEY (customer_id) REFERENCES customer (customer_id),
-                FOREIGN KEY (product_id) REFERENCES product (product_id)
-            )
-        """
+# Sale table configuration
+SALE_TABLE = {
+    "csv": "sale_data_cleaned.csv",
+    "columns": [
+        "transactionid",
+        "saledate",
+        "customerid",
+        "productid",
+        "storeid",
+        "campaignid",
+        "saleamount",
+        "bonuspoints",
+        "paymenttype"
+    ],
+    "schema": """
+        CREATE TABLE sale (
+            sale_id TEXT PRIMARY KEY,
+            sale_date TEXT NOT NULL,
+            customer_id INTEGER NOT NULL,
+            product_id INTEGER NOT NULL,
+            store_id INTEGER,
+            campaign_id INTEGER,
+            sale_amount REAL CHECK(sale_amount >= 0),
+            bonus_points REAL DEFAULT 0,
+            payment_type TEXT,
+            FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+            FOREIGN KEY (product_id) REFERENCES product(product_id)
+        )
+    """,
+    "column_mapping": {
+        "transactionid": "sale_id",
+        "saledate": "sale_date",
+        "customerid": "customer_id",
+        "productid": "product_id",
+        "storeid": "store_id",
+        "campaignid": "campaign_id",
+        "saleamount": "sale_amount",
+        "bonuspoints": "bonus_points",
+        "paymenttype": "payment_type"
     }
 }
 
-##############################################
-# Helper Functions
-##############################################
-
-def create_tables(cursor: sqlite3.Cursor):
-    """Drop and recreate all tables based on metadata."""
-    for table_name, metadata in TABLE_METADATA.items():
-        cursor.execute(f"DROP TABLE IF EXISTS {table_name}")
-        cursor.execute(metadata["schema"])
-
-def load_and_prepare_data(table_name: str) -> pd.DataFrame:
-    """Load and prepare data for the given table."""
-    metadata = TABLE_METADATA[table_name]
-    file_path = CLEANED_DATA_DIR / metadata["file_name"]
-    df = pd.read_csv(file_path)
-    df.rename(columns=metadata["columns"], inplace=True)
-    df.dropna(how="all", inplace=True)  # Drop fully blank rows
-    return df
-
-def inject_data(table_name: str, df: pd.DataFrame, conn: sqlite3.Connection):
-    """Inject data into the specified table."""
-    try:
-        print(f"Injecting data into '{table_name}'...")
-        print(f"Columns: {df.columns.tolist()}")
-        print(f"First 5 rows:\n{df.head()}")
-        print(f"Total rows in '{table_name}' data: {len(df)}")
-
-        df.to_sql(table_name, conn, if_exists="append", index=False)
-
-        cursor = conn.cursor()
-        cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
-        row_count = cursor.fetchone()[0]
-        print(f"Rows in '{table_name}' table after insertion: {row_count}")
-    except Exception as e:
-        print(f"Error inserting data into '{table_name}': {e}")
-
-def display_table_contents(table_name: str, conn: sqlite3.Connection):
-    """Display all contents of a given table."""
+def verify_prerequisite_tables(conn):
+    """Check if customer and product tables exist and have data."""
     cursor = conn.cursor()
-    cursor.execute(f"SELECT * FROM {table_name}")
-    rows = cursor.fetchall()
+    try:
+        # Check customer table
+        cursor.execute("SELECT COUNT(*) FROM customer")
+        customer_count = cursor.fetchone()[0]
+        logging.info(f"Customer records found: {customer_count}")
+        
+        # Check product table
+        cursor.execute("SELECT COUNT(*) FROM product")
+        product_count = cursor.fetchone()[0]
+        logging.info(f"Product records found: {product_count}")
+        
+        return customer_count > 0 and product_count > 0
+    except sqlite3.Error as e:
+        logging.error(f"Error checking prerequisite tables: {str(e)}")
+        return False
 
-    print(f"Contents of table '{table_name}' ({len(rows)} rows):")
-    for row in rows:
-        print(row)
+def load_sales_data():
+    """Load and prepare sales data with validation."""
+    csv_path = CLEANED_DATA_DIR / SALE_TABLE["csv"]
+    
+    if not csv_path.exists():
+        logging.error(f"Sales data file not found: {csv_path}")
+        return None
 
-##############################################
-# Main Workflow
-##############################################
+    try:
+        # Load CSV with specific columns
+        df = pd.read_csv(
+            csv_path,
+            usecols=SALE_TABLE["columns"],
+            dtype={
+                'transactionid': str,
+                'customerid': int,
+                'productid': int,
+                'storeid': int,
+                'campaignid': int
+            },
+            parse_dates=['saledate']
+        )
+        
+        # Verify all required columns are present
+        missing_cols = set(SALE_TABLE["columns"]) - set(df.columns)
+        if missing_cols:
+            logging.error(f"Missing columns in sales data: {missing_cols}")
+            return None
+            
+        logging.info(f"Loaded {len(df)} sales records from {csv_path.name}")
+        return df
+
+    except Exception as e:
+        logging.error(f"Error loading sales data: {str(e)}")
+        return None
+
+def validate_foreign_keys(conn, sales_df):
+    """Validate that all foreign keys exist in their parent tables."""
+    cursor = conn.cursor()
+    
+    # Check customer IDs
+    cursor.execute("SELECT customer_id FROM customer")
+    valid_customers = {row[0] for row in cursor.fetchall()}
+    invalid_customers = set(sales_df['customerid']) - valid_customers
+    
+    # Check product IDs
+    cursor.execute("SELECT product_id FROM product")
+    valid_products = {row[0] for row in cursor.fetchall()}
+    invalid_products = set(sales_df['productid']) - valid_products
+    
+    if invalid_customers:
+        logging.warning(f"Found {len(invalid_customers)} invalid customer references")
+        logging.debug(f"Invalid customer IDs: {list(invalid_customers)[:10]}")
+    
+    if invalid_products:
+        logging.warning(f"Found {len(invalid_products)} invalid product references")
+        logging.debug(f"Invalid product IDs: {list(invalid_products)[:10]}")
+    
+    return not (invalid_customers or invalid_products)
+
+def insert_sales_data(conn, sales_df):
+    """Insert validated sales data into database."""
+    if sales_df is None or sales_df.empty:
+        logging.error("No sales data to insert")
+        return False
+
+    try:
+        # Rename columns to match database schema
+        sales_df = sales_df.rename(columns=SALE_TABLE["column_mapping"])
+        
+        # Convert sale_date to string format
+        sales_df['sale_date'] = sales_df['sale_date'].dt.strftime('%Y-%m-%d')
+        
+        # Insert data
+        sales_df.to_sql(
+            "sale",
+            conn,
+            if_exists="append",
+            index=False,
+            dtype={
+                'sale_date': 'TEXT',
+                'payment_type': 'TEXT'
+            }
+        )
+        
+        # Verify insertion
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM sale")
+        count = cursor.fetchone()[0]
+        logging.info(f"Successfully inserted {len(sales_df)} sales records. Total now: {count}")
+        return True
+        
+    except Exception as e:
+        logging.error(f"Error inserting sales data: {str(e)}")
+        return False
+
+def main():
+    """Main ETL workflow for sales data."""
+    conn = None
+    try:
+        # Initialize database connection
+        conn = sqlite3.connect(DB_PATH)
+        conn.execute("PRAGMA foreign_keys = ON")
+        
+        # Verify prerequisite tables
+        if not verify_prerequisite_tables(conn):
+            logging.error("Customer or product tables are missing or empty")
+            return
+        
+        # Create sale table if it doesn't exist
+        cursor = conn.cursor()
+        cursor.execute("DROP TABLE IF EXISTS sale")
+        cursor.execute(SALE_TABLE["schema"])
+        logging.info("Created sale table")
+        
+        # Load and validate sales data
+        sales_df = load_sales_data()
+        if sales_df is None:
+            logging.error("Failed to load sales data")
+            return
+            
+        # Validate foreign keys
+        if not validate_foreign_keys(conn, sales_df):
+            logging.error("Foreign key validation failed")
+            return
+            
+        # Insert data
+        if insert_sales_data(conn, sales_df):
+            conn.commit()
+            logging.info("Sales data loaded successfully!")
+        else:
+            conn.rollback()
+            
+    except Exception as e:
+        logging.error(f"ETL process failed: {str(e)}")
+        if conn:
+            conn.rollback()
+    finally:
+        if conn:
+            conn.close()
 
 if __name__ == "__main__":
-    try:
-        # Connect to the database
-        conn = sqlite3.connect(DB_PATH)
-        cursor = conn.cursor()
-
-        # Step 1: Create tables
-        create_tables(cursor)
-
-        # Step 2: Load, prepare, and inject data into tables
-        for table_name in TABLE_METADATA.keys():
-            df = load_and_prepare_data(table_name)
-            inject_data(table_name, df, conn)
-
-        # Step 3: Display contents of each table
-        for table_name in TABLE_METADATA.keys():
-            display_table_contents(table_name, conn)
-
-        conn.commit()
-        print("ETL process completed successfully!")
-    except Exception as e:
-        print(f"An error occurred during the ETL process: {e}")
-    finally:
-        conn.close()
+    main()
